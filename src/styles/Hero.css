@@ -1,0 +1,8 @@
+/* Hero.css */
+.hero-bg-section {
+  position: relative;
+}
+
+.glass-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

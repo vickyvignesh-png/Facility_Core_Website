@@ -1,0 +1,60 @@
+/* Features.css */
+
+/* Floating UI card widgets */
+.ui-mockup-card {
+  box-shadow: 0 20px 40px -15px rgba(17, 24, 39, 0.08);
+  border: 1px solid rgba(17, 24, 39, 0.05);
+}
+
+/* Pulsing QR scanning line */
+@keyframes scan-line {
+  0%, 100% {
+    top: 5%;
+  }
+  50% {
+    top: 90%;
+  }
+}
+
+.scanner-overlay::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #69BC45;
+  box-shadow: 0 0 8px #69BC45;
+  animation: scan-line 3s linear infinite;
+  pointer-events: none;
+}
+
+/* Pulsing animation node */
+@keyframes pulse-light {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.pulse-node-glow {
+  animation: pulse-light 2s infinite ease-in-out;
+}
+
+/* Connection lines animation */
+@keyframes connection-flow {
+  0% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.connect-line-flow {
+  stroke-dasharray: 6 4;
+  animation: connection-flow 8s linear infinite;
+}

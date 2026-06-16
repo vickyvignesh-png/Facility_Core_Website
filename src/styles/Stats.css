@@ -1,0 +1,25 @@
+/* Stats.css */
+.stats-container-box {
+  background: linear-gradient(135deg, #1d4fa3 0%, #111827 100%);
+  border-radius: 32px;
+}
+
+.stat-item {
+  position: relative;
+}
+
+.stat-item::after {
+  content: '';
+  position: absolute;
+  right: -1.5rem;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1023px) {
+  .stat-item::after {
+    display: none;
+  }
+}

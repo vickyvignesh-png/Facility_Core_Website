@@ -1,0 +1,46 @@
+/* Clients.css */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.clients-scroll-container {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll 25s linear infinite;
+}
+
+.clients-scroll-container:hover {
+  animation-play-state: paused;
+}
+
+/* Edge fading effect */
+.clients-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.clients-carousel-wrapper::before,
+.clients-carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clients-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, #F5F7FA 0%, rgba(245, 247, 250, 0) 100%);
+}
+
+.clients-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, #F5F7FA 0%, rgba(245, 247, 250, 0) 100%);
+}
