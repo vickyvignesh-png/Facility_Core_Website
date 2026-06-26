@@ -1,121 +1,218 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FiSmartphone,
   FiBarChart2,
-  FiTarget,
-  FiCheckCircle,
-  FiClock,
+  FiPackage,
+  FiTool,
   FiZap,
-  FiLayers,
-} from 'react-icons/fi';
-import '../../styles/Features.css';
+  FiGrid,
+  FiCheckCircle,
+} from "react-icons/fi";
+import "../../styles/Features.css";
 
-// Fade‑up animation variants
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1 },
-  }),
-};
-
-const features = [
+/* ─── Tab data ───────────────────────────────────── */
+const tabs = [
   {
-    id: 'mobile',
-    icon: <FiSmartphone size={24} />, // Mobile Applications
-    title: 'Mobile Applications',
-    description: 'Role‑based apps for managers, technicians and occupants.',
+    id: "mobile",
+    label: "Mobile Workforce",
+    icon: <FiSmartphone />,
+    image: "/mobileworkforceplatform.png",
+    title: "Mobile Workforce Platform",
+    overview:
+      "Empower managers, technicians, and occupants with real-time access to facility operations from anywhere. Improve response times, streamline field activities, and boost workforce productivity.",
+    bullets: [
+      "FC Admin App",
+      "FC Employee App",
+      "FC Occupant App",
+      "Real-Time Notifications",
+      "QR Asset Scanning",
+      "Offline Capability",
+    ],
   },
   {
-    id: 'analytics',
-    icon: <FiBarChart2 size={24} />, // Dashboard Analytics
-    title: 'Dashboard Analytics',
-    description: 'Real‑time KPIs, operational visibility and insights.',
+    id: "dashboard",
+    label: "Dashboard & Analytics",
+    icon: <FiBarChart2 />,
+    image: "/dashboard.png",
+    title: "Dashboard & Analytics",
+    overview:
+      "Gain complete operational visibility with executive dashboards and real-time analytics. Monitor KPIs, SLAs, workforce performance, and facility health from a centralized platform.",
+    bullets: [
+      "Executive Dashboards",
+      "KPI Monitoring",
+      "SLA Tracking",
+      "Workforce Analytics",
+      "Custom Reports",
+      "Performance Insights",
+    ],
   },
   {
-    id: 'asset',
-    icon: <FiTarget size={24} />, // Asset Management
-    title: 'Asset Management',
-    description: 'Track assets from acquisition to replacement.',
+    id: "asset",
+    label: "Asset & QR Tracking",
+    icon: <FiPackage />,
+    image: "/qrtracking.png",
+    title: "Asset & QR Tracking",
+    overview:
+      "Track, monitor, and manage every asset across your facilities using QR-based identification. Maintain complete lifecycle history and improve asset accountability.",
+    bullets: [
+      "QR Code Scanning",
+      "Asset Lifecycle Tracking",
+      "Asset Location Mapping",
+      "Warranty Management",
+      "Maintenance History",
+      "Barcode Integration",
+    ],
   },
   {
-    id: 'workorder',
-    icon: <FiCheckCircle size={24} />, // Work Order Management
-    title: 'Work Order Management',
-    description: 'Create, prioritize and close work orders in seconds.',
+    id: "maintenance",
+    label: "Preventive Maintenance",
+    icon: <FiTool />,
+    image: "/pmworking.png",
+    title: "Preventive Maintenance",
+    overview:
+      "Automate recurring inspections and maintenance schedules to minimize downtime, extend asset life, and improve operational efficiency.",
+    bullets: [
+      "Automated PM Scheduling",
+      "Recurring Tasks",
+      "Inspection Planner",
+      "Technician Alerts",
+      "Compliance Checklists",
+      "Downtime Reports",
+    ],
   },
   {
-    id: 'maintenance',
-    icon: <FiClock size={24} />, // Preventive Maintenance
-    title: 'Preventive Maintenance',
-    description: 'Schedule recurring tasks to keep equipment running.',
-  },
-  {
-    id: 'automation',
-    icon: <FiZap size={24} />, // Workflow Automation
-    title: 'Workflow Automation',
-    description: 'No‑code rules that route work to the right team.',
-  },
-  {
-    id: 'integrations',
-    icon: <FiLayers size={24} />, // Integrations & APIs
-    title: 'Integrations & APIs',
-    description: 'Connect BMS, IoT, ERP and other systems seamlessly.',
+    id: "automation",
+    label: "Workflow Automation",
+    icon: <FiZap />,
+    image: "/workflowautomation.png",
+    title: "Workflow Automation",
+    overview:
+      "Automate routine processes with intelligent workflows. Trigger actions, route approvals, escalate issues, and streamline facility operations without manual intervention.",
+    bullets: [
+      "No-Code Rule Builder",
+      "Auto Routing",
+      "Multi-Level Approvals",
+      "Escalation Rules",
+      "SLA Automation",
+      "Email & SMS Alerts",
+    ],
   },
 ];
 
-const Features = () => (
-  <section id="features" className="py-24 bg-white overflow-hidden">
-    <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12">
-      {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <span className="text-sm font-bold uppercase tracking-wider text-[#69BC45]">
-          Platform Features
-        </span>
-        <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-[#111827]">
-          Everything You Need To Manage Facilities Efficiently
-        </h2>
-        <p className="mt-4 text-base text-[#6B7280]">
-          FacilityCore combines asset management, maintenance automation, workforce mobility, analytics, and compliance tools into one intelligent platform.
-        </p>
-      </div>
-      {/* Cards */}
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-      >
-        {features.map((item, idx) => (
+/* ─── Animation variants ─────────────────────────── */
+const contentVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+  },
+  exit: {
+    opacity: 0,
+    y: -16,
+    transition: { duration: 0.25, ease: "easeIn" },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.97,
+    transition: { duration: 0.25, ease: "easeIn" },
+  },
+};
+
+/* ─── Component ──────────────────────────────────── */
+const Features = () => {
+  const [activeTab, setActiveTab] = useState("mobile");
+  const activeData = tabs.find((t) => t.id === activeTab);
+
+  return (
+    <section id="features" className="features-section">
+      <div className="features-container">
+
+        {/* ── Section Header ── */}
+        <div className="features-header">
+          <span className="features-label">
+            <FiGrid />
+            PLATFORM FEATURES
+          </span>
+          <h2 className="features-heading">Essential Facility Features</h2>
+          <p className="features-paragraph">
+            FacilityCore delivers a complete suite of tools to streamline
+            facility operations, enhance visibility, and boost productivity.
+          </p>
+        </div>
+
+        {/* ── Tab Navigation ── */}
+        <div className="features-tabs-wrapper">
+          <nav className="features-tabs">
+            {/* Animated indicator */}
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                className={`features-tab ${activeTab === tab.id ? "active" : ""}`}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                <span className="tab-icon">{tab.icon}</span>
+                {tab.label}
+              </button>
+            ))}
+          </nav>
+        </div>
+
+        {/* ── Content Card ── */}
+        <AnimatePresence mode="wait">
           <motion.div
-            key={item.id}
-            className="feature-card"
-            custom={idx}
-            variants={fadeUp}
+            key={activeTab}
+            className="features-content-card"
+            variants={contentVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
-            <div className="icon-box">{item.icon}</div>
-            <h3 className="feature-title">{item.title}</h3>
-            <p className="feature-desc">{item.description}</p>
-            <a href="#" className="learn-more">
-              Learn More <span className="arrow">→</span>
-            </a>
+            {/* Left — image */}
+            <motion.div
+              variants={imageVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <img
+                src={activeData.image}
+                alt={activeData.title}
+                className="features-image"
+              />
+            </motion.div>
+
+            {/* Right — content */}
+            <div className="features-text-col">
+              <h3 className="features-feature-title">{activeData.title}</h3>
+              <p className="features-overview">{activeData.overview}</p>
+
+              {/* Bullet grid */}
+              <ul className="features-bullets">
+                {activeData.bullets.map((point, i) => (
+                  <li key={i} className="features-bullet-item">
+                    <FiCheckCircle className="bullet-icon" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
-        ))}
-      </motion.div>
-      {/* Bottom CTA */}
-      <div className="cta-section">
-        <h3 className="cta-title">Ready To See FacilityCore In Action?</h3>
-        <p className="cta-text">
-          Discover how FacilityCore helps organizations improve productivity, optimize maintenance operations, and gain complete operational visibility.
-        </p>
-        <a href="#" className="cta-button">
-          Request Demo
-        </a>
+        </AnimatePresence>
+
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Features;

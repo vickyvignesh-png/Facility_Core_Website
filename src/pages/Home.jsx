@@ -19,24 +19,22 @@ const Home = () => {
       <main className="flex-1">
         {/* Section 1: Hero Banner */}
         <Hero />
-        
+
         {/* Section 2: Why FacilityCore (About) */}
         <WhyFacilityCore />
-        
+
         {/* Section 3: Solutions Suite */}
         <Solutions />
-        
+
         {/* Section 4: Industries Verticals */}
         <Industries />
-        
+
         {/* Section 5: Features Alternating Layout */}
         <Features />
 
         {/* Section 6: Mobile App Showcase */}
         <MobileApp />
-        
-        {/* Section 7: Demo CTA Banner */}
-        <DemoCTA />
+
       </main>
 
       {/* Site Footer */}
