@@ -1,43 +1,225 @@
-/* Solutions.css */
-.solution-card {
+/* ============================================
+   Solutions Section — Premium 3×2 Card Grid
+   ============================================ */
+
+/* ---------- Section ---------- */
+.solutions-section {
   position: relative;
-  background: #ffffff;
-  border-radius: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+  background: #F8FAFC;
+  padding: 80px 0;
+}
+
+/* Background blur blobs */
+.solutions-blob-left,
+.solutions-blob-right {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(120px);
+}
+
+.solutions-blob-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgba(29, 79, 163, 0.05);
+}
+
+.solutions-blob-right {
+  top: 33%;
+  right: 0;
+  background: rgba(105, 188, 69, 0.05);
+}
+
+/* ---------- Container ---------- */
+.solutions-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 10;
+}
+
+/* ---------- Header ---------- */
+.solutions-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 64px;
+}
+
+.solutions-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #69BC45;
+  background: rgba(105, 188, 69, 0.1);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+}
+
+.solutions-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.solutions-paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6B7280;
+}
+
+/* ---------- Grid ---------- */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* ---------- Card ---------- */
+.solution-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid rgba(29, 79, 163, 0.08);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease;
+}
+
+/* Top border highlight on hover */
+.solution-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1D4FA3, #69BC45);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Subtle inner glow on hover */
+.solution-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(29, 79, 163, 0.04), rgba(105, 188, 69, 0.04));
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .solution-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 30px 60px -15px rgba(29, 79, 163, 0.1);
-}
-
-/* Premium Gradient Border Effect on Hover */
-.solution-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  padding: 1.5px; /* Border width */
-  background: linear-gradient(135deg, #1D4FA3, #69BC45);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
+  box-shadow: 0 24px 60px rgba(29, 79, 163, 0.13);
+  border-color: rgba(29, 79, 163, 0.16);
 }
 
 .solution-card:hover::before {
   opacity: 1;
 }
 
-/* Icon container inner shadow and premium border */
-.solution-icon-wrapper {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.solution-card:hover::after {
+  opacity: 1;
 }
 
-.solution-card:hover .solution-icon-wrapper {
-  transform: scale(1.08) rotate(2deg);
+/* ---------- Icon Container ---------- */
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1D4FA3, #69BC45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.solution-card:hover .icon-wrapper {
+  transform: scale(1.1);
+}
+
+/* All icons inside the wrapper should be white */
+.icon-wrapper svg {
+  color: #FFFFFF;
+  width: 26px;
+  height: 26px;
+}
+
+/* ---------- Card Typography ---------- */
+.solution-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.solution-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #6B7280;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .solutions-container {
+    padding: 0 32px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .solutions-heading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .solutions-container {
+    padding: 0 20px;
+  }
+
+  .solutions-section {
+    padding: 60px 0;
+  }
+
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .solutions-heading {
+    font-size: 28px;
+  }
+
+  .solution-card {
+    padding: 32px 28px;
+  }
 }
