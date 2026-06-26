@@ -1,5 +1,231 @@
-/* MobileApp.css */
-/* Minimal styles. Tailwind is used for layout */
-.bg-gray-850 {
-  background-color: #1f2937;
+/* MobileApp.css - Premium Enterprise SaaS Redesign */
+
+/* Section styling */
+.mobileapp-section {
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Custom Grid Container */
+.mobileapp-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Left Side Content Column */
+.mobileapp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.mobileapp-content {
+  max-width: 550px;
+}
+
+/* Tag */
+.mobileapp-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.mobileapp-tag-icon {
+  color: #1D4FA3;
+}
+
+.mobileapp-tag-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1D4FA3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Heading */
+.mobileapp-heading {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #111827;
+  max-width: 480px;
+  margin-bottom: 24px;
+}
+
+/* Description */
+.mobileapp-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4B5563;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+/* Feature Grid */
+.mobileapp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
+  row-gap: 24px;
+  padding: 0;
+  margin: 0 0 40px 0;
+  list-style: none;
+  width: 100%;
+  max-width: 520px;
+}
+
+.mobileapp-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.mobileapp-item-icon {
+  color: #69BC45;
+  flex-shrink: 0;
+}
+
+/* Download Buttons Container */
+.mobileapp-downloads {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  width: 100%;
+}
+
+/* App Download Button */
+.mobileapp-store-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 64px;
+  border-radius: 18px;
+  background: #111827;
+  color: #ffffff;
+  padding: 0 24px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.mobileapp-store-btn:hover {
+  transform: translateY(-4px);
+  background: #1f2937;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mobileapp-store-subtitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  line-height: 1.2;
+}
+
+.mobileapp-store-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Right Side Image Container */
+.mobileapp-image-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Image Wrapper card */
+.mobileapp-image-wrapper {
+  background: linear-gradient(135deg,
+      rgba(29, 79, 163, 0.05),
+      rgba(105, 188, 69, 0.05));
+  border-radius: 32px;
+  padding: 30px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileapp-image {
+  width: 100%;
+  max-height: 510px;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet & Smaller Layout (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .mobileapp-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .mobileapp-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobileapp-heading {
+    font-size: 42px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobileapp-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobileapp-grid {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .mobileapp-downloads {
+    justify-content: center;
+  }
+
+  .mobileapp-image-container {
+    order: 2;
+    /* Image appears below the content on tablet & mobile */
+  }
+}
+
+/* Mobile & Smaller Breakpoint (max-width: 768px) */
+@media (max-width: 768px) {
+  .mobileapp-heading {
+    font-size: 34px;
+  }
+
+  .mobileapp-grid {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    max-width: 320px;
+    text-align: left;
+  }
+
+  .mobileapp-downloads {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobileapp-store-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
 }
