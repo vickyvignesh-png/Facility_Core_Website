@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import '../../styles/Hero.css';
+import { FiGrid } from "react-icons/fi";
 
 const Hero = () => {
   return (<section className="hero-bg-section">
@@ -25,7 +26,7 @@ const Hero = () => {
         >
 
           <div className="hero-badge">
-            <span className="hero-badge-dot"></span>
+            <FiGrid />
             Next-Gen Enterprise CMMS & Facility Platform
           </div>
 
