@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 import '../../styles/Navbar.css';
 
 const Navbar = () => {
@@ -9,8 +10,8 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', link: '#' },
-    { name: 'Solutions', link: '#solutions' },
+    { name: 'Home', link: '/' },
+    { name: 'Solutions', link: '/solutions' },
     { name: 'Industries', link: '#industries' },
     { name: 'Features', link: '#features' },
     { name: 'Resources', link: '#resources' },
@@ -32,26 +33,34 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`navbar-wrapper ${isScrolled ? 'navbar-scrolled' : ''}`}>
+    <header className={`navbar-wrapper`}>
       <div className="navbar-container">
         <div className="navbar-inner">
 
           {/* Logo */}
-          <a href="#" className="navbar-logo" onClick={() => setActiveItem('Home')}>
-            <img src="/Facility_Core_logo.svg" alt="FacilityCore" className="logo-img" />
-          </a>
+          <Link
+            to="/"
+            className="navbar-logo"
+            onClick={() => setActiveItem('Home')}
+          >
+            <img
+              src="/Facility_Core_logo.svg"
+              alt="FacilityCore"
+              className="logo-img"
+            />
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="desktop-nav">
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={idx}
-                href={item.link}
+                to={item.link}
                 className={`nav-link ${activeItem === item.name ? 'nav-link-active' : ''}`}
                 onClick={() => setActiveItem(item.name)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 

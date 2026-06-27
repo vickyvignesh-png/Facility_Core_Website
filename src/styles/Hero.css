@@ -41,7 +41,7 @@
 
   margin: 0 auto;
 
-  padding-top: 60px;
+  padding-top: 60px !important;
 }
 
 .hero-badge {
@@ -79,7 +79,7 @@
 }
 
 .hero-title {
-  font-size: 42px;
+  font-size: 34px !important;
   font-weight: 800;
 
   line-height: 1.2;
@@ -187,7 +187,7 @@
 @media (max-width: 1024px) {
 
   .hero-title {
-    font-size: 56px;
+    font-size: 34px;
   }
 
   .hero-description {
