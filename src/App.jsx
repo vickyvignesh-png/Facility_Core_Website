@@ -1,16 +1,19 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Home from './pages/Home';
 import SolutionsPage from './pages/SolutionsPage/SolutionsPage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import IndustriesPage from './pages/IndustriesPage/IndustriesPage';
 
 function App() {
   return (
-    < BrowserRouter >
-      <Routes >
+    <BrowserRouter>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<SolutionsPage />} />
-      </Routes >
-    </BrowserRouter >
+        <Route path="/industries" element={<IndustriesPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
