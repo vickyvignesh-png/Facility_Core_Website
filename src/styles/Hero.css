@@ -9,11 +9,16 @@
 .hero-bg-image {
   position: absolute;
   inset: 0;
-
-  background-image: url('/FacilityHeroSection.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-bg-image.active {
+  opacity: 1;
 }
 
 .hero-overlay {
@@ -32,6 +37,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 80px;
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, .4);
+  transition: all .3s ease;
+}
+
+.hero-dot.active {
+  width: 36px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #1D4FA3, #69BC45);
 }
 
 .hero-content {

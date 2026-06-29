@@ -1,77 +1,119 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import '../../styles/Hero.css';
 import { FiGrid } from "react-icons/fi";
 
+const heroSlides = [
+  {
+    image: "/FacilityHeroSection.png",
+    badge: "Next-Gen Enterprise CMMS & Facility Platform",
+    title: "Transform Facility Operations With One",
+    highlight: "Intelligent Platform",
+    description:
+      "FacilityCore helps organizations streamline maintenance operations, automate workflows, manage assets, improve compliance, and gain complete operational visibility."
+  },
+  {
+    image: "/homepageherosection2img.png",
+    badge: "Smart Healthcare Facility Management",
+    title: "Optimize Hospital Infrastructure With",
+    highlight: "Intelligent Facility Solutions",
+    description:
+      "Manage healthcare facilities efficiently with preventive maintenance, asset tracking, compliance monitoring, and real-time operational visibility."
+  },
+  {
+    image: "/homepageherosection3img.png",
+    badge: "Residential & Apartment Facility Platform",
+    title: "Enhance Residential Operations Through",
+    highlight: "Connected Facility Management",
+    description:
+      "Streamline apartment and residential community operations with maintenance automation, resident support, asset management, and workforce mobility."
+  }
+];
+
 const Hero = () => {
-  return (<section className="hero-bg-section">
-    {/* Background */}
-    <div className="hero-bg-image"></div>
 
-    {/* Overlay */}
-    <div className="hero-overlay"></div>
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-    {/* Container */}
-    <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-      <div className="hero-wrapper">
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) =>
+        prev === heroSlides.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.9,
-            ease: [0.16, 1, 0.3, 1]
-          }}
-          className="hero-content"
-        >
+    return () => clearInterval(interval);
+  }, []);
 
-          <div className="hero-badge">
-            <FiGrid />
-            Next-Gen Enterprise CMMS & Facility Platform
-          </div>
+  return (
+    <section className="hero-bg-section">
 
-          <h1 className="hero-title">
-            Transform Facility Operations With One
-            <span className="hero-highlight">
-              Intelligent Platform
-            </span>
-          </h1>
+      {/* Background Images */}
+      {heroSlides.map((slide, index) => (
+        <div
+          key={index}
+          className={`hero-bg-image ${index === currentSlide ? "active" : ""
+            }`}
+          style={{ backgroundImage: `url(${slide.image})` }}
+        />
+      ))}
 
-          <p className="hero-description">
-            FacilityCore helps organizations streamline maintenance operations,
-            automate workflows, manage assets, improve compliance, and gain
-            complete operational visibility.
-          </p>
+      {/* Overlay */}
+      <div className="hero-overlay"></div>
 
-          <div className="hero-buttons">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+        <div className="hero-wrapper">
 
-            <motion.a
-              href="#demo"
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.98 }}
-              className="hero-btn-primary"
-            >
-              Book Demo
-            </motion.a>
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hero-content"
+          >
 
-            <motion.a
-              href="#solutions"
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.98 }}
-              className="hero-btn-secondary"
-            >
-              Explore Solutions
-            </motion.a>
+            <div className="hero-badge">
+              <FiGrid />
+              {heroSlides[currentSlide].badge}
+            </div>
 
-          </div>
+            <h1 className="hero-title">
+              {heroSlides[currentSlide].title}
+              <span className="hero-highlight">
+                {heroSlides[currentSlide].highlight}
+              </span>
+            </h1>
 
-        </motion.div>
+            <p className="hero-description">
+              {heroSlides[currentSlide].description}
+            </p>
 
+            <div className="hero-buttons">
+              <a href="#demo" className="hero-btn-primary">
+                Book Demo
+              </a>
+
+              <a href="#solutions" className="hero-btn-secondary">
+                Explore Solutions
+              </a>
+            </div>
+
+            {/* Dots */}
+            <div className="hero-dots">
+              {heroSlides.map((_, index) => (
+                <button
+                  key={index}
+                  className={`hero-dot ${currentSlide === index ? "active" : ""
+                    }`}
+                  onClick={() => setCurrentSlide(index)}
+                />
+              ))}
+            </div>
+
+          </motion.div>
+
+        </div>
       </div>
-    </div>
-
-  </section>
-
+    </section>
   );
 };
 
