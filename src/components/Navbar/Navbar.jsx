@@ -12,7 +12,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', link: '/' },
     { name: 'Solutions', link: '/solutions' },
-    { name: 'Industries', link: '#industries' },
+    { name: 'Industries', link: '/industries' },
     { name: 'Features', link: '#features' },
     { name: 'Resources', link: '#resources' },
     { name: 'Pricing', link: '#pricing' },
@@ -166,4 +166,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
