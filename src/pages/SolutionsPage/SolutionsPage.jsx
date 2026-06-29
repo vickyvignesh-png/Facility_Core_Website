@@ -1,6 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import {
+  FiHome, FiPackage, FiTool,
+  FiZap, FiMessageSquare,
+  FiUsers, FiClipboard, FiGrid, FiGitBranch, FiEdit3,
+  FiSettings,
+  FiSend
+} from "react-icons/fi";
+import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "../../styles/SolutionsPage.css";
@@ -27,6 +35,74 @@ const scaleIn = {
 };
 
 const SolutionsPage = () => {
+  React.useEffect(() => {
+    const wrappers = document.querySelectorAll(".sticky-wrapper");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          } else {
+            entry.target.classList.remove("active");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "-10% 0px -10% 0px"
+      }
+    );
+    wrappers.forEach((wrapper) => observer.observe(wrapper));
+    return () => {
+      wrappers.forEach((wrapper) => observer.unobserve(wrapper));
+    };
+  }, []);
+
+  const modules = [
+    {
+      title: "Asset Management",
+      description:
+        "Comprehensive tracking and lifecycle management for all facility assets.",
+      bullets: [
+        "Real-time Asset Location",
+        "Predictive Maintenance Alerts",
+        "Custom Lifecycle Stages",
+        "Integrated Cost Tracking",
+        "Barcode & RFID Support",
+        "Analytics Dashboard",
+      ],
+      img: "/sectionpagedashboard.png",
+    },
+    {
+      title: "Preventive Maintenance",
+      description:
+        "Schedule and automate routine maintenance to reduce downtime and improve operational efficiency.",
+      bullets: [
+        "Dynamic Work Order Generation",
+        "AI-driven Frequency Optimization",
+        "Mobile Technician App",
+        "Resource Allocation Tools",
+        "Compliance Reporting",
+        "Performance KPIs",
+      ],
+      img: "/preventivemaintenance.png",
+    },
+    {
+      title: "Vendor Management",
+      description:
+        "Centralize vendor contracts, performance, and communication in a single platform.",
+      bullets: [
+        "Contract Repository",
+        "SLA & KPI Tracking",
+        "Automated Vendor Rating",
+        "Integrated Purchase Orders",
+        "Secure Document Exchange",
+        "Vendor Performance Analytics",
+      ],
+      img: "/vendormanagement.png",
+    },
+  ];
+
   return (
     <div className="solutions-page">
       <Navbar />
@@ -44,40 +120,65 @@ const SolutionsPage = () => {
           <nav className="breadcrumb">
             <Link to="/">Home</Link> / <span>Solutions</span>
           </nav>
-          <span className="badge">Enterprise Facility Solutions</span>
-          <h1 className="hero-title">Smart Facility Solutions For Modern Enterprises</h1>
+          <span className="badge"><FiHome /> FACILITYCORE SOLUTIONS</span>
+          <h1 className="hero-title">Smart Solutions For Every Facility</h1>
           <p className="hero-desc">
-            Streamline facility operations, automate maintenance workflows, improve compliance, and maximize operational efficiency through a unified FacilityCore platform.
+            Stay audit-ready with automated compliance tracking.
           </p>
-          <div className="hero-cta">
-            <Link to="/solutions" className="btn btn-primary">
-              Explore Modules
-            </Link>
-            <Link to="/demo" className="btn btn-secondary">
-              Request Demo
-            </Link>
-          </div>
         </motion.div>
       </section>
 
       {/* Platform Modules Section */}
       <section className="platform-modules">
+        <span className="section-badge">
+          <FiGrid /> PLATFORM MODULES
+        </span>
+
         <motion.h2
           className="section-title"
           variants={scaleIn}
           initial="hidden"
           whileInView="visible"
         >
-          Platform Modules
+          Complete Facility Suite
         </motion.h2>
-        <div className="modules-grid">
+        <p className="section-description">
+          Eliminate operational silos with integrated facility management modules.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {[
-            { title: "Asset Management", icon: "🛠" },
-            { title: "Preventive Maintenance", icon: "🔧" },
-            { title: "Reactive Maintenance", icon: "⚡" },
-            { title: "Helpdesk Portal", icon: "💬" },
-            { title: "Vendor Management", icon: "🏢" },
-            { title: "Compliance Logs", icon: "📋" },
+            {
+              title: "Asset Management",
+              icon: <FiPackage />,
+              desc: "Track and manage assets across their complete lifecycle."
+            },
+            {
+              title: "Preventive Maintenance",
+              icon: <FiTool />,
+              desc: "Automate maintenance schedules and inspections."
+            },
+            {
+              title: "Reactive Maintenance",
+              icon: <FiZap />,
+              desc: "Respond quickly to breakdowns and service requests."
+            },
+            {
+              title: "Helpdesk Portal",
+              icon: <FiMessageSquare />,
+              desc: "Centralized support requests and issue tracking."
+            },
+            {
+              title: "Vendor Management",
+              icon: <FiUsers />,
+              desc: "Manage vendors, contracts, and service providers."
+            },
+            {
+              title: "Compliance Logs",
+              icon: <FiClipboard />,
+              desc: "Maintain audit-ready compliance records and reports."
+            }
+
           ].map((item, idx) => (
             <div key={idx} className="module-card">
               <div className="module-icon">{item.icon}</div>
@@ -88,155 +189,121 @@ const SolutionsPage = () => {
       </section>
 
       {/* Detailed Solution Modules */}
+
       <section className="detailed-modules">
-        {[
-          {
-            title: "Asset Management",
-            description: "Comprehensive tracking and lifecycle management for all facility assets.",
-            bullets: [
-              "Real‑time asset location",
-              "Predictive maintenance alerts",
-              "Custom lifecycle stages",
-              "Integrated cost tracking",
-              "Barcode & RFID support",
-              "Analytics dashboard",
-            ],
-            img: "/assets/asset-dashboard.png",
-          },
-          {
-            title: "Preventive Maintenance",
-            description: "Schedule and automate routine maintenance to reduce downtime.",
-            bullets: [
-              "Dynamic work order generation",
-              "AI‑driven frequency optimization",
-              "Mobile technician app",
-              "Resource allocation tools",
-              "Compliance reporting",
-              "Performance KPIs",
-            ],
-            img: "/assets/preventive-dashboard.png",
-          },
-          {
-            title: "Vendor Management",
-            description: "Centralize vendor contracts, performance, and communication.",
-            bullets: [
-              "Contract repository",
-              "SLAs & KPI tracking",
-              "Automated vendor rating",
-              "Integrated purchase orders",
-              "Secure document exchange",
-              "Vendor performance analytics",
-            ],
-            img: "/assets/vendor-dashboard.png",
-          },
-        ].map((module, index) => (
-          <motion.div
-            key={index}
-            className={`detail-card ${index % 2 === 0 ? "layout-left" : "layout-right"}`}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <div className="detail-left">
-              <h3 className="detail-title">{module.title}</h3>
-              <p className="detail-desc">{module.description}</p>
-              <ul className="detail-bullets">
-                {module.bullets.map((b, i) => (
-                  <li key={i}>
-                    <span className="check-icon">✔</span> {b}
-                  </li>
-                ))}
-              </ul>
-              <Link to="/solutions" className="btn btn-primary detail-cta">
-                Explore Solution
-              </Link>
+        {modules.map((module, index) => (
+          <div className="sticky-wrapper" key={index}>
+            <div
+              className={`detail-card ${index % 2 === 0 ? "layout-left" : "layout-right"
+                }`}
+            >
+              <div className="detail-left">
+                <h3 className="detail-title">{module.title}</h3>
+                <p className="detail-desc">{module.description}</p>
+                <ul className="detail-bullets">
+                  {module.bullets.map((b, i) => (
+                    <li key={i}>
+                      <span className="check-icon">✔</span> {b}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/solutions" className="btn btn-primary detail-cta">
+                  Explore Solution
+                </Link>
+              </div>
+              <div className="detail-right">
+                <img
+                  src={module.img}
+                  alt={module.title}
+                  className="detail-img"
+                />
+              </div>
             </div>
-            <div className="detail-right">
-              <img src={module.img} alt={`${module.title} dashboard`} className="detail-img" />
-            </div>
-          </motion.div>
+          </div>
         ))}
       </section>
 
       {/* Workflow Section */}
       <section className="workflow-section">
-        <motion.h2
-          className="section-title"
-          variants={slideLeft}
-          initial="hidden"
-          whileInView="visible"
-        >
-          End‑to‑End Workflow Overview
-        </motion.h2>
-        <p className="section-subtitle">
-          Streamline every facility process from request creation to closure.
-        </p>
+
+        <div className="workflow-header">
+
+          <span className="section-badge">
+            <FiGitBranch />
+            WORKFLOW PROCESS
+          </span>
+
+          <motion.h2
+            className="section-title"
+            variants={slideLeft}
+            initial="hidden"
+            whileInView="visible"
+          >
+            End-to-End Workflow Overview
+          </motion.h2>
+
+          <p className="section-subtitle">
+            Streamline every facility process from request creation to closure.
+          </p>
+
+        </div>
+
         <div className="workflow-steps">
+
           {[
-            { num: "01", title: "Input / Request", desc: "User submits a service request" },
-            { num: "02", title: "Initial Assessment", desc: "Team evaluates request viability" },
-            { num: "03", title: "Planning & Setup", desc: "Allocate resources and schedule" },
-            { num: "04", title: "Execution", desc: "Field technicians perform work" },
-            { num: "05", title: "Review & Control", desc: "Quality check and approval" },
-            { num: "06", title: "Final Output", desc: "Close request and report" },
-          ].map((step, i) => (
+            {
+              icon: <FiEdit3 />,
+              title: "Input / Request",
+              desc: "The process begins with a request, data, or trigger."
+            },
+            {
+              icon: <FiSettings />,
+              title: "Initial Assessment",
+              desc: "Review the request to confirm scope and feasibility."
+            },
+            {
+              icon: <FiUsers />,
+              title: "Planning & Setup",
+              desc: "Resources, roles and timelines are prepared."
+            },
+            {
+              icon: <FiTool />,
+              title: "Execution",
+              desc: "Planned activities are carried out according to procedures."
+            },
+            {
+              icon: <FiClipboard />,
+              title: "Review & Control",
+              desc: "Results are checked to ensure quality and compliance."
+            },
+            {
+              icon: <FiSend />,
+              title: "Final Output",
+              desc: "Completed output is delivered to stakeholders."
+            }
+          ].map((step, i, arr) => (
             <div key={i} className="workflow-step">
-              <div className="step-icon">{step.num}</div>
-              <h4 className="step-title">{step.title}</h4>
-              <p className="step-desc">{step.desc}</p>
+              <div className="workflow-top">
+                <div className="workflow-circle">
+                  {step.icon}
+                </div>
+                {i !== arr.length - 1 && (
+                  <div className="workflow-arrow">
+                    <HiOutlineArrowLongRight />
+                  </div>
+                )}
+              </div>
+              <h4 className="step-title">
+                {step.title}
+              </h4>
+              <p className="step-desc">
+                {step.desc}
+              </p>
             </div>
           ))}
-        </div>
-      </section>
 
-      {/* Key Benefits Section */}
-      <section className="benefits-section">
-        <div className="benefits-bg" />
-        <div className="benefits-overlay" />
-        <h2 className="benefits-title">Driving Measurable Facility Excellence</h2>
-        <div className="benefits-counters">
-          {[
-            { percent: "30%", label: "Reduction in Downtime" },
-            { percent: "40%", label: "Faster Response Times" },
-            { percent: "25%", label: "Lower Maintenance Costs" },
-            { percent: "95%", label: "SLA Compliance" },
-          ].map((item, idx) => (
-            <motion.div
-              key={idx}
-              className="counter-card"
-              variants={scaleIn}
-              initial="hidden"
-              whileInView="visible"
-            >
-              <div className="counter-icon">📈</div>
-              <div className="counter-value">{item.percent}</div>
-              <div className="counter-label">{item.label}</div>
-            </motion.div>
-          ))}
         </div>
-      </section>
 
-      {/* CTA Banner */}
-      <section className="cta-banner">
-        <motion.div
-          className="cta-content"
-          variants={slideRight}
-          initial="hidden"
-          whileInView="visible"
-        >
-          <h2 className="cta-title">Ready to Transform Your Facility Operations?</h2>
-          <p className="cta-desc">
-            Book a personalized demo and discover how FacilityCore can optimize your operations.
-          </p>
-          <div className="cta-buttons">
-            <Link to="/demo" className="btn btn-primary">
-              Request Demo
-            </Link>
-            <Link to="/contact" className="btn btn-secondary">
-              Contact Sales
-            </Link>
-          </div>
-        </motion.div>
       </section>
 
       <Footer />
