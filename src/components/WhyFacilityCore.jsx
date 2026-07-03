@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle, FiAward } from 'react-icons/fi';
-import '../../styles/WhyFacilityCore.css';
+import '../styles/WhyFacilityCore.css';
 
 const WhyFacilityCore = () => {
   const points = [

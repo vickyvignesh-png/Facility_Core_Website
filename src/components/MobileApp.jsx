@@ -1,10 +1,10 @@
 import React from "react";
 import { FiSmartphone, FiCheckCircle } from "react-icons/fi";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
-import "../../styles/MobileApp.css";
+import "../styles/MobileApp.css";
 
 // Image path
-const mobileAppImage = "/FacilityCore-Mobile-App.svg";
+const mobileAppImage = "/fcmobileapp.svg";
 
 const MobileApp = () => {
   const features = [
