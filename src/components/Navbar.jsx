@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
-import '../../styles/Navbar.css';
+import { Link, useLocation } from 'react-router-dom';
+import '../styles/Navbar.css';
 
 const Navbar = () => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeItem, setActiveItem] = useState('Home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', link: '/' },
     { name: 'Solutions', link: '/solutions' },
     { name: 'Industries', link: '/industries' },
-    { name: 'Features', link: '#features' },
+    { name: 'Features', link: '/features' },
     { name: 'Resources', link: '#resources' },
     { name: 'Pricing', link: '#pricing' },
-    { name: 'About Us', link: '#about-us' },
-    { name: 'Contact', link: '#contact' }
+    { name: 'About Us', link: '/about' },
+    { name: 'Contact', link: '/contact' }
   ];
 
   useEffect(() => {
@@ -41,7 +41,6 @@ const Navbar = () => {
           <Link
             to="/"
             className="navbar-logo"
-            onClick={() => setActiveItem('Home')}
           >
             <img
               src="/Facility_Core_logo.svg"
@@ -56,8 +55,10 @@ const Navbar = () => {
               <Link
                 key={idx}
                 to={item.link}
-                className={`nav-link ${activeItem === item.name ? 'nav-link-active' : ''}`}
-                onClick={() => setActiveItem(item.name)}
+                className={`nav-link ${location.pathname === item.link
+                  ? 'nav-link-active'
+                  : ''
+                  }`}
               >
                 {item.name}
               </Link>
@@ -126,17 +127,17 @@ const Navbar = () => {
               <div className="drawer-content">
                 <nav className="mobile-nav-links">
                   {navItems.map((item, idx) => (
-                    <a
+                    <link
                       key={idx}
                       href={item.link}
-                      onClick={() => {
-                        setActiveItem(item.name);
-                        setIsMobileMenuOpen(false);
-                      }}
-                      className={`mobile-nav-link ${activeItem === item.name ? 'mobile-nav-link-active' : ''}`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`mobile-nav-link ${location.pathname === item.link
+                        ? 'mobile-nav-link-active'
+                        : ''
+                        }`}
                     >
                       {item.name}
-                    </a>
+                    </link>
                   ))}
                 </nav>
                 <div className="drawer-divider" />

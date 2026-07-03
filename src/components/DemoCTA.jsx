@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiPhoneCall } from 'react-icons/fi';
-import '../../styles/DemoCTA.css';
+import '../styles/DemoCTA.css';
 
 const DemoCTA = () => {
   return (

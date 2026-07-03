@@ -9,7 +9,7 @@ import {
   FiGrid,
   FiCheckCircle,
 } from "react-icons/fi";
-import "../../styles/Features.css";
+import "../styles/Features.css";
 
 /* ─── Tab data ───────────────────────────────────── */
 const tabs = [

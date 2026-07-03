@@ -1,13 +1,13 @@
 import React from 'react';
-import Navbar from '../components/Navbar/Navbar';
-import Hero from '../components/Hero/Hero';
-import WhyFacilityCore from '../components/WhyFacilityCore/WhyFacilityCore';
-import Solutions from '../components/Solutions/Solutions';
-import Industries from '../components/Industries/Industries';
-import Features from '../components/Features/Features';
-import MobileApp from '../components/MobileApp/MobileApp';
-import DemoCTA from '../components/DemoCTA/DemoCTA';
-import Footer from '../components/Footer/Footer';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import WhyFacilityCore from '../components/WhyFacilityCore';
+import Solutions from '../components/Solutions';
+import Industries from '../components/Industries';
+import Features from '../components/Features';
+import MobileApp from '../components/MobileApp';
+import DemoCTA from '../components/DemoCTA';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom"; import {
+import { Link } from "react-router-dom";
+import {
   FiHome,
   FiMonitor,
   FiCpu,
@@ -25,9 +26,9 @@ import { Link } from "react-router-dom"; import {
   FiAward,
   FiAlertTriangle
 } from "react-icons/fi";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import "../../styles/IndustriesPage.css";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import "../styles/IndustriesPage.css";
 
 // Animation Variants
 const fadeUp = {
@@ -255,14 +256,6 @@ const IndustriesPage = () => {
             <p className="ind-hero-desc">
               FacilityCore adapts to the unique operational requirements of every industry, helping organizations improve efficiency, reduce costs, and deliver exceptional experiences.
             </p>
-            <div className="ind-hero-ctas">
-              <Link to="/demo" className="btn btn-primary">
-                Book Demo
-              </Link>
-              <a href="#explore-grid" className="btn btn-secondary">
-                Explore Industries
-              </a>
-            </div>
           </motion.div>
         </div>
       </section>
