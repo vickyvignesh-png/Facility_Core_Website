@@ -9,7 +9,7 @@ import {
   FiShield,
   FiLayers,
 } from "react-icons/fi";
-import "../../styles/Solutions.css";
+import "../styles/Solutions.css";
 
 /* ─── Animation variants ─────────────────────────── */
 const containerVariants = {

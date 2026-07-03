@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGrid } from 'react-icons/fi';
-import '../../styles/Industries.css';
+import '../styles/Industries.css';
 
 const Industries = () => {
   const industries = [
