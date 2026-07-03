@@ -484,12 +484,7 @@
     overflow: hidden;
 }
 
-.ind-benefits-bg {
-    position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
-    z-index: 1;
-}
+
 
 .ind-benefits-overlay {
     position: absolute;
