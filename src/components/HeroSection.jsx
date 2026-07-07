@@ -9,26 +9,53 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const HeroSection = () => {
+const HeroSection = ({
+  title = "Smart Solutions For Every Facility",
+  description = "Stay audit-ready with automated compliance tracking.",
+  badge = (
+    <>
+      <FiHome /> FACILITYCORE SOLUTIONS
+    </>
+  ),
+  breadcrumb = (
+    <nav className="breadcrumb">
+      <Link to="/">Home</Link> / <span>Solutions</span>
+    </nav>
+  ),
+  backgroundImage = "/solutionpageherosection.png",
+  overlay = "linear-gradient(90deg, rgba(8, 20, 43, 0.85), rgba(8, 20, 43, 0.55))",
+  height = "450px",
+  alignment = "center",
+  className = "",
+  titleClassName = ""
+}) => {
+  const alignClass = alignment === "left" ? "text-left items-start" : "text-center items-center text-center";
+
   return (
-    <section className="hero-section">
-      <div className="hero-bg" />
-      <div className="hero-overlay" />
+    <section className={`hero-section ${className}`} style={{ height }}>
+      <div 
+        className="hero-bg" 
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      />
+      <div 
+        className="hero-overlay" 
+        style={{ background: overlay }}
+      />
       <motion.div
-        className="hero-content"
+        className={`hero-content ${alignClass}`}
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
       >
-        <nav className="breadcrumb">
-          <Link to="/">Home</Link> / <span>Solutions</span>
-        </nav>
+        {breadcrumb}
         <span className="badge">
-          <FiHome /> FACILITYCORE SOLUTIONS
+          {badge}
         </span>
-        <h1 className="hero-title">Smart Solutions For Every Facility</h1>
+        <h1 className={`hero-title ${titleClassName}`}>
+          {title}
+        </h1>
         <p className="hero-desc">
-          Stay audit-ready with automated compliance tracking.
+          {description}
         </p>
       </motion.div>
     </section>

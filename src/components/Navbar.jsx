@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: 'Industries', link: '/industries' },
     { name: 'Features', link: '/features' },
     { name: 'Resources', link: '#resources' },
-    { name: 'Pricing', link: '#pricing' },
+    { name: 'Pricing', link: '/pricing' },
     { name: 'About Us', link: '/about' },
     { name: 'Contact', link: '/contact' }
   ];

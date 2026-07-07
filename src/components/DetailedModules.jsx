@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FiLayers, FiUsers, FiClipboard } from "react-icons/fi";
-import SolutionCard from "./SolutionCard";
+import { Link } from "react-router-dom";
+import { FiLayers, FiUsers, FiClipboard, FiArrowUpRight } from "react-icons/fi";
 import SolutionModal from "./SolutionModal";
 import { modules } from "../data/solutionsData";
 import "../styles/DetailedModules.css";
@@ -111,26 +111,6 @@ const DetailedModules = () => {
 
   return (
     <section className="detailed-modules !py-10">
-      <style>{`
-        .solutions-split-layout {
-          display: grid !important;
-          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-          column-gap: 32px !important;
-          row-gap: 20px !important;
-        }
-        .detailed-modules .feature-card {
-          min-height: 130px !important;
-          padding: 24px !important;
-          border-radius: 24px !important;
-          height: 100% !important;
-        }
-        @media (max-width: 768px) {
-          .solutions-split-layout {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
-
       <div className="detailed-modules-header !mb-5">
         <div className="flex justify-center w-full mb-5">
           <span className="inline-flex items-center gap-2 px-[18px] h-[36px] bg-[#EAF8E8] text-[#69BC45] rounded-full font-semibold text-[13px] tracking-[1px] uppercase">
@@ -143,13 +123,29 @@ const DetailedModules = () => {
 
       <div className="solutions-split-layout !mt-5">
         {detailedList.map((module, index) => (
-          <SolutionCard
+          <Link
+            to="#"
             key={index}
-            module={module}
-            isActive={hoveredIndex === index}
+            onClick={(e) => {
+              e.preventDefault();
+              setSelectedModule(module);
+            }}
+            className={`feature-card ${hoveredIndex === index ? "active" : ""}`}
             onMouseEnter={() => setHoveredIndex(index)}
-            onClick={() => setSelectedModule(module)}
-          />
+          >
+            <div className="card-left">
+              <div className="card-icon">{module.icon}</div>
+              <div className="card-content">
+                <h3 className="card-title">{module.title}</h3>
+                <p className="card-description">{module.description}</p>
+              </div>
+            </div>
+            <div className="card-arrow">
+              <div className="arrow-btn">
+                <FiArrowUpRight />
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
 

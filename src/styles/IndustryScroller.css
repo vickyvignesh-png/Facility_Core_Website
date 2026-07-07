@@ -1,0 +1,209 @@
+.ind-scroller-section {
+    padding: 120px 48px;
+    background: #f1f5f9;
+}
+
+.ind-scroller-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.ind-scroll-wrapper {
+    height: 100vh;
+    position: relative;
+}
+
+/* Z-indexing to ensure stack order */
+.ind-scroll-wrapper:nth-child(1) {
+    z-index: 1;
+}
+
+.ind-scroll-wrapper:nth-child(2) {
+    z-index: 2;
+}
+
+.ind-scroll-wrapper:nth-child(3) {
+    z-index: 3;
+}
+
+.ind-scroll-wrapper:nth-child(4) {
+    z-index: 4;
+}
+
+.ind-scroll-wrapper:nth-child(5) {
+    z-index: 5;
+}
+
+.ind-scroll-wrapper:nth-child(6) {
+    z-index: 6;
+}
+
+.ind-scroll-card {
+    position: sticky;
+    top: 110px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    padding: 60px;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+    width: 100%;
+    margin-bottom: 50px;
+    border: 1px solid rgba(29, 79, 163, 0.04);
+}
+
+.ind-scroll-card.layout-right .ind-scroll-left {
+    order: 2;
+}
+
+.ind-scroll-card.layout-right .ind-scroll-right {
+    order: 1;
+}
+
+.ind-scroll-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.ind-scroll-badge {
+    font-size: 12px;
+    font-weight: 800;
+    color: #69BC45;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.ind-scroll-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.ind-scroll-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #6B7280;
+    margin-bottom: 32px;
+}
+
+.ind-scroll-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.ind-scroll-challenges h4,
+.ind-scroll-helps h4,
+.ind-scroll-benefits h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 14px;
+}
+
+.ind-scroll-challenges ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ind-scroll-challenges li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6B7280;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.bullet-x {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.ind-scroll-helps p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6B7280;
+}
+
+.ind-benefits-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ind-benefit-pill {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1D4FA3;
+    background: rgba(29, 79, 163, 0.06);
+    padding: 8px 16px;
+    border-radius: 100px;
+}
+
+.ind-card-cta {
+    align-self: flex-start;
+    margin-top: 24px;
+}
+
+.ind-scroll-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media(max-width: 1200px) {
+    .ind-scroll-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+        height: auto;
+    }
+
+    .ind-scroll-card.layout-right .ind-scroll-left,
+    .ind-scroll-card.layout-right .ind-scroll-right {
+        order: unset;
+    }
+
+    .ind-scroll-wrapper {
+        height: auto;
+        margin-bottom: 60px;
+    }
+
+    .ind-scroll-card {
+        position: relative;
+        top: 0;
+    }
+
+    .ind-scroll-img {
+        height: 380px;
+    }
+}
+
+@media(max-width: 768px) {
+    .ind-scroller-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .ind-scroll-split {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media(max-width: 480px) {
+    .ind-scroll-img {
+        height: 280px;
+    }
+}
