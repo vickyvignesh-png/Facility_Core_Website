@@ -1,0 +1,267 @@
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+    background: #fff;
+    width: 85vw;
+    max-width: 1200px;
+    height: 90vh;
+    max-height: 900px;
+    border-radius: 28px;
+    overflow-y: auto;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+}
+
+/* Hide default scrollbar but allow scrolling */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Close button */
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close:hover {
+    background: #f3f4f6;
+}
+
+/* Modal grid layout */
+.modal-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+/* Left side image */
+.modal-row-left {
+    flex: 1 1 40%;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+}
+
+/* Right side content */
+.modal-row-right {
+    flex: 1 1 58%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.modal-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.modal-tagline {
+    font-size: 18px;
+    color: #6B7280;
+    margin-bottom: 12px;
+}
+
+.modal-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6B7280;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.modal-tag {
+    background: rgba(105, 188, 69, 0.12);
+    color: #69BC45;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+/* Modal cards */
+.modal-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(29, 79, 163, 0.08);
+}
+
+/* Specific spacing for What You Can Do section */
+.modal-whatcando {
+    margin-top: 40px;
+    margin-bottom: 28px;
+}
+
+.modal-section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* What you can do grid */
+.whatcando-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.whatcando-item {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.whatcando-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.whatcando-desc {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.whatcando-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(29, 79, 163, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1D4FA3;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+    margin-top: 10px;
+}
+
+.whatcando-content {
+    flex: 1;
+}
+
+/* Key Features list styling */
+.modal-keyfeatures-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-keyfeatures-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.modal-keyfeatures-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #69BC45;
+}
+
+.modal-keyfeatures-text {
+    flex: 1;
+}
+
+.modal-keyfeatures-title {
+    font-weight: 700;
+    display: inline;
+    white-space: nowrap;
+}
+
+.modal-keyfeatures-desc {
+    margin-left: 4px;
+    font-weight: 400;
+}
+
+/* Benefits list styling */
+.modal-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-benefits-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.modal-benefits-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #69BC45;
+}
+
+.modal-benefits-title {
+    font-weight: 400;
+    display: inline;
+    white-space: nowrap;
+}
+
+.modal-benefits-desc {
+    margin-left: 4px;
+    font-weight: 400;
+}
+
+/* Modal Features Grid */
+.modal-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.modal-features-grid .modal-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(29, 79, 163, .08);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .05);
+}
