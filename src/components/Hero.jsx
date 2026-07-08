@@ -6,7 +6,7 @@ import { FiGrid } from "react-icons/fi";
 const heroSlides = [
   {
     image: "/FacilityHeroSection.png",
-    badge: "Next-Gen Enterprise CMMS & Facility Platform",
+    badge: "Enterprise CMMS Platform",
     title: "Transform Facility Operations With One",
     highlight: "Intelligent Platform",
     description:
@@ -14,22 +14,23 @@ const heroSlides = [
   },
   {
     image: "/homepageherosection2img.png",
-    badge: "Smart Healthcare Facility Management",
+    badge: "Healthcare Management Platform",
     title: "Optimize Hospital Infrastructure With",
     highlight: "Intelligent Facility Solutions",
     description:
-      "Manage healthcare facilities efficiently with preventive maintenance, asset tracking, compliance monitoring, and real-time operational visibility."
+      "FacilityCore helps healthcare organizations streamline maintenance operations, manage critical assets, improve compliance, automate workflows, and enhance operational visibility."
   },
   {
     image: "/homepageherosection3img.png",
-    badge: "Residential & Apartment Facility Platform",
+    badge: "Residential Facility Platform",
     title: "Enhance Residential Operations Through",
-    highlight: "Connected Facility Management",
+    highlight: "Connected Facility Platform",
     description:
-      "Streamline apartment and residential community operations with maintenance automation, resident support, asset management, and workforce mobility."
+      "FacilityCore helps residential communities streamline maintenance operations, manage shared assets, improve resident services, automate workflows, and increase operational visibility."
   }
 ];
 
+// Responsive spacing configurations (offsets for navbar height and vertical gap balances) are managed in Hero.css
 const Hero = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);

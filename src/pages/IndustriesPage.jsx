@@ -11,6 +11,10 @@ import IndustryBenefits from "../components/IndustryBenefits";
 import IndustryTestimonials from "../components/IndustryTestimonials";
 import "../styles/IndustriesPage.css";
 
+/**
+ * IndustriesPage - Redesigned to show FacilityCore's industry solutions.
+ * Incorporates three updated modules: IndustryScroller, IndustriesMarquee, and IndustryTestimonials.
+ */
 const IndustriesPage = () => {
   return (
     <div className="industries-page">
@@ -39,8 +43,6 @@ const IndustriesPage = () => {
       <IndustryScroller />
 
       <IndustriesMarquee />
-
-      <IndustryBenefits />
 
       <IndustryTestimonials />
 

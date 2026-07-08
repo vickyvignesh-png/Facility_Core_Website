@@ -14,16 +14,16 @@ const WhyFacilityCore = () => {
 
   return (
     <section id="about-us" className="whyfc-section bg-white overflow-hidden py-10">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+      <div className="container mx-auto">
+        <div className="whyfc-row">
 
-          {/* Left Side: Asymmetrical Image Collage */}
+          {/* Desktop/Tablet Left Side - Gallery Collage */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 whyfc-gallery"
+            className="whyfc-gallery desktop-only-gallery"
           >
             {/* Left Column (Large Image) */}
             <div className="whyfc-gallery-left">
@@ -52,16 +52,48 @@ const WhyFacilityCore = () => {
             </div>
           </motion.div>
 
-          {/* Right Side: Key Highlights Checklist */}
+          {/* Desktop/Tablet Right Side - Content column */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 text-left flex flex-col justify-center whyfc-content-col"
+            className="whyfc-content-col"
           >
             <span className="whyfc-tag"><FiAward className="whyfc-tag-icon" />Why FacilityCore</span>
             <h2 className="whyfc-heading">Transforming Operations, Maximizing Lifecycles</h2>
+            
+            {/* Description Paragraph - Hidden on mobile via CSS */}
+            <p className="whyfc-description">
+              FacilityCore enables modern enterprise facility teams to optimize operations, automate scheduling, coordinate service work orders, and maintain strict regulatory compliance logs.
+            </p>
+
+            {/* Mobile-only Gallery Collage (renders between Heading/Description and Bullet Points) */}
+            <div className="whyfc-gallery mobile-only-gallery">
+              <div className="whyfc-gallery-left">
+                <img
+                  src="/aboutimg1.png"
+                  alt="Facility Management Specialist"
+                  className="whyfc-collage-img"
+                />
+              </div>
+              <div className="whyfc-gallery-right">
+                <div className="whyfc-gallery-item-small">
+                  <img
+                    src="/aboutimg2.png"
+                    alt="Facility Operations Automation"
+                    className="whyfc-collage-img"
+                  />
+                </div>
+                <div className="whyfc-gallery-item-tall">
+                  <img
+                    src="/aboutimg3.png"
+                    alt="Workforce Coordination"
+                    className="whyfc-collage-img"
+                  />
+                </div>
+              </div>
+            </div>
 
             {/* Icon List Checklist */}
             <div className="whyfc-list">
