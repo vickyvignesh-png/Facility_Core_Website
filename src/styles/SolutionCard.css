@@ -1,0 +1,104 @@
+.feature-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(29, 79, 163, 0.08);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    background: #f9fafb;
+    border-color: #1D4FA3;
+    box-shadow: 0 8px 32px rgba(29, 79, 163, 0.10);
+}
+
+.feature-card.active {
+    border-color: #1D4FA3;
+    background: #f0f5ff;
+}
+
+.feature-card:hover .card-icon-container {
+    background: linear-gradient(135deg, #69BC45, #1D4FA3);
+}
+
+.feature-card:hover .card-heading {
+    color: #1D4FA3;
+}
+
+.card-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.card-icon-container {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1D4FA3, #69BC45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    margin-right: 16px;
+    transition: background 0.25s ease;
+}
+
+.card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 4px 0;
+    transition: color 0.25s ease;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-arrow-container {
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.arrow-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1D4FA3, #69BC45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .feature-card {
+        padding: 16px 18px;
+    }
+
+    .card-heading {
+        font-size: 16px;
+    }
+}

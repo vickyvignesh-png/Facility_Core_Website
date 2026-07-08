@@ -1,0 +1,65 @@
+.ind-marquee-section {
+    padding: 80px 0;
+    background: #0F172A;
+    overflow: hidden;
+}
+
+.marquee-title {
+    text-align: center;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    letter-spacing: 0.5px;
+}
+
+.ind-marquee-track {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.ind-marquee-content {
+    display: flex;
+    gap: 32px;
+    animation: marqueeScroll 25s linear infinite;
+    width: max-content;
+}
+
+.ind-marquee-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 36px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+    cursor: default;
+    transition: background 0.3s ease;
+}
+
+.ind-marquee-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.ind-marquee-icon {
+    font-size: 24px;
+    color: #69BC45;
+}
+
+.ind-marquee-name {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

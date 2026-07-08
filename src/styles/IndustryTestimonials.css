@@ -1,0 +1,135 @@
+.ind-testimonials-section {
+    padding: 120px 48px;
+    background: #fff;
+}
+
+.ind-testimonial-slider-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ind-testimonial-window {
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+}
+
+.ind-testimonial-slide {
+    text-align: center;
+}
+
+.ind-testimonial-quote {
+    font-size: 24px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #0F172A;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.ind-testimonial-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.ind-testimonial-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ind-testimonial-meta {
+    text-align: left;
+}
+
+.ind-testimonial-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 4px;
+}
+
+.ind-testimonial-desc {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.text-highlight {
+    color: #1D4FA3;
+    font-weight: 600;
+}
+
+.ind-slider-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.ind-nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0F172A;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ind-nav-btn:hover {
+    background: #1D4FA3;
+    color: #fff;
+}
+
+.ind-nav-dots {
+    display: flex;
+    gap: 12px;
+}
+
+.ind-nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ind-nav-dot.active {
+    background: #1D4FA3;
+    width: 28px;
+    border-radius: 100px;
+}
+
+@media(max-width: 768px) {
+    .ind-testimonials-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .ind-testimonial-quote {
+        font-size: 18px;
+    }
+
+    .ind-testimonial-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ind-testimonial-meta {
+        text-align: center;
+    }
+}
