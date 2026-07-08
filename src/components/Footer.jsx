@@ -8,7 +8,8 @@ const Footer = () => {
 
   return (
     <footer className="footer-section">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12">
+      {/* Tailwind container mx-auto wrapper for page width consistency */}
+      <div className="container mx-auto footer-container">
         <div className="footer-grid">
           {/* Column 1: Brand Info */}
           <div className="footer-left">
@@ -34,60 +35,63 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Company Links */}
-          <div className="footer-column">
-            <h4 className="footer-heading">COMPANY</h4>
-            <ul className="footer-links">
-              <li>
-                <a href="#about-us" className="footer-link">
-                  <FiChevronsRight className="footer-link-icon" />
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#solutions" className="footer-link">
-                  <FiChevronsRight className="footer-link-icon" />
-                  Solutions
-                </a>
-              </li>
-              <li>
-                <a href="#industries" className="footer-link">
-                  <FiChevronsRight className="footer-link-icon" />
-                  Industries
-                </a>
-              </li>
-              <li>
-                <a href="#features" className="footer-link">
-                  <FiChevronsRight className="footer-link-icon" />
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="footer-link">
-                  <FiChevronsRight className="footer-link-icon" />
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Wrapper for Company & Legal Links - side by side on mobile */}
+          <div className="footer-links-wrapper">
+            {/* Column 2: Company Links */}
+            <div className="footer-column">
+              <h4 className="footer-heading">COMPANY</h4>
+              <ul className="footer-links">
+                <li>
+                  <a href="#about-us" className="footer-link">
+                    <FiChevronsRight className="footer-link-icon" />
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#solutions" className="footer-link">
+                    <FiChevronsRight className="footer-link-icon" />
+                    Solutions
+                  </a>
+                </li>
+                <li>
+                  <a href="#industries" className="footer-link">
+                    <FiChevronsRight className="footer-link-icon" />
+                    Industries
+                  </a>
+                </li>
+                <li>
+                  <a href="#features" className="footer-link">
+                    <FiChevronsRight className="footer-link-icon" />
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="footer-link">
+                    <FiChevronsRight className="footer-link-icon" />
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          {/* Column 3: Legal Links */}
-          <div className="footer-column">
-            <h4 className="footer-heading">LEGAL</h4>
-            <ul className="footer-links">
-              <li>
-                <a href="#privacy" className="footer-link">
-                  <FiChevronsRight className="footer-link-icon" />
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#terms" className="footer-link">
-                  <FiChevronsRight className="footer-link-icon" />
-                  Terms & Conditions
-                </a>
-              </li>
-            </ul>
+            {/* Column 3: Legal Links */}
+            <div className="footer-column">
+              <h4 className="footer-heading">LEGAL</h4>
+              <ul className="footer-links">
+                <li>
+                  <a href="#privacy" className="footer-link">
+                    <FiChevronsRight className="footer-link-icon" />
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#terms" className="footer-link">
+                    <FiChevronsRight className="footer-link-icon" />
+                    Terms & Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Column 4: Contact Details */}

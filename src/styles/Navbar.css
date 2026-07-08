@@ -370,3 +370,36 @@
 .mobile-btn-demo:hover {
   transform: translateY(-2px);
 }
+
+/* ==========================================================
+   RESPONSIVE SPACING FIXES
+   ========================================================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 1.5rem; /* Reduce left/right padding slightly */
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    width: calc(100% - 24px); /* Left margin: 12px, Right margin: 12px */
+    top: 12px;
+  }
+  .navbar-container {
+    padding: 0 16px; /* Internal horizontal padding: 16px */
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .navbar-wrapper {
+    width: calc(100% - 16px); /* Left margin: 8px, Right margin: 8px */
+    top: 8px;
+  }
+  .navbar-container {
+    padding: 0 12px; /* Internal padding: 12px–14px (using 12px) */
+  }
+}

@@ -1,0 +1,263 @@
+.platform-pricing-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.pricing-section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 48px;
+}
+
+.pricing-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: rgba(29, 79, 163, 0.08);
+    color: #1D4FA3;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.pricing-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 16px 0;
+}
+
+.pricing-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #64748b;
+    margin: 0;
+}
+
+.platform-pricing-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    overflow: hidden;
+}
+
+.card-left {
+    padding: 48px;
+    border-right: 1px solid rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.platform-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.platform-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1D4FA3, #69BC45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.platform-card-title {
+    font-size: 22px;
+    font-weight: 850;
+    color: #0F172A;
+    margin: 0 0 4px 0;
+}
+
+.platform-card-subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.details-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px 0;
+}
+
+.users-flex {
+    display: flex;
+    gap: 24px;
+}
+
+.user-box {
+    flex: 1;
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.user-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1D4FA3;
+}
+
+.user-label {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.additional-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.additional-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #334155;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.additional-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Right Section of the Platform Card */
+.card-right {
+    padding: 48px;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+}
+
+.fee-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.fee-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.fee-val {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1;
+}
+
+.fee-period {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.features-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0 0 16px 0;
+}
+
+.platform-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.platform-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #334155;
+    font-weight: 550;
+}
+
+.check-icon {
+    color: #69BC45;
+    font-weight: 800;
+}
+
+.platform-cta {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    background: #1D4FA3;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.platform-cta:hover {
+    background: #163d80;
+}
+
+@media (max-width: 1024px) {
+    .platform-pricing-card {
+        grid-template-columns: 1fr;
+    }
+    .card-left {
+        border-right: none;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+        padding: 36px;
+    }
+    .card-right {
+        padding: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .platform-pricing-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .users-flex {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .platform-features-list {
+        grid-template-columns: 1fr;
+    }
+}

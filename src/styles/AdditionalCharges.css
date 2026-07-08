@@ -1,0 +1,39 @@
+.additional-charges-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.additional-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.additional-charge-card .card-price {
+    font-size: 40px;
+}
+
+.additional-charge-card .card-pricing {
+    margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+    .additional-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .additional-charges-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .additional-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

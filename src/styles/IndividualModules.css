@@ -1,0 +1,45 @@
+.individual-modules-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: #f8fafc;
+    border-top: 1px solid rgba(15, 23, 42, 0.04);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.individual-modules-section .pricing-section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 48px;
+    padding: 0 48px;
+}
+
+.modules-cards-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.module-pricing-card .card-price {
+    font-size: 32px;
+}
+
+@media (max-width: 1024px) {
+    .modules-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .individual-modules-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .modules-cards-grid {
+        padding: 0;
+        grid-template-columns: 1fr;
+    }
+}

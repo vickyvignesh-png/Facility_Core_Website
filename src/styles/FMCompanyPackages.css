@@ -1,0 +1,40 @@
+.fm-company-packages-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: #f8fafc;
+    border-top: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.fm-company-packages-section .pricing-section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 48px;
+    padding: 0 48px;
+}
+
+.fm-cards-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 1024px) {
+    .fm-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fm-company-packages-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .fm-cards-grid {
+        padding: 0;
+        grid-template-columns: 1fr;
+    }
+}

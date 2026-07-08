@@ -4,6 +4,7 @@ import { HiMenu, HiX } from 'react-icons/hi';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
 
+// Responsive spacing configuration for mobile and tablet devices is managed in Navbar.css
 const Navbar = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,8 +15,7 @@ const Navbar = () => {
     { name: 'Solutions', link: '/solutions' },
     { name: 'Industries', link: '/industries' },
     { name: 'Features', link: '/features' },
-    { name: 'Resources', link: '#resources' },
-    { name: 'Pricing', link: '#pricing' },
+    { name: 'Pricing', link: '/pricing' },
     { name: 'About Us', link: '/about' },
     { name: 'Contact', link: '/contact' }
   ];
