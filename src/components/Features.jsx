@@ -136,7 +136,8 @@ const Features = () => {
 
   return (
     <section id="features" className="features-section">
-      <div className="features-container">
+      {/* Tailwind container mx-auto wrapper for page width consistency */}
+      <div className="container mx-auto features-container">
 
         {/* ── Section Header ── */}
         <div className="features-header">

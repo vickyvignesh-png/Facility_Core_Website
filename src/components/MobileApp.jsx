@@ -18,8 +18,9 @@ const MobileApp = () => {
 
   return (
     <section className="mobileapp-section py-10">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12 mobileapp-container">
-        {/* Left Side Content */}
+      {/* Tailwind container mx-auto wraps the layout */}
+      <div className="container mx-auto mobileapp-container">
+        {/* Left Side Content (Desktop/Tablet) */}
         <div className="mobileapp-content">
           <div className="mobileapp-tag">
             <FiSmartphone className="mobileapp-tag-icon" size={24} />
@@ -33,6 +34,11 @@ const MobileApp = () => {
           <p className="mobileapp-description">
             Empower managers, technicians, occupants, and stakeholders with real-time access to facility operations from anywhere.
           </p>
+
+          {/* Mobile-only Image (rendered between Description and Bullet Points on mobile screens) */}
+          <div className="mobileapp-image-container mobile-only-image">
+            <img src={mobileAppImage} alt="FacilityCore Mobile App" className="mobileapp-image" />
+          </div>
 
           <ul className="mobileapp-grid">
             {features.map((item) => (
@@ -61,8 +67,8 @@ const MobileApp = () => {
           </div>
         </div>
 
-        {/* Right Side Image */}
-        <div className="mobileapp-image-container">
+        {/* Right Side Image (Desktop/Tablet only) */}
+        <div className="mobileapp-image-container desktop-only-image">
           <img src={mobileAppImage} alt="FacilityCore Mobile App" className="mobileapp-image" />
         </div>
       </div>

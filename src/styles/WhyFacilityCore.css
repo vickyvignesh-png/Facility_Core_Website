@@ -1,8 +1,62 @@
 /* WhyFacilityCore custom styles */
 
-/* Section height overrides and padding fixes */
+/* Section spacing */
 .whyfc-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
     min-height: auto;
+}
+
+/* Page container responsive padding and max-widths */
+.whyfc-section .container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+    .whyfc-section .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .whyfc-section .container {
+        max-width: 1320px; /* Container max-width: 1320px */
+        margin: 0 auto;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+/* CSS Grid Container (Desktop default: 1200px and above) */
+.whyfc-row {
+    display: grid;
+    grid-template-columns: 48% 52%; /* grid-template-columns: 48% 52% */
+    align-items: center; /* align-items: center */
+    column-gap: 56px; /* column-gap: 56px Desktop */
+    width: 100%;
+}
+
+/* Left Side: Desktop Image Collage (max-height: 500px) */
+.desktop-only-gallery {
+    display: flex;
+    height: 500px; /* Large Image/Column Height: 500px */
+    max-height: 500px;
+    width: 100%;
+    margin: 0 auto 0 0; /* Align left */
+    flex-shrink: 0;
+    gap: 20px;
+}
+
+/* Right Side: Desktop Content Area */
+.whyfc-content-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    flex-shrink: 0;
+    text-align: left; /* Text alignment should remain LEFT */
 }
 
 /* Tag */
@@ -15,7 +69,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #69BC45;
-    margin-bottom: 12px;
+    margin-bottom: 12px; /* margin-bottom: 12px */
 }
 
 .whyfc-tag-icon {
@@ -27,15 +81,24 @@
     font-size: 34px;
     font-weight: 800;
     color: #111827;
-    margin-bottom: 32px;
+    margin-bottom: 16px; /* margin-bottom: 16px */
     line-height: 1.25;
+}
+
+/* Description paragraph */
+.whyfc-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4B5563;
+    margin-bottom: 20px; /* margin-bottom: 20px */
 }
 
 /* Checklist list-items styling */
 .whyfc-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 14px; /* Bullet List gap: 14px */
+    width: 100%;
 }
 
 .whyfc-item {
@@ -45,69 +108,81 @@
 }
 
 .whyfc-item-icon {
-    width: 22px;
-    height: 22px;
+    width: 18px; /* Bullet Icon Width: 18px */
+    height: 18px; /* Bullet Icon Height: 18px */
     color: #1D4FA3;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2px;
+    margin-top: 4px;
+}
+
+.whyfc-item-icon svg {
+    width: 18px;
+    height: 18px;
 }
 
 .whyfc-item-title {
-    font-size: 18px;
+    font-size: 18px; /* Bullet Title font-size: 18px */
     font-weight: 700;
     color: #111827;
     margin: 0 0 4px 0;
 }
 
 .whyfc-item-desc {
-    font-size: 14px;
+    font-size: 14px; /* Bullet Description font-size: 14px */
     font-weight: 400;
     color: #4B5563;
-    line-height: 1.6;
+    line-height: 1.5; /* line-height: 1.5 */
     margin: 0;
 }
 
-/* Asymmetrical Collage Layout */
+/* Asymmetrical Collage Layout (Desktop & Tablet flex values) */
 .whyfc-gallery {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 24px;
-    height: 100%;
+    display: flex;
+    gap: 20px;
+    width: 100%;
 }
 
 .whyfc-gallery-left {
-    border-radius: 28px;
+    flex: 1.4; /* Large image container flex: 1.4 */
+    height: 100%;
     overflow: hidden;
     background: #F8FAFC;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    height: 100%;
+    border-radius: 28px; /* Keep existing border radius */
 }
 
 .whyfc-gallery-right {
-    display: grid;
-    grid-template-rows: 3fr 7fr;
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Right Column stack flex: 1 */
+    gap: 20px;
     height: 100%;
 }
 
 .whyfc-gallery-item-small,
 .whyfc-gallery-item-tall {
-    border-radius: 28px;
+    flex: 1;
     overflow: hidden;
     background: #F8FAFC;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 28px; /* Keep existing border radius */
+}
+
+/* Specific heights of desktop small images based on 500px stack */
+.desktop-only-gallery .whyfc-gallery-item-small,
+.desktop-only-gallery .whyfc-gallery-item-tall {
+    height: calc((500px - 20px) / 2); /* height: calc((500px - 20px) / 2) */
 }
 
 .whyfc-collage-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     display: block;
 }
 
@@ -119,72 +194,156 @@
     box-shadow: 0 35px 80px rgba(0, 0, 0, 0.12);
 }
 
+.mobile-only-gallery {
+    display: none;
+}
+
 /* --- RESPONSIVE MEDIA QUERIES --- */
 
-/* Tablet (<1024px) */
-@media (max-width: 1023px) {
-    .whyfc-gallery {
-        grid-template-columns: 3fr 2fr;
-        gap: 20px;
-        aspect-ratio: 16 / 10;
-        height: auto;
+/* Tablet View (768px - 1199px) */
+@media (max-width: 1199px) {
+    .whyfc-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* grid-template-columns: 1fr 1fr */
+        align-items: center; /* align-items: center */
+        gap: 40px; /* gap: 40px Tablet */
     }
-
-    .whyfc-gallery-left {
-        height: 100%;
+    .desktop-only-gallery {
+        display: flex;
+        width: 100%;
+        height: 420px; /* Tablet Large Image Height: 420px */
+        max-height: 420px; /* Small Column Height: 420px */
+        margin: 0 auto 0 0; /* Left aligned */
     }
-
+    /* Specific heights of tablet small images based on 420px stack */
+    .desktop-only-gallery .whyfc-gallery-item-small,
+    .desktop-only-gallery .whyfc-gallery-item-tall {
+        height: calc((420px - 20px) / 2);
+    }
     .whyfc-gallery-right {
-        grid-template-rows: 3fr 7fr;
-        gap: 20px;
-        height: 100%;
+        height: 420px;
     }
-
+    .whyfc-gallery-left {
+        height: 420px;
+    }
+    .whyfc-content-col {
+        width: 100%;
+        text-align: left;
+    }
     .whyfc-heading {
-        font-size: 38px;
+        font-size: 30px; /* Reduce heading size slightly */
+        margin-bottom: 14px;
+    }
+    .whyfc-description {
+        margin-bottom: 16px;
+    }
+    .whyfc-list {
+        gap: 12px; /* Reduce bullet spacing */
     }
 }
 
-/* Mobile (<768px) */
+/* Tablet smaller size optimization (max-width: 992px) */
+@media (max-width: 992px) {
+    .whyfc-heading {
+        font-size: 26px;
+    }
+}
+
+/* Mobile Devices (Below 768px) - KEEP EXISTING APPROVED LAYOUT UNCHANGED */
 @media (max-width: 767px) {
-    .whyfc-gallery {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        aspect-ratio: auto;
+    .whyfc-row {
+        display: flex;
+        flex-direction: column; /* Stacked layout */
+        gap: 24px;
+    }
+    
+    .desktop-only-gallery {
+        display: none !important; /* Hide main desktop gallery */
+    }
+    
+    .mobile-only-gallery {
+        display: grid !important; /* Show inline mobile gallery */
+        grid-template-columns: 3fr 2fr !important;
+        gap: 16px !important;
+        aspect-ratio: 1.25 !important;
+        height: auto !important;
+        width: 70%; /* Scaled to 70% on Mobile */
+        margin: 24px auto !important; /* Centered horizontally */
     }
 
     .whyfc-gallery-left {
-        aspect-ratio: 16 / 10;
-        width: 100%;
-        height: auto;
+        flex: none !important;
+        height: 100% !important;
+        border-radius: 20px !important; /* Keep mobile border radius */
     }
 
     .whyfc-gallery-right {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 20px;
-        height: auto;
+        display: grid !important;
+        grid-template-rows: 3fr 7fr !important;
+        gap: 16px !important;
+        height: 100% !important;
+        flex: none !important;
     }
 
-    .whyfc-gallery-item-small {
-        aspect-ratio: 16 / 6;
-        width: 100%;
-        height: auto;
-    }
-
+    .whyfc-gallery-item-small,
     .whyfc-gallery-item-tall {
-        aspect-ratio: 16 / 11;
-        width: 100%;
-        height: auto;
+        height: 100% !important;
+        flex: none !important;
+        border-radius: 20px !important; /* Keep mobile border radius */
     }
 
-    .whyfc-heading {
-        font-size: 30px;
-        text-align: left;
+    .whyfc-description {
+        display: none !important; /* Hide description paragraph on mobile only */
     }
 
     .whyfc-content-col {
-        order: 2;
-        /* Content appears below images on mobile */
+        width: 100% !important;
+        text-align: center !important; /* Everything Center Aligned on mobile */
+        align-items: center !important;
+    }
+
+    .whyfc-heading {
+        font-size: 26px !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+    }
+
+    .whyfc-tag {
+        justify-content: center !important;
+    }
+
+    /* Bullet points mobile alignment */
+    .whyfc-list {
+        margin: 0 auto !important;
+        max-width: 540px !important;
+        align-items: center !important; /* Center aligned */
+    }
+
+    .whyfc-item {
+        text-align: left !important; /* Keep text/icons aligned cleanly inside items */
+        width: 100% !important;
+    }
+
+    .whyfc-item-title {
+        font-size: 16px !important;
+    }
+
+    .whyfc-item-desc {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* Small Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+    .mobile-only-gallery {
+        width: 80% !important; /* Scale up slightly for smaller viewports */
+    }
+}
+
+/* Very Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .mobile-only-gallery {
+        width: 90% !important; /* Expand to cover tiny mobile screens nicely */
     }
 }
