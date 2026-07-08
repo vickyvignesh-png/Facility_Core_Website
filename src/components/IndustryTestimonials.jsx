@@ -1,97 +1,103 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiAward, FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { testimonials } from "../data/industriesData";
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FiCpu,
+  FiEye,
+  FiTrendingDown,
+  FiShield,
+  FiZap,
+  FiTrendingUp
+} from "react-icons/fi";
 import "../styles/IndustryTestimonials.css";
 
-const IndustryTestimonials = () => {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 8000);
-    return () => clearInterval(timer);
-  }, []);
+const IndustryTestimonials = () => {
+  const steps = [
+    {
+      num: "01",
+      icon: <FiCpu />,
+      title: "Centralized Operations",
+      desc: "Integrate all maintenance requests, schedules, and communication channels into a single unified control dashboard."
+    },
+    {
+      num: "02",
+      icon: <FiEye />,
+      title: "Real-time Visibility",
+      desc: "Monitor active team locations, asset health status, and operational SLA performance dynamically in real time."
+    },
+    {
+      num: "03",
+      icon: <FiTrendingDown />,
+      title: "Reduced Operational Cost",
+      desc: "Implement predictive maintenance workflows to save on emergency repairs and optimize facility utility bills."
+    },
+    {
+      num: "04",
+      icon: <FiShield />,
+      title: "Compliance & Safety",
+      desc: "Maintain digital audit logs, inspection protocols, and health check schedules to remain 100% compliance-ready."
+    },
+    {
+      num: "05",
+      icon: <FiZap />,
+      title: "Higher Productivity",
+      desc: "Automate task assignments based on technician skill-sets and proximity to resolve tickets faster."
+    },
+    {
+      num: "06",
+      icon: <FiTrendingUp />,
+      title: "Business Growth",
+      desc: "Leverage deep analytical insights to extend equipment lifespans and support scalable business expansions."
+    }
+  ];
 
   return (
     <section className="ind-testimonials-section">
-      <div className="ind-section-header">
-        <span className="ind-section-badge">
-          <FiAward /> PROVEN RESULTS
-        </span>
-        <h2 className="section-title">What Industry Leaders Say</h2>
-        <p className="section-subtitle">
-          See how facility executives coordinate workflows and achieve maximum system reliability.
-        </p>
-      </div>
-
-      <div className="ind-testimonial-slider-container">
-        <div className="ind-testimonial-window">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTestimonial}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5 }}
-              className="ind-testimonial-slide"
-            >
-              <p className="ind-testimonial-quote">
-                "{testimonials[activeTestimonial].quote}"
-              </p>
-              <div className="ind-testimonial-profile">
-                <img
-                  src={testimonials[activeTestimonial].image}
-                  alt={testimonials[activeTestimonial].name}
-                  className="ind-testimonial-avatar"
-                />
-                <div className="ind-testimonial-meta">
-                  <h4 className="ind-testimonial-name">
-                    {testimonials[activeTestimonial].name}
-                  </h4>
-                  <p className="ind-testimonial-desc">
-                    {testimonials[activeTestimonial].name} •{" "}
-                    <span className="text-highlight">
-                      {testimonials[activeTestimonial].industry}
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+      <div className="ind-testimonials-container">
+        {/* Premium Section Header */}
+        <div className="ind-section-header">
+          <span className="ind-premium-tag">Key Benefits</span>
+          <h2 className="ind-main-heading">Why Industries Choose FacilityCore</h2>
+          <p className="ind-section-description">
+            Explain overall business value.
+          </p>
         </div>
 
-        <div className="ind-slider-nav">
-          <button
-            onClick={() =>
-              setActiveTestimonial(
-                (prev) => (prev - 1 + testimonials.length) % testimonials.length
-              )
-            }
-            className="ind-nav-btn"
-          >
-            <FiChevronLeft />
-          </button>
-          <div className="ind-nav-dots">
-            {testimonials.map((_, idx) => (
-              <span
-                key={idx}
-                onClick={() => setActiveTestimonial(idx)}
-                className={`ind-nav-dot ${
-                  idx === activeTestimonial ? "active" : ""
-                }`}
-              />
-            ))}
-          </div>
-          <button
-            onClick={() =>
-              setActiveTestimonial((prev) => (prev + 1) % testimonials.length)
-            }
-            className="ind-nav-btn"
-          >
-            <FiChevronRight />
-          </button>
+        {/* Workflow/Timeline Area */}
+        <div className="ind-timeline-steps">
+          {steps.map((step, idx) => (
+            <motion.div
+              key={idx}
+              className="ind-timeline-card"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {/* Header section with circle icon and connecting line */}
+              <div className="ind-timeline-icon-row">
+                <div className="ind-timeline-circle">{step.icon}</div>
+                {idx < steps.length - 1 && (
+                  <div className="ind-timeline-line">
+                    <svg className="ind-timeline-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+
+              {/* Card Body */}
+              <div className="ind-timeline-card-content">
+                <span className="ind-timeline-num">{step.num}</span>
+                <h4 className="ind-timeline-title">{step.title}</h4>
+                <p className="ind-timeline-desc">{step.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
