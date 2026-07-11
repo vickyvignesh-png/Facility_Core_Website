@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
-    FiHome,
     FiMapPin,
     FiPhone,
     FiMail,
@@ -15,6 +13,7 @@ import {
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import HeroSection from '../components/HeroSection';
 
 import '../styles/ContactPage.css';
 
@@ -47,34 +46,16 @@ const ContactPage = () => {
 
             <Navbar />
 
-            {/* Hero Section */}
-            <section className="contact-hero">
-
-                <div className="contact-hero-overlay"></div>
-
-                <div className="contact-hero-content">
-
-                    <nav className="contact-breadcrumb">
-                        <Link to="/">Home</Link> / <span>Contact</span>
-                    </nav>
-
-                    <span className="contact-badge">
-                        <FiHome />
-                        CONTACT US
-                    </span>
-
-                    <h1 className="contact-hero-title">
-                        Let's Transform Your Facility Operations Together
-                    </h1>
-
-                    <p className="contact-hero-desc">
-                        Have questions or need a personalized demo? Our experts are ready
-                        to help you streamline facility management.
-                    </p>
-
-                </div>
-
-            </section>
+            <HeroSection
+                backgroundImage="/solutionpageherosection.png"
+                badge="CONTACT US"
+                title="Let's Transform Your Facility Operations Together"
+                description="Have questions or need a personalized demo? Our experts are ready to help you streamline facility management."
+                breadcrumbItems={[
+                    { label: "Home", link: "/" },
+                    { label: "Contact" }
+                ]}
+            />
 
             {/* Contact Info + Form */}
             <section className="contact-section">

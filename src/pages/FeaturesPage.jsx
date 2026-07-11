@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import HeroSection from '../components/HeroSection';
 
 import '../styles/FeaturesPage.css';
 
@@ -20,43 +21,16 @@ const FeaturesPage = () => {
         <div className="features-page">
             <Navbar />
 
-            {/* Hero Section */}
-            <section className="features-hero">
-                <div className="container">
-                    <motion.div
-                        className="hero-content"
-                        initial="hidden"
-                        animate="visible"
-                        variants={containerVariants}
-                    >
-                        <p className="breadcrumb">Home / Features</p>
-                        <span className="badge">PLATFORM FEATURES</span>
-                        <h1 className="hero-title">
-                            Powerful Features Built For Modern Facility Management
-                        </h1>
-                        <p className="hero-description">
-                            Manage assets, automate workflows, gain real-time visibility, and optimize facility
-                            performance from a single platform.
-                        </p>
-                        <div className="hero-cta">
-                            <motion.button
-                                className="btn primary"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Explore Features
-                            </motion.button>
-                            <motion.button
-                                className="btn secondary"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Book Demo
-                            </motion.button>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+            <HeroSection
+                backgroundImage="/solutionpageherosection.png"
+                badge="PLATFORM FEATURES"
+                title="Modern Features For Smart Facilities"
+                description="Manage assets, automate workflows, gain real-time visibility, and optimize facility performance from a single platform."
+                breadcrumbItems={[
+                    { label: "Home", link: "/" },
+                    { label: "Features" }
+                ]}
+            />
 
             {/* Mobile Application Section */}
             <section className="mobile-app-section">
