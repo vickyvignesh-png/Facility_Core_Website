@@ -1,0 +1,377 @@
+/* MobileFirst.css */
+
+.mobile-first-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background-color: #FFFFFF;
+}
+
+/* Header */
+.mobile-first-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.mobile-first-badge {
+  background-color: #EAF8E8;
+  color: #69BC45;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.mobile-first-badge .badge-icon {
+  font-size: 16px;
+}
+
+.mobile-first-heading {
+  font-size: 48px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.mobile-first-intro-p {
+  color: #6B7280;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Main Grid Layout - Desktop */
+.mobile-first-main-grid {
+  display: grid;
+  grid-template-columns: 5.5fr 4.5fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.mobile-first-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.block-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Premium Bullets */
+.premium-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bullet-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #1D4FA3;
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bullet-text {
+  font-size: 16px;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Connected Card styling */
+.connected-card {
+  background-color: #F8FAFC;
+  border: 1px solid #E8EDF5;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+}
+
+.connected-card p {
+  color: #4B5563;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.connected-card p:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+/* Right Side: Image and Floating Cards */
+.mobile-first-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.premium-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.premium-mobile-image {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+}
+
+.floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  z-index: 5;
+}
+
+.floating-emoji {
+  font-size: 20px;
+}
+
+.floating-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+  white-space: nowrap;
+}
+
+.card-top-left {
+  top: 40px;
+  left: -20px;
+}
+
+.card-bottom-right {
+  bottom: 40px;
+  right: -20px;
+}
+
+/* Dedicated Mobile Applications Section */
+.dedicated-apps-section {
+  margin-bottom: 60px;
+}
+
+.dedicated-apps-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #111827;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+/* 3 Column Grid */
+.app-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.premium-app-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8EDF5;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 320px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.premium-app-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+  border-color: #69BC45;
+}
+
+.card-icon-gradient-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1D4FA3, #69BC45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 24px;
+  box-shadow: 0 12px 25px rgba(29, 79, 163, 0.18);
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+}
+
+.premium-app-card:hover .card-icon-gradient-circle {
+  transform: scale(1.1);
+}
+
+.card-app-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  transition: color 0.35s ease;
+}
+
+.premium-app-card:hover .card-app-title {
+  color: #1D4FA3;
+}
+
+.card-app-desc {
+  font-size: 15px;
+  color: #6B7280;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Bottom Highlight Quote Card */
+.bottom-highlight-quote-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #FFFFFF;
+  border-left: 4px solid #69BC45;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.07);
+  max-width: 100%;
+}
+
+.highlight-quote-icon {
+  font-size: 28px;
+  color: #69BC45;
+  line-height: 1;
+}
+
+.highlight-quote-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.highlight-quote-sub {
+  font-size: 15px;
+  color: #6B7280;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1279px) {
+  .mobile-first-heading {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-first-heading {
+    font-size: 40px;
+  }
+
+  .mobile-first-main-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 60px;
+  }
+
+  .premium-mobile-image {
+    height: 480px;
+  }
+
+  .app-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-first-heading {
+    font-size: 32px;
+  }
+
+  .dedicated-apps-heading {
+    font-size: 28px;
+  }
+
+  .app-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-top-left {
+    left: 10px;
+  }
+
+  .card-bottom-right {
+    right: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-first-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bullet-item {
+    align-items: flex-start;
+  }
+
+  .bullet-icon-circle {
+    margin-top: 2px;
+  }
+
+  .premium-mobile-image {
+    height: 380px;
+  }
+
+  .highlight-quote-text {
+    font-size: 16px;
+  }
+
+  .highlight-quote-sub {
+    font-size: 14px;
+  }
+}

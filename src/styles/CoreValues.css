@@ -1,0 +1,164 @@
+/* CoreValues.css — scoped with cv- prefix */
+
+/* ─── Section ─────────────────────────────────────────────── */
+.cv-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background-color: #F8FAFC;
+}
+
+/* ─── Header ──────────────────────────────────────────────── */
+.cv-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+/* ─── Badge ───────────────────────────────────────────────── */
+.cv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #EAF8E8;
+  color: #69BC45;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  width: fit-content;
+}
+
+.cv-badge-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* ─── Heading ─────────────────────────────────────────────── */
+.cv-heading {
+  font-size: 46px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+  margin: 0 0 18px 0;
+}
+
+/* ─── Intro Description ───────────────────────────────────── */
+.cv-intro {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #6B7280;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ─── Cards Grid ──────────────────────────────────────────── */
+.cv-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* ─── Card ────────────────────────────────────────────────── */
+.cv-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8EDF5;
+  border-radius: 22px;
+  padding: 32px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  cursor: default;
+}
+
+.cv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+  border-color: #69BC45;
+}
+
+/* ─── Icon Circle ─────────────────────────────────────────── */
+.cv-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1D4FA3, #69BC45);
+  color: #FFFFFF;
+  font-size: 28px;
+  box-shadow: 0 12px 25px rgba(29, 79, 163, 0.18);
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+}
+
+/* ─── Card Title ──────────────────────────────────────────── */
+.cv-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 20px 0 0 0;
+  line-height: 1.25;
+  transition: color 0.35s ease;
+}
+
+.cv-card:hover .cv-card-title {
+  color: #1D4FA3;
+}
+
+/* ─── Card Description ────────────────────────────────────── */
+.cv-card-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #6B7280;
+  margin: 12px 0 0 0;
+}
+
+/* ─── Tablet ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .cv-heading {
+    font-size: 40px;
+  }
+
+  .cv-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* ─── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .cv-heading {
+    font-size: 32px;
+  }
+
+  .cv-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cv-card {
+    min-height: unset;
+    padding: 28px 24px;
+  }
+
+  .cv-icon-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .cv-card-title {
+    font-size: 20px;
+  }
+}
