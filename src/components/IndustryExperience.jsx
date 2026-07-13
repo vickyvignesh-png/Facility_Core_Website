@@ -72,27 +72,51 @@ const IndustryExperience = () => {
         </motion.div>
 
         {/* Industry Grid */}
-        <motion.div 
-          className="industry-cards-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {industries.map((ind, i) => (
-            <motion.div
-              key={i}
-              className="industry-card"
-              variants={cardVariants}
-              whileHover={{ y: -8 }}
-            >
-              <div className="industry-icon-circle">
-                {ind.icon}
-              </div>
-              <h4 className="industry-card-title">{ind.name}</h4>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="industry-cards-container">
+          <motion.div 
+            className="industry-grid-main"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {industries.slice(0, 8).map((ind, i) => (
+              <motion.div
+                key={i}
+                className="industry-card"
+                variants={cardVariants}
+                whileHover={{ y: -8 }}
+              >
+                <div className="industry-icon-circle">
+                  {ind.icon}
+                </div>
+                <h4 className="industry-card-title">{ind.name}</h4>
+              </motion.div>
+            ))}
+          </motion.div>
+          
+          <motion.div 
+            className="industry-grid-centered"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {industries.slice(8).map((ind, i) => (
+              <motion.div
+                key={i + 8}
+                className="industry-card"
+                variants={cardVariants}
+                whileHover={{ y: -8 }}
+              >
+                <div className="industry-icon-circle">
+                  {ind.icon}
+                </div>
+                <h4 className="industry-card-title">{ind.name}</h4>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Bottom Concluding Description */}
         <motion.div

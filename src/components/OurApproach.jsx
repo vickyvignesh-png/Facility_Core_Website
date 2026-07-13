@@ -1,70 +1,132 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiLayout, FiAward, FiCpu, FiUsers } from 'react-icons/fi';
-import "../styles/OurApproach.css";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  FiCompass,
+  FiFeather,
+  FiActivity,
+  FiCpu,
+  FiHeart,
+} from 'react-icons/fi';
+import '../styles/OurApproach.css';
 
-const approaches = [
+const tabs = [
   {
     step: '01',
-    icon: <FiLayout />,
+    label: 'Simplicity',
+    icon: <FiFeather />,
     title: 'Simplicity',
-    desc: 'We design intuitive, user-friendly interfaces that require zero training, ensuring high adoption rates across teams.'
+    desc: 'Technology should make work easier. We create intuitive solutions that simplify even the most complex facility operations.',
   },
   {
     step: '02',
-    icon: <FiAward />,
+    label: 'Operational Excellence',
+    icon: <FiActivity />,
     title: 'Operational Excellence',
-    desc: 'We automate redundant tasks, structure processes, and focus on delivering reliable data outputs to make audit-readiness simple.'
+    desc: 'We help organizations standardize processes, improve service quality, and achieve consistent operational performance.',
   },
   {
     step: '03',
+    label: 'Innovation',
     icon: <FiCpu />,
     title: 'Innovation',
-    desc: 'We integrate modern technologies like QR-code asset mapping, mobile offline-first syncing, and IoT triggers.'
+    desc: 'We continuously invest in modern technologies, automation, mobility, analytics, and intelligent workflows to meet the future needs of facility management.',
   },
   {
     step: '04',
-    icon: <FiUsers />,
+    label: 'Customer Success',
+    icon: <FiHeart />,
     title: 'Customer Success',
-    desc: 'We prioritize customer satisfaction, offering dedicated support, rapid iterations, and platform reliability updates.'
-  }
+    desc: 'Our success is measured by the success of our customers. We are committed to building long-term partnerships and delivering measurable business value.',
+  },
 ];
 
+const panelVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  exit:   { opacity: 0, y: -12, transition: { duration: 0.25, ease: 'easeIn' } },
+};
+
+const headerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
 const OurApproach = () => {
+  const [active, setActive] = useState(0);
+  const current = tabs[active];
+
   return (
-    <section className="our-approach-section">
-      <div className="container mx-auto px-6 lg:px-8 xl:px-10">
+    <section className="oa-section">
+      <div className="container mx-auto px-4 md:px-8">
 
-        {/* Header Block */}
-        <div className="section-header-centered">
-          <span className="premium-tag">Our Approach</span>
-          <h2 className="section-title">How We Do Things</h2>
-          <p className="section-desc centered">
-            Our operating philosophy is centered on building high-value, easy-to-use software that solves actual ground-level facility bottlenecks.
-          </p>
+        {/* ── Header ─────────────────────────────────────────── */}
+        <motion.div
+          className="oa-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+        >
+          <motion.span className="oa-badge" variants={fadeUp}>
+            <FiCompass className="oa-badge-icon" />
+            OUR APPROACH
+          </motion.span>
+          <motion.h2 className="oa-heading" variants={fadeUp}>
+            Our Approach
+          </motion.h2>
+          <motion.p className="oa-desc" variants={fadeUp}>
+            Everything we build is guided by four key principles.
+          </motion.p>
+        </motion.div>
+
+        {/* ── Two-Column Panel ──────────────────────────────── */}
+        <div className="oa-panel-grid">
+
+          {/* LEFT — Vertical Tabs */}
+          <nav className="oa-tab-nav">
+            {tabs.map((tab, i) => (
+              <button
+                key={i}
+                className={`oa-tab-item${active === i ? ' oa-tab-active' : ''}`}
+                onClick={() => setActive(i)}
+              >
+                <span className="oa-tab-num-circle">{tab.step}</span>
+                <span className="oa-tab-label">{tab.label}</span>
+              </button>
+            ))}
+          </nav>
+
+          {/* RIGHT — Dynamic Content Panel */}
+          <div className="oa-content-panel">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                className="oa-content-inner"
+                variants={panelVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                {/* Large icon circle */}
+                <div className="oa-icon-circle">
+                  {current.icon}
+                </div>
+
+                {/* Title */}
+                <h3 className="oa-content-title">{current.title}</h3>
+
+                {/* Description */}
+                <p className="oa-content-desc">{current.desc}</p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
         </div>
-
-        {/* 4 Premium Cards Grid */}
-        <div className="approach-grid">
-          {approaches.map((app, i) => (
-            <motion.div
-              key={i}
-              className="approach-card"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <div className="approach-card-header">
-                <span className="approach-step">{app.step}</span>
-                <div className="approach-icon-wrapper">{app.icon}</div>
-              </div>
-              <h3 className="approach-card-title">{app.title}</h3>
-              <p className="approach-card-desc">{app.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-
       </div>
     </section>
   );

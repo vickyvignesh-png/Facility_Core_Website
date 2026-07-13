@@ -1,63 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiCheckCircle } from 'react-icons/fi';
+import { FiTrendingUp } from 'react-icons/fi';
 import "../styles/LookingAhead.css";
-
-const bulletPoints = [
-  'Integrating advanced AI and predictive analysis tools for preemptive asset maintenance.',
-  'Expanding global infrastructure to support faster response times and multi-region deployments.',
-  'Enhancing sustainability and energy tracking tools to help clients meet carbon goals.',
-  'Scaling mobile app features with offline-first capabilities for remote facility zones.',
-  'Deepening API integrations with third-party building automation and IoT sensor systems.'
-];
 
 const LookingAhead = () => {
   return (
-    <section className="looking-ahead-section">
-      <div className="container mx-auto px-6 lg:px-8 xl:px-10">
-        <div className="looking-ahead-grid">
+    <section className="la-section">
+      <div className="container mx-auto px-4 md:px-8">
+        <motion.div 
+          className="la-card"
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Subtle background glow effects */}
+          <div className="la-glow la-glow-1" />
+          <div className="la-glow la-glow-2" />
 
-          {/* Left: Image (on mobile, it will appear below content) */}
-          <motion.div
-            className="looking-ahead-image-container"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <img
-              src="/about_dashboard_preview.png"
-              alt="FacilityCore Future Product Features"
-              className="looking-ahead-img"
-            />
-          </motion.div>
+          {/* Card Content Wrapper */}
+          <div className="la-card-content">
+            {/* Badge */}
+            <div className="la-badge">
+              <FiTrendingUp className="la-badge-icon" />
+              <span>LOOKING AHEAD</span>
+            </div>
 
-          {/* Right: Content Block */}
-          <div className="looking-ahead-content">
-            <span className="premium-tag">Looking Ahead</span>
-            <h2 className="looking-ahead-heading">Future Focus & Expansion</h2>
-            <p className="looking-ahead-desc">
-              We are constantly evolving our system to handle the next generation of smart facilities. Here is what we are building for the near future.
+            {/* Heading */}
+            <h2 className="la-heading">The Future of Facility Management</h2>
+
+            {/* Description */}
+            <div className="la-desc-container">
+              <p className="la-desc-p">
+                The future of facility management is intelligent, connected, mobile, and data-driven.
+              </p>
+              <p className="la-desc-p">
+                FacilityCore is committed to helping organizations embrace this transformation through a platform that connects assets, people, technology, and operations into one unified ecosystem.
+              </p>
+              <p className="la-desc-p">
+                As organizations continue to grow and facilities become more complex, FacilityCore will continue to innovate, enabling businesses to improve efficiency, maximize asset value, enhance occupant experiences, and make smarter operational decisions.
+              </p>
+            </div>
+
+            {/* Premium Divider */}
+            <div className="la-divider" />
+
+            {/* Bottom Highlight */}
+            <p className="la-bottom-highlight">
+              Together, we're building the future of facility management.
             </p>
-
-            <ul className="looking-ahead-bullets">
-              {bulletPoints.map((bullet, i) => (
-                <motion.li
-                  key={i}
-                  className="bullet-item"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                >
-                  <FiCheckCircle className="bullet-icon" />
-                  <span className="bullet-text">{bullet}</span>
-                </motion.li>
-              ))}
-            </ul>
           </div>
-
-        </div>
+        </motion.div>
       </div>
     </section>
   );

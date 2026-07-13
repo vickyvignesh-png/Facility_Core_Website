@@ -1,121 +1,168 @@
-.looking-ahead-section {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+/* LookingAhead.css */
+
+.la-section {
   background-color: #FFFFFF;
+  padding: 2.5rem 0;
 }
 
-.looking-ahead-grid {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  grid-template-areas: "image content";
-  gap: 4rem;
-  align-items: center;
+.la-card {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #0D2B5B, #1D4FA3);
+  border-radius: 28px;
+  padding: 60px;
+  box-shadow: 0 30px 80px rgba(29, 79, 163, 0.20);
+  overflow: hidden;
 }
 
-.looking-ahead-image-container {
-  grid-area: image;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Subtle background glow effects */
+.la-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.looking-ahead-img {
-  width: 100%;
-  max-width: 480px;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-  object-fit: cover;
+.la-glow-1 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #69BC45 0%, transparent 70%);
+  top: -80px;
+  left: -80px;
 }
 
-.looking-ahead-content {
-  grid-area: content;
+.la-glow-2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #38BDF8 0%, transparent 70%);
+  bottom: -80px;
+  right: -80px;
+}
+
+.la-card-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.premium-tag {
-  align-self: flex-start;
-  background-color: #EAF8E8;
-  color: #69BC45;
+/* Premium Rounded Badge */
+.la-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
   border-radius: 999px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 13px;
   font-weight: 700;
-  padding: 0.5rem 1.25rem;
-  margin-bottom: 1rem;
-  display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
-.looking-ahead-heading {
-  font-size: 2.5rem;
+.la-badge-icon {
+  font-size: 15px;
+}
+
+/* Heading */
+.la-heading {
+  font-size: 48px;
   font-weight: 800;
-  color: #0F172A;
-  line-height: 1.15;
-  margin-bottom: 1.25rem;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: 0 0 28px 0;
+  max-width: 800px;
 }
 
-.looking-ahead-desc {
-  max-width: 720px;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #475569;
+/* Description Paragraphs */
+.la-desc-container {
+  max-width: 760px;
+  margin-bottom: 36px;
 }
 
-.looking-ahead-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.la-desc-p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.90);
+  margin: 0 0 24px 0;
 }
 
-.bullet-item {
-  display: flex;
-  gap: 0.85rem;
-  align-items: flex-start;
+.la-desc-p:last-child {
+  margin-bottom: 0;
 }
 
-.bullet-icon {
-  font-size: 1.35rem;
-  color: #69BC45;
-  flex-shrink: 0;
-  margin-top: 0.15rem;
+/* Premium Divider Line */
+.la-divider {
+  width: 100%;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin-bottom: 28px;
 }
 
-.bullet-text {
-  font-size: 1.05rem;
-  color: #475569;
-  line-height: 1.5;
+/* Bottom Highlight with gradient text */
+.la-bottom-highlight {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(135deg, #599EF7, #69BC45);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  line-height: 1.4;
 }
 
-/* Tablet (2 Columns, reduced space) */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .looking-ahead-grid {
-    gap: 2rem;
+/* Tablet Layout Override */
+@media (max-width: 991px) {
+  .la-card {
+    padding: 48px;
   }
 
-  .looking-ahead-heading {
-    font-size: 2.125rem;
+  .la-heading {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+
+  .la-desc-p {
+    font-size: 17px;
+    margin-bottom: 20px;
   }
 }
 
-/* Mobile (1 Column, content then image below) */
-@media (max-width: 640px) {
-  .looking-ahead-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      "content"
-      "image";
-    gap: 2rem;
+/* Mobile Layout Override */
+@media (max-width: 767px) {
+  .la-card {
+    padding: 36px 24px;
+    border-radius: 20px;
   }
 
-  .looking-ahead-heading {
-    font-size: 2rem;
+  .la-heading {
+    font-size: 32px;
+    margin-bottom: 20px;
   }
 
-  .looking-ahead-img {
-    max-width: 100%;
+  .la-desc-p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .la-bottom-highlight {
+    font-size: 18px;
+  }
+
+  .la-divider {
+    margin-bottom: 24px;
   }
 }

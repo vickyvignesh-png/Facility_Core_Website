@@ -12,7 +12,9 @@ import WhyChooseFacilityCore from '../components/WhyChooseFacilityCore';
 import OurApproach from '../components/OurApproach';
 import VisionMission from '../components/VisionMission';
 import CoreValues from '../components/CoreValues';
+import WhyChooseUs from '../components/WhyChooseUs';
 import LookingAhead from '../components/LookingAhead';
+
 
 import '../styles/AboutPage.css';
 
@@ -49,6 +51,8 @@ const AboutPage = () => {
       <VisionMission />
 
       <CoreValues />
+
+      <WhyChooseUs />
 
       <LookingAhead />
 

@@ -1,120 +1,226 @@
-.why-choose-section {
+/* WhyChooseFacilityCore.css */
+
+/* ─── Section ─────────────────────────────────────────────── */
+.wcf-section {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   background-color: #FFFFFF;
 }
 
-.section-header-centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 3rem;
+/* ─── Two-Column Grid ─────────────────────────────────────── */
+.wcf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: stretch;
 }
 
-.premium-tag {
+/* ─── Image Column ────────────────────────────────────────── */
+.wcf-image-col {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.wcf-image-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.10);
+}
+
+.wcf-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ─── Content Column ──────────────────────────────────────── */
+.wcf-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ─── Badge ───────────────────────────────────────────────── */
+.wcf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background-color: #EAF8E8;
   color: #69BC45;
   border-radius: 999px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
+  padding: 10px 18px;
+  font-size: 13px;
   font-weight: 700;
-  padding: 0.5rem 1.25rem;
-  margin-bottom: 1rem;
-  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: fit-content;
+  margin-bottom: 18px;
 }
 
-.section-title {
-  font-size: 2.5rem;
+.wcf-badge-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* ─── Heading ─────────────────────────────────────────────── */
+.wcf-heading {
+  font-size: 46px;
   font-weight: 800;
-  color: #0F172A;
-  line-height: 1.15;
-  margin-bottom: 1.25rem;
+  color: #111827;
+  line-height: 1.2;
+  margin: 0 0 18px 0;
 }
 
-.section-desc {
-  max-width: 720px;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #475569;
+/* ─── Description ─────────────────────────────────────────── */
+.wcf-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6B7280;
+  margin: 0 0 24px 0;
 }
 
-.section-desc.centered {
-  margin-left: auto;
-  margin-right: auto;
+/* ─── Blue Sub-Label ──────────────────────────────────────── */
+.wcf-blue-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1D4FA3;
+  margin: 0 0 22px 0;
 }
 
-/* Grid Layout */
-.why-choose-grid {
+/* ─── Bullet Grid ─────────────────────────────────────────── */
+.wcf-bullet-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 18px;
+  column-gap: 16px;
 }
 
-.why-choose-card {
-  background-color: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 16px;
-  padding: 1.75rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.wcf-bullet-item {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  gap: 14px;
+  cursor: default;
+  transition: transform 0.25s ease;
 }
 
-.why-choose-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.05);
-  border-color: #CBD5E1;
-}
-
-.why-choose-icon-wrapper {
-  font-size: 1.5rem;
-  color: #69BC45;
-  background-color: #EAF8E8;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+.wcf-bullet-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1D4FA3, #69BC45);
+  color: #FFFFFF;
+  font-size: 12px;
+  flex-shrink: 0;
 }
 
-.why-choose-card-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0F172A;
-  margin-bottom: 0.5rem;
+.wcf-bullet-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
 }
 
-.why-choose-card-desc {
-  font-size: 0.875rem;
-  color: #64748B;
-  line-height: 1.5;
+/* ─── Highlight Box ───────────────────────────────────────── */
+.wcf-highlight-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: #F8FAFC;
+  border-left: 4px solid #69BC45;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  transition: box-shadow 0.35s ease;
 }
 
-/* Tablet (2 Columns) */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .why-choose-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+.wcf-quote-icon {
+  font-size: 24px;
+  color: #69BC45;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.wcf-highlight-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1F2937;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─── Tablet ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .wcf-grid {
+    gap: 40px;
   }
 
-  .section-title {
-    font-size: 2.125rem;
+  .wcf-heading {
+    font-size: 38px;
   }
 }
 
-/* Mobile (1 Column) */
-@media (max-width: 640px) {
-  .why-choose-grid {
+/* ─── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .wcf-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 36px;
   }
 
-  .section-title {
-    font-size: 2rem;
+  /* On mobile: image appears AFTER badge/heading/desc */
+  .wcf-image-col {
+    order: 2;
+    height: auto;
+  }
+
+  .wcf-image-wrapper {
+    height: 320px;
+    width: 100%;
+  }
+
+  .wcf-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .wcf-content-col {
+    order: 1;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .wcf-badge {
+    justify-content: center;
+  }
+
+  .wcf-heading {
+    font-size: 30px;
+  }
+
+  /* bullet grid becomes 1 column */
+  .wcf-bullet-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .wcf-bullet-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .wcf-highlight-box {
+    text-align: left;
   }
 }

@@ -1,91 +1,134 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  FiHeart,
-  FiZap,
-  FiAward,
   FiShield,
   FiUsers,
-  FiLayout,
+  FiCpu,
+  FiAward,
+  FiLink,
+  FiFeather,
   FiGlobe,
-  FiTrendingUp
+  FiTrendingUp,
 } from 'react-icons/fi';
-import "../styles/CoreValues.css";
+import '../styles/CoreValues.css';
 
 const coreValues = [
   {
-    icon: <FiHeart />,
+    icon: <FiUsers />,
     title: 'Customer First',
-    desc: 'Customer growth and satisfaction remain our top priority in every feature we build.'
+    desc: 'We listen, understand, and deliver solutions that create lasting value for our customers.',
   },
   {
-    icon: <FiZap />,
+    icon: <FiCpu />,
     title: 'Innovation',
-    desc: 'We continuously innovate to simplify facility operations and predictive maintenance.'
+    desc: 'We embrace new ideas and technologies that transform the future of facility management.',
   },
   {
     icon: <FiAward />,
     title: 'Excellence',
-    desc: 'We strive for exceptional quality and reliability in every solution we deliver.'
+    desc: 'We strive for quality, reliability, and continuous improvement in everything we do.',
   },
   {
     icon: <FiShield />,
     title: 'Integrity',
-    desc: 'We build trust through absolute transparency, data security, and accountability.'
+    desc: 'We build trust through transparency, accountability, and ethical business practices.',
   },
   {
-    icon: <FiUsers />,
+    icon: <FiLink />,
     title: 'Collaboration',
-    desc: 'Strong teamwork and shared goals drive better outcomes and platform growth.'
+    desc: 'We believe successful facility management is built on teamwork, communication, and strong partnerships.',
   },
   {
-    icon: <FiLayout />,
+    icon: <FiFeather />,
     title: 'Simplicity',
-    desc: 'We believe that the best enterprise solutions are straightforward, clean, and intuitive.'
+    desc: 'We design technology that is intuitive, user-friendly, and focused on productivity.',
   },
   {
     icon: <FiGlobe />,
     title: 'Sustainability',
-    desc: 'We design tools that minimize paper waste, optimize energy, and support green goals.'
+    desc: 'We help organizations create efficient, responsible, and future-ready facilities.',
   },
   {
     icon: <FiTrendingUp />,
     title: 'Continuous Improvement',
-    desc: 'We constantly evolve our skills and platform capabilities to deliver more value.'
-  }
+    desc: 'We continuously enhance our platform to meet the evolving needs of modern facility management.',
+  },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const headerVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
 
 const CoreValues = () => {
   return (
-    <section className="core-values-section">
-      <div className="container mx-auto px-6 lg:px-8 xl:px-10">
+    <section className="cv-section">
+      <div className="container mx-auto px-4 md:px-8">
 
-        {/* Header Block */}
-        <div className="section-header-centered">
-          <span className="premium-tag">Our Values</span>
-          <h2 className="section-title">Core Values That Drive Us</h2>
-          <p className="section-desc centered">
-            These values shape our culture, guide our decisions, and define how we support facility teams around the globe.
-          </p>
-        </div>
+        {/* ── Header ───────────────────────────────────────── */}
+        <motion.div
+          className="cv-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
+          <motion.span className="cv-badge" variants={headerVariants}>
+            <FiShield className="cv-badge-icon" />
+            CORE VALUES
+          </motion.span>
+          <motion.h2 className="cv-heading" variants={headerVariants}>
+            Our Core Values
+          </motion.h2>
+          <motion.p className="cv-intro" variants={headerVariants}>
+            These values define our culture, guide every decision we make, and inspire our team to deliver exceptional facility management solutions.
+          </motion.p>
+        </motion.div>
 
-        {/* 8 Cards Grid */}
-        <div className="core-values-grid">
+        {/* ── Cards Grid ───────────────────────────────────── */}
+        <motion.div
+          className="cv-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
           {coreValues.map((val, i) => (
             <motion.div
               key={i}
-              className="value-card"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
+              className="cv-card"
+              variants={cardVariants}
+              whileHover="hover"
             >
-              <div className="value-card-icon-wrapper">{val.icon}</div>
-              <h3 className="value-card-title">{val.title}</h3>
-              <p className="value-card-desc">{val.desc}</p>
+              <motion.div
+                className="cv-icon-circle"
+                variants={{ hover: { scale: 1.08 } }}
+                transition={{ duration: 0.3 }}
+              >
+                {val.icon}
+              </motion.div>
+              <h3 className="cv-card-title">{val.title}</h3>
+              <p className="cv-card-desc">{val.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

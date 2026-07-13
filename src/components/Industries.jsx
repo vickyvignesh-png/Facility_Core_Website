@@ -28,13 +28,13 @@ const Industries = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'spring', stiffness: 80, damping: 15 },
+      transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
 
   return (
     <section id="industries" className="py-10 bg-white relative">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12">
         {/* Header */}
         <div className="text-center mb-16">
           <span className="platform-label"><FiGrid className="w-5 h-5" /> Vertical Solutions</span>
@@ -53,11 +53,13 @@ const Industries = () => {
           className="industries-grid"
         >
           {industries.map((ind, idx) => (
-            <motion.div key={idx} variants={cardVariants} className="industry-card">
-              <img src={ind.image} alt={ind.title} className="industry-image" />
-              <div className="industry-overlay">
-                <h3 className="industry-title">{ind.title}</h3>
-                <p className="industry-description">{ind.description}</p>
+            <motion.div key={idx} variants={cardVariants} className="vertical-industry-card">
+              <img src={ind.image} alt={ind.title} className="vertical-industry-image" />
+              <div className="vertical-industry-overlay" />
+              <div className="vertical-industry-overlay-dark" />
+              <div className="vertical-industry-card-content">
+                <p className="vertical-industry-description">{ind.description}</p>
+                <h3 className="vertical-industry-title">{ind.title}</h3>
               </div>
             </motion.div>
           ))}
