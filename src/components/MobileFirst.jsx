@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiSmartphone, FiCheck, FiSettings, FiTool, FiUsers } from 'react-icons/fi';
+import { FiSmartphone, FiCheck, FiSettings, FiTool, FiUsers, FiCheckCircle } from 'react-icons/fi';
 import "../styles/MobileFirst.css";
 
 const MobileFirst = () => {
@@ -24,9 +24,9 @@ const MobileFirst = () => {
   return (
     <section className="mobile-first-section">
       <div className="container mx-auto px-4 md:px-8">
-        
+
         {/* Header Block */}
-        <motion.div 
+        <motion.div
           className="mobile-first-header"
           initial="hidden"
           whileInView="visible"
@@ -46,9 +46,9 @@ const MobileFirst = () => {
 
         {/* Main Grid Layout */}
         <div className="mobile-first-main-grid">
-          
+
           {/* Left Side Content (55%) */}
-          <motion.div 
+          <motion.div
             className="mobile-first-left"
             initial="hidden"
             whileInView="visible"
@@ -69,7 +69,7 @@ const MobileFirst = () => {
                 ].map((point, index) => (
                   <li key={index} className="bullet-item">
                     <span className="bullet-icon-circle">
-                      <FiCheck />
+                      <FiCheckCircle />
                     </span>
                     <span className="bullet-text">{point}</span>
                   </li>
@@ -95,7 +95,7 @@ const MobileFirst = () => {
           </motion.div>
 
           {/* Right Side Image & Floating Cards (45%) */}
-          <motion.div 
+          <motion.div
             className="mobile-first-right"
             initial="hidden"
             whileInView="visible"
@@ -103,12 +103,12 @@ const MobileFirst = () => {
             variants={fadeUpVariants}
           >
             <div className="premium-image-wrapper">
-              <img 
-                src="/facility_mobile_app.png" 
-                alt="Facility Management Mobile Application" 
-                className="premium-mobile-image" 
+              <img
+                src="/facility_mobile_app.png"
+                alt="Facility Management Mobile Application"
+                className="premium-mobile-image"
               />
-              
+
               {/* Floating Card 1 */}
               <div className="floating-card card-top-left">
                 <span className="floating-emoji">📱</span>
@@ -128,8 +128,8 @@ const MobileFirst = () => {
         {/* Dedicated Mobile Applications Sub-section */}
         <div className="dedicated-apps-section">
           <h2 className="dedicated-apps-heading">Dedicated Mobile Applications</h2>
-          
-          <motion.div 
+
+          <motion.div
             className="app-cards-grid"
             initial="hidden"
             whileInView="visible"
@@ -153,9 +153,9 @@ const MobileFirst = () => {
                 desc: "Designed for occupants, tenants, residents, and employees to submit service requests, receive updates, access facility services, and communicate with management."
               }
             ].map((card, i) => (
-              <motion.div 
-                key={i} 
-                className="premium-app-card" 
+              <motion.div
+                key={i}
+                className="premium-app-card"
                 variants={fadeUpVariants}
               >
                 <div className="card-icon-gradient-circle">
@@ -169,7 +169,7 @@ const MobileFirst = () => {
         </div>
 
         {/* Bottom Highlight Quote Card */}
-        <motion.div 
+        <motion.div
           className="bottom-highlight-quote-card"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

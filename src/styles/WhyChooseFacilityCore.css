@@ -118,15 +118,14 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1D4FA3, #69BC45);
-  color: #FFFFFF;
-  font-size: 12px;
+  color: #1D4FA3;
+  font-size: 22px;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .wcf-bullet-text {
   font-size: 15px;
-  font-weight: 600;
   color: #111827;
   line-height: 1.4;
 }

@@ -99,10 +99,10 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #EAF8E8;
-  color: #69BC45;
-  font-size: 13px;
+  color: #1D4FA3;
+  font-size: 22px;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .bullet-text {
@@ -311,7 +311,7 @@
   .mobile-first-heading {
     font-size: 40px;
   }
-  
+
   .mobile-first-main-grid {
     grid-template-columns: 1fr;
     gap: 48px;

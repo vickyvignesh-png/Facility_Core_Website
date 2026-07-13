@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiAward, FiCheck, FiMessageCircle } from 'react-icons/fi';
+import { FiAward, FiCheckCircle, FiMessageCircle } from 'react-icons/fi';
 import '../styles/WhyChooseFacilityCore.css';
 
 const bullets = [
@@ -90,7 +90,7 @@ const WhyChooseFacilityCore = () => {
                   whileHover={{ y: -3 }}
                 >
                   <span className="wcf-bullet-icon">
-                    <FiCheck />
+                    <FiCheckCircle />
                   </span>
                   <span className="wcf-bullet-text">{point}</span>
                 </motion.li>

@@ -81,8 +81,10 @@ const WorkflowSection = () => {
             <div className="workflow-top">
               <div className="workflow-circle">{step.icon}</div>
               {i !== arr.length - 1 && (
-                <div className="workflow-arrow">
-                  <HiOutlineArrowLongRight />
+                <div className="ind-timeline-line">
+                  <svg className="ind-timeline-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               )}
             </div>
