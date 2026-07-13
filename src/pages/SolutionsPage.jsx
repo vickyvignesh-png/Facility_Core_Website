@@ -11,7 +11,16 @@ const SolutionsPage = () => {
   return (
     <div className="solutions-page">
       <Navbar />
-      <HeroSection />
+      <HeroSection
+        backgroundImage="/solutionpageherosection.png"
+        badge="SMART SOLUTIONS"
+        title="Smart Solutions For Every Facility"
+        description="Stay audit-ready with automated compliance tracking."
+        breadcrumbItems={[
+          { label: "Home", link: "/" },
+          { label: "Solutions" }
+        ]}
+      />
       <PlatformModules />
       <DetailedModules />
       <WorkflowSection />

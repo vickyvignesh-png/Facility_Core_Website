@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FiHome } from "react-icons/fi";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
@@ -21,21 +19,14 @@ const IndustriesPage = () => {
       <Navbar />
 
       <HeroSection
+        backgroundImage="/solutionpageherosection.png"
+        badge="INDUSTRY SOLUTIONS"
         title="Industry-Specific Facility Management Solutions"
         description="FacilityCore adapts to the unique operational requirements of every industry, helping organizations improve efficiency, reduce costs, and deliver exceptional experiences."
-        badge={
-          <>
-            <FiHome /> INDUSTRIES WE SERVE
-          </>
-        }
-        breadcrumb={
-          <nav className="breadcrumb">
-            <Link to="/">Home</Link> / <span>Industries</span>
-          </nav>
-        }
-        backgroundImage="/solutionpageherosection.png"
-        className="ind-hero"
-        titleClassName="ind-hero-title"
+        breadcrumbItems={[
+          { label: "Home", link: "/" },
+          { label: "Industries" }
+        ]}
       />
 
       <IndustriesGrid />

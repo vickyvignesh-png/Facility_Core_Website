@@ -112,7 +112,7 @@ const Navbar = () => {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'tween', duration: 0.35, ease: 'easeOut' }}
+              transition={{ type: 'tween', duration: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
               className="mobile-menu-drawer"
             >
               <div className="drawer-header">
@@ -127,9 +127,9 @@ const Navbar = () => {
               <div className="drawer-content">
                 <nav className="mobile-nav-links">
                   {navItems.map((item, idx) => (
-                    <link
+                    <Link
                       key={idx}
-                      href={item.link}
+                      to={item.link}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`mobile-nav-link ${location.pathname === item.link
                         ? 'mobile-nav-link-active'
@@ -137,7 +137,7 @@ const Navbar = () => {
                         }`}
                     >
                       {item.name}
-                    </link>
+                    </Link>
                   ))}
                 </nav>
                 <div className="drawer-divider" />

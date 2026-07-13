@@ -1,4 +1,5 @@
 import React from "react";
+import { FiLayers, FiCheckCircle } from "react-icons/fi";
 import "../styles/IndustryScroller.css";
 
 const IndustryScroller = () => {
@@ -22,7 +23,7 @@ const IndustryScroller = () => {
       <div className="ind-scroller-container">
         {/* Premium Section Header */}
         <div className="ind-section-header">
-          <span className="ind-premium-tag">Industry Challenges</span>
+          <span className="ind-premium-tag"><FiLayers className="ind-badge-icon" />Industry Challenges</span>
           <h2 className="ind-main-heading">Industry Challenges Across Modern Facilities</h2>
           <p className="ind-section-description">
             Introduce the common operational challenges faced by different industries before implementing FacilityCore.
@@ -50,21 +51,7 @@ const IndustryScroller = () => {
             <div className="ind-bullet-list">
               {challenges.map((item, idx) => (
                 <div className="ind-bullet-item" key={idx}>
-                  <div className="ind-bullet-icon-container">
-                    <svg
-                      className="ind-bullet-svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
+                  <FiCheckCircle className="ind-bullet-icon" />
                   <div className="ind-bullet-text">
                     <h4 className="ind-bullet-title">{item.title}</h4>
                     <p className="ind-bullet-desc">{item.desc}</p>

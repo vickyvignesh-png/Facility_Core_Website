@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { FiCheckCircle, FiBriefcase } from "react-icons/fi";
 import "../styles/IndustriesMarquee.css";
 
 const IndustriesMarquee = () => {
@@ -129,7 +129,7 @@ const IndustriesMarquee = () => {
       <div className="ind-marquee-container">
         {/* Premium Section Header */}
         <div className="ind-section-header">
-          <span className="ind-premium-tag">How FacilityCore Helps</span>
+          <span className="ind-premium-tag"><FiBriefcase className="ind-badge-icon" />How FacilityCore Helps</span>
           <h2 className="ind-main-heading">How FacilityCore Solves Industry Challenges</h2>
           <p className="ind-section-description">
             Explain how the platform adapts to multiple industries.
@@ -160,19 +160,15 @@ const IndustriesMarquee = () => {
               <div className="ind-content-info">
                 <h3 className="ind-content-heading">{selectedIndustry.heading}</h3>
                 <p className="ind-content-description">{selectedIndustry.description}</p>
-                
+
                 <ul className="ind-content-bullet-list">
                   {selectedIndustry.solutions.map((sol, idx) => (
                     <li className="ind-content-bullet-item" key={idx}>
-                      <span className="ind-content-bullet-checkmark">✓</span>
+                      <span className="ind-content-bullet-checkmark"><FiCheckCircle /></span>
                       <span className="ind-content-bullet-text">{sol}</span>
                     </li>
                   ))}
                 </ul>
-
-                <Link to="/demo" className="btn btn-primary ind-content-cta">
-                  Learn More
-                </Link>
               </div>
 
               {/* Illustration / Image Area */}

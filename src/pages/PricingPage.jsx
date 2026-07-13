@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FiHome } from "react-icons/fi";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
@@ -19,19 +17,14 @@ const PricingPage = () => {
       <Navbar />
 
       <HeroSection
+        backgroundImage="/solutionpageherosection.png"
+        badge="PRICING PLANS"
         title="Simple, Transparent Pricing"
         description="Choose the right FacilityCore plan for your business, property or facility management operations."
-        badge={
-          <>
-            <FiHome /> PRICING
-          </>
-        }
-        breadcrumb={
-          <nav className="breadcrumb">
-            <Link to="/">Home</Link> / <span>Pricing</span>
-          </nav>
-        }
-        backgroundImage="/solutionpageherosection.png"
+        breadcrumbItems={[
+          { label: "Home", link: "/" },
+          { label: "Pricing" }
+        ]}
       />
 
       <PricingNavigation />
