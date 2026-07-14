@@ -32,6 +32,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header className={`navbar-wrapper`}>
       <div className="navbar-container">
@@ -115,15 +127,6 @@ const Navbar = () => {
               transition={{ type: 'tween', duration: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
               className="mobile-menu-drawer"
             >
-              <div className="drawer-header">
-                <button
-                  className="drawer-close-btn"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  aria-label="Close menu"
-                >
-                  <HiX />
-                </button>
-              </div>
               <div className="drawer-content">
                 <nav className="mobile-nav-links">
                   {navItems.map((item, idx) => (
