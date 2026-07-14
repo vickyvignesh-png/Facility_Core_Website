@@ -81,12 +81,14 @@ const Navbar = () => {
           <div className="desktop-ctas">
             <a
               href="https://admin.facilitycore.in/login"
+              target="_blank"
               className="btn-login"
             >
               Login
             </a>
             <motion.a
               href="https://admin.facilitycore.in/register"
+              target="_blank"
               whileHover={{ y: -3, scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="btn-demo"

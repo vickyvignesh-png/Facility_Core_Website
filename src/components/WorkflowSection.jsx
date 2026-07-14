@@ -88,8 +88,10 @@ const WorkflowSection = () => {
                 </div>
               )}
             </div>
-            <h4 className="step-title">{step.title}</h4>
-            <p className="step-desc">{step.desc}</p>
+            <div className="workflow-step-text">
+              <h4 className="step-title">{step.title}</h4>
+              <p className="step-desc">{step.desc}</p>
+            </div>
           </div>
         ))}
       </div>
