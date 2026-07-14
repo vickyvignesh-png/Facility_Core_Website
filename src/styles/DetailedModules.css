@@ -172,22 +172,90 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .detailed-modules {
-        padding: 60px 20px;
+        padding: 40px 16px;
     }
 
+    /* Single-column grid already set by ≤1024px rule */
+
+    /* Card: auto height so a 2-line title doesn't get vertically clipped,
+       but overflow:hidden is REQUIRED to stop text bleeding past card edges. */
     .detailed-modules .feature-card {
-        padding: 0 16px;
+        height: auto;
+        min-height: 92px;
+        padding: 12px 12px 12px 0px;
+        border-radius: 18px;
+        overflow: hidden;
+        align-items: center;
     }
 
+    /* Left section: tighter gap, icon never shrinks */
     .detailed-modules .card-left {
-        gap: 14px;
+        gap: 12px;
+        min-width: 0;               /* critical — allows flex children to shrink */
+        flex: 1;
+        align-items: center;
+        overflow: hidden;           /* keeps card-content from pushing card wider */
     }
-}
 
-@media (max-width: 480px) {
-    .detailed-modules {
-        padding: 60px 16px;
+    /* Icon: 52×52, never shrinks */
+    .detailed-modules .card-icon {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        min-height: 52px;
+        flex-shrink: 0;
+        font-size: 22px;
+    }
+
+    /* Content: flex:1 + min-width:0 + overflow:hidden confines text inside */
+    .detailed-modules .card-content {
+        gap: 2px;
+        flex: 1;
+        min-width: 0;               /* allows the block to shrink below intrinsic width */
+        overflow: hidden;
+    }
+
+    /* Title: 2-line clamp with ellipsis — standard mobile pattern.
+       word-break:break-word prevents single long words from overflowing. */
+    .detailed-modules .card-title {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.25;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;           /* required for -webkit-line-clamp to work */
+        text-overflow: ellipsis;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    /* Description: always single line with ellipsis */
+    .detailed-modules .card-description {
+        font-size: 13px;
+        line-height: 1.4;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Arrow wrapper: perfectly centred, no extra margins */
+    .detailed-modules .card-arrow {
+        flex-shrink: 0;
+        margin-left: 10px;
+        margin-right: 0;
+        align-self: center;
+    }
+
+    /* Arrow button: 44×44, never shrinks */
+    .detailed-modules .arrow-btn {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        flex-shrink: 0;
+        font-size: 17px;
     }
 }

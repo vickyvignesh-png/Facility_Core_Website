@@ -1,8 +1,14 @@
 .platform-modules {
-    padding: 100px 48px;
+    width: 100%;
+    background: #ffffff !important;
+    position: relative;
+    padding: 100px 0;
+}
+
+.platform-modules .platform-container {
     max-width: 1400px;
-    margin: auto;
-    text-align: center;
+    margin: 0 auto;
+    padding: 0 48px;
 }
 
 .section-badge {
