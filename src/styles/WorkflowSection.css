@@ -1,6 +1,7 @@
 .workflow-section {
     padding: 100px 48px;
     background: #fff;
+    overflow: hidden;
 }
 
 .workflow-header {

@@ -18,7 +18,7 @@
   width: calc(100% - 40px);
   max-width: 1400px;
   height: 90px;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.92);
@@ -234,93 +234,81 @@
   }
 }
 
-/* Mobile Menu Backdrop */
+/* Mobile Menu Backdrop — starts BELOW the navbar so logo is never covered */
 .mobile-menu-backdrop {
   position: fixed;
-  top: 0;
+  top: 110px;         
   left: 0;
   width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  z-index: 95;
+  height: calc(100vh - 110px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
 }
 
-/* Mobile Side Drawer Menu */
+
 .mobile-menu-drawer {
   position: fixed;
-  top: 0;
+  top: 110px;         /* start BELOW the floating navbar pill */
   right: 0;
-  width: 82vw;
-  max-width: 340px;
-  height: 100vh;
-  background: rgba(10, 20, 45, 0.92);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  z-index: 100;
+  width: 90%;
+  max-width: 360px;
+  height: auto;       /* Changed from fixed height to prevent unnecessary empty height */
+  max-height: calc(100vh - 110px);
+  background: #0E1730;
+  z-index: 950;        /* above backdrop (900) but below navbar (1000) */
   display: flex;
   flex-direction: column;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
-  padding-bottom: 40px;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.30);
+  border-radius: 0 0 0 24px;   /* rounded only on bottom-left */
+  overflow: hidden;
 }
 
-/* Tablet width override */
+/* Tablet (768px–1024px): slightly wider drawer */
 @media (min-width: 768px) and (max-width: 1024px) {
   .mobile-menu-drawer {
-    width: 420px;
-    max-width: none;
+    width: 85%;
+    max-width: 420px;
   }
-}
-
-.drawer-header {
-  height: 88px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 2rem;
-}
-
-.drawer-close-btn {
-  background: transparent;
-  border: none;
-  font-size: 1.75rem;
-  color: #FFFFFF;
-  cursor: pointer;
-  width: 48px;
-  height: 48px;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.drawer-close-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .drawer-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 70px 2rem 0 2rem;
-  overflow-y: auto;
+  padding: 24px 32px 0 32px;
+  overflow: hidden;          
+}
+
+.drawer-content::-webkit-scrollbar {
+  display: none;
+  width: 0;
 }
 
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 8px;
+  flex: 0 0 auto;            
+  overflow-y: auto;          
+  padding-bottom: 0px;        /* Reduced padding-bottom */
+  margin-bottom: 0px;         /* Reduced margin-bottom */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-nav-links::-webkit-scrollbar {
+  display: none;
+  width: 0;
 }
 
 .mobile-nav-link {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  height: 56px;
-  border-radius: 16px;
-  padding-left: 24px;
+  height: 52px;
+  border-radius: 14px;
+  padding-left: 20px;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
@@ -341,13 +329,21 @@
 .drawer-divider {
   height: 1px;
   background: rgba(255, 255, 255, 0.1);
-  margin: 2rem 0;
+  border: none;
+  margin-top: 12px;           /* Reduced top margin (Contact to Divider: 10px-16px) */
+  margin-bottom: 12px;        /* Spacing from Divider to Login: 10px-12px */
+  width: 100%;
+  flex: 0 0 auto;             /* Keep it static and prevent stretching */
 }
 
 .mobile-ctas {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 10px;
+  flex-shrink: 0;             
+  margin-top: 0px;            /* Reduced margin-top of .mobile-ctas */
+  padding-top: 0;
+  padding-bottom: 16px;
 }
 
 .mobile-btn-login {
@@ -355,15 +351,15 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 56px;
+  height: 50px;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  margin-top: 24px;
+  border-radius: 14px;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .mobile-btn-login:hover {
@@ -375,15 +371,16 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 56px;
+  height: 50px;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   color: #FFFFFF;
   background: linear-gradient(135deg, #1D4FA3, #69BC45);
-  border-radius: 16px;
+  border-radius: 14px;
   box-shadow: 0 10px 25px rgba(29, 79, 163, 0.25);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .mobile-btn-demo:hover {
@@ -397,28 +394,50 @@
 /* Tablet (1024px and below) */
 @media (max-width: 1024px) {
   .navbar-container {
-    padding: 0 1.5rem; /* Reduce left/right padding slightly */
+    padding: 0 1.5rem; 
   }
 }
 
 /* Mobile (768px and below) */
 @media (max-width: 768px) {
   .navbar-wrapper {
-    width: calc(100% - 24px); /* Left margin: 12px, Right margin: 12px */
+    width: calc(100% - 24px);
     top: 12px;
   }
   .navbar-container {
-    padding: 0 16px; /* Internal horizontal padding: 16px */
+    padding: 0 16px;
+  }
+ 
+  .mobile-menu-drawer {
+    top: 102px;
+    height: auto;
+    max-height: calc(100vh - 102px);
+  }
+  .mobile-menu-backdrop {
+    top: 102px;
+    height: calc(100vh - 102px);
   }
 }
 
 /* Small Mobile (480px and below) */
 @media (max-width: 480px) {
   .navbar-wrapper {
-    width: calc(100% - 16px); /* Left margin: 8px, Right margin: 8px */
+    width: calc(100% - 16px);
     top: 8px;
   }
   .navbar-container {
-    padding: 0 12px; /* Internal padding: 12px–14px (using 12px) */
+    padding: 0 12px;
+  }
+  /* Drawer + backdrop start below navbar: 8px top + 90px = 98px */
+  .mobile-menu-drawer {
+    top: 98px;
+    height: auto;
+    max-height: calc(100vh - 98px);
+    width: 90%;
+    max-width: none;
+  }
+  .mobile-menu-backdrop {
+    top: 98px;
+    height: calc(100vh - 98px);
   }
 }
