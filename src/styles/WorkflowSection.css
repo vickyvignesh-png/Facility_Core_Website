@@ -81,7 +81,8 @@
     line-height: 1.8;
 }
 
-@media(max-width:1200px) {
+/* ── ≤1200px: 3-column grid, hide arrows (desktop-only behaviour) ── */
+@media (max-width: 1200px) {
     .workflow-steps {
         grid-template-columns: repeat(3, 1fr);
         row-gap: 60px;
@@ -92,13 +93,151 @@
     }
 }
 
-@media(max-width:768px) {
+/* ── Tablet (768px–1024px): restore horizontal connector arrows ── */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .workflow-steps {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 60px;
+    }
+
+    /* Restore the arrow that the ≤1200px rule hid */
+    .workflow-arrow {
+        display: flex;
+    }
+}
+
+/* ── Mobile (below 768px): left-icon / right-text vertical timeline ─ */
+@media (max-width: 767px) {
     .workflow-section {
         padding-left: 20px;
         padding-right: 20px;
     }
 
+    /* Single-column, no gap — spacing is handled by step padding */
     .workflow-steps {
         grid-template-columns: 1fr;
+        row-gap: 0;
+        position: relative;
+    }
+
+    /* ── Each step: flex row so icon is left, text is right ─────── */
+    .workflow-step {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;       /* icon column stretches to text height */
+        gap: 20px;
+        text-align: left;
+        padding: 0;
+        position: relative;
+    }
+
+    /* ── Icon column ──────────────────────────────────────────────
+       Fixed 80px wide. flex-direction:column so the circle sits at
+       the top and the connector line fills the space below it.     */
+    .workflow-top {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        width: 80px;
+        margin-bottom: 0;
+        position: relative;
+        gap: 0;
+        /* stretch to full step height so ::after can fill it */
+        align-self: stretch;
+    }
+
+    /* ── Circle ── */
+    .workflow-circle {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        min-height: 80px;
+        font-size: 30px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* ── Vertical connector: fills remaining height below circle ──
+       Uses flex:1 to grow into whatever space is left in the column
+       after the 80px circle — so it always matches the text height.
+       The arrow tip is a small CSS triangle via ::before.           */
+    .workflow-top::after {
+        content: "";
+        display: block;
+        flex: 1;                    /* grow to fill remaining icon-column height */
+        width: 3px;
+        background: repeating-linear-gradient(
+            to bottom,
+            #1D4FA3 0px,
+            #1D4FA3 6px,
+            transparent 6px,
+            transparent 12px
+        );                          /* dashed look via repeating gradient */
+        opacity: 0.55;
+        margin-top: 6px;
+        margin-bottom: 0;
+        position: relative;
+    }
+
+    /* Arrowhead at the bottom of the connector */
+    .workflow-top::before {
+        content: "";
+        display: none;              /* default hidden; shown only on non-last steps */
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid #1D4FA3;
+        opacity: 0.55;
+        z-index: 3;
+    }
+
+    /* Show arrowhead on all steps except the last */
+    .workflow-step:not(:last-child) .workflow-top::before {
+        display: block;
+    }
+
+    /* Last step: no connector line or arrowhead */
+    .workflow-step:last-child .workflow-top::after {
+        display: none;
+    }
+
+    /* ── Hide horizontal connector (ind-timeline-line) on mobile ── */
+    .workflow-step .ind-timeline-line {
+        display: none !important;
+    }
+
+    /* ── Text column: wraps to remaining width ────────────────── */
+    .workflow-step-text {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 12px;
+        padding-bottom: 20px;
+    }
+
+    .step-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #111827;
+        line-height: 1.3;
+    }
+
+    .step-desc {
+        font-size: 14px;
+        color: #6B7280;
+        line-height: 1.75;
     }
 }
+
+
+

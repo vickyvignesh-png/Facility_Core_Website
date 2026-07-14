@@ -1,4 +1,10 @@
-/* Modal overlay */
+/* ============================================================
+   SolutionModal.css
+   Desktop styles are preserved exactly.
+   Tablet (≤1024px) and Mobile (≤767px) breakpoints are added.
+   ============================================================ */
+
+/* ── Overlay ─────────────────────────────────────────────── */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -8,9 +14,10 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    padding: 16px; 
 }
 
-/* Modal content */
+/* ── Modal container ─────────────────────────────────────── */
 .modal-content {
     background: #fff;
     width: 85vw;
@@ -19,91 +26,108 @@
     max-height: 900px;
     border-radius: 28px;
     overflow-y: auto;
+    overflow-x: hidden; /* never allow horizontal scroll */
     padding: 32px;
     position: relative;
     box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+    /* hide scrollbar while keeping scroll functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-/* Hide default scrollbar but allow scrolling */
 .modal-content::-webkit-scrollbar {
-    width: 8px;
+    display: none;
+    width: 0;
+    height: 0;
 }
 
-.modal-content::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-/* Close button */
+/* ── Close button ────────────────────────────────────────── */
 .modal-close {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 44px;
-    height: 44px;
-    background: #fff;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1010;
+    transition: all 0.3s ease;
+    padding: 0;
 }
 
 .modal-close:hover {
     background: #f3f4f6;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
 }
 
-/* Modal grid layout */
+/* ── Header row (image + text) ───────────────────────────── */
 .modal-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 0;
 }
 
-/* Left side image */
 .modal-row-left {
-    flex: 1 1 40%;
+    flex: 0 0 35%;
+    width: 35%;
+    max-width: 35%;
 }
 
 .modal-image {
     width: 100%;
-    height: auto;
+    height: 240px;
+    object-fit: cover;
     border-radius: 24px;
+    display: block;
 }
 
-/* Right side content */
 .modal-row-right {
-    flex: 1 1 58%;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-bottom: 40px;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 0;
+    padding-right: 40px;
 }
 
 .modal-title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 800;
+    line-height: 1.2;
     color: #111827;
+    margin: 0;
 }
 
 .modal-tagline {
-    font-size: 18px;
-    color: #6B7280;
-    margin-bottom: 12px;
+    font-size: 16px;
+    color: #64748b;
+    margin: 0;
+    font-weight: 500;
 }
 
 .modal-description {
     font-size: 15px;
     line-height: 1.8;
-    color: #6B7280;
+    color: #6b7280;
+    max-width: 100%;
+    margin: 0;
 }
 
 .modal-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
+    margin: 0;
 }
 
 .modal-tag {
@@ -114,7 +138,7 @@
     font-size: 13px;
 }
 
-/* Modal cards */
+/* ── What You Can Do card ────────────────────────────────── */
 .modal-card {
     background: #fff;
     border-radius: 16px;
@@ -123,7 +147,6 @@
     border: 1px solid rgba(29, 79, 163, 0.08);
 }
 
-/* Specific spacing for What You Can Do section */
 .modal-whatcando {
     margin-top: 40px;
     margin-bottom: 28px;
@@ -135,7 +158,6 @@
     margin-bottom: 12px;
 }
 
-/* What you can do grid */
 .whatcando-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -181,7 +203,7 @@
     flex: 1;
 }
 
-/* Key Features list styling */
+/* ── Key Features list ───────────────────────────────────── */
 .modal-keyfeatures-list {
     list-style: none;
     padding: 0;
@@ -203,12 +225,12 @@
 
 .modal-keyfeatures-text {
     flex: 1;
+    min-width: 0; /* allow text to wrap inside flex */
 }
 
 .modal-keyfeatures-title {
     font-weight: 700;
     display: inline;
-    white-space: nowrap;
 }
 
 .modal-keyfeatures-desc {
@@ -216,7 +238,7 @@
     font-weight: 400;
 }
 
-/* Benefits list styling */
+/* ── Benefits list ───────────────────────────────────────── */
 .modal-benefits-list {
     list-style: none;
     padding: 0;
@@ -236,10 +258,14 @@
     color: #69BC45;
 }
 
+.modal-benefits-text {
+    flex: 1;
+    min-width: 0; /* allow text to wrap inside flex */
+}
+
 .modal-benefits-title {
     font-weight: 400;
     display: inline;
-    white-space: nowrap;
 }
 
 .modal-benefits-desc {
@@ -247,7 +273,7 @@
     font-weight: 400;
 }
 
-/* Modal Features Grid */
+/* ── Features grid (Key Features + Benefits side by side) ── */
 .modal-features-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -264,4 +290,227 @@
     background: #ffffff;
     border: 1px solid rgba(29, 79, 163, .08);
     box-shadow: 0 10px 30px rgba(15, 23, 42, .05);
+}
+
+/* ============================================================
+   TABLET  (768px – 1024px)
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .modal-content {
+        width: 90%;
+        max-height: 88vh;
+        padding: 28px;
+    }
+
+    /* Slightly narrower image column on tablet */
+    .modal-row-left {
+        flex: 0 0 40%;
+        width: 40%;
+        max-width: 40%;
+    }
+
+    .modal-row-right {
+        padding-right: 0;
+        gap: 14px;
+    }
+
+    .modal-title {
+        font-size: 30px;
+    }
+
+    .modal-features-grid {
+        gap: 16px;
+    }
+
+    .modal-features-grid .modal-card {
+        padding: 24px;
+    }
+
+    /* Prevent key-feature/benefit text overflow */
+    .modal-keyfeatures-title,
+    .modal-benefits-title {
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+/* ============================================================
+   MOBILE  (below 768px)
+   ============================================================ */
+@media (max-width: 767px) {
+    /* Overlay: remove extra padding so modal fills more of the screen */
+    .modal-overlay {
+        padding: 0;
+        align-items: flex-end; /* sheet slides up from the bottom */
+    }
+
+    /* Modal container */
+    .modal-content {
+        width: 95%;
+        max-width: 100%;
+        height: auto;
+        max-height: 90vh;
+        border-radius: 18px 18px 0 0; /* bottom-sheet style on mobile */
+        padding: 20px 16px 24px;
+        margin: 0;
+    }
+
+    /* Close button — stays in top-right corner */
+    .modal-close {
+        top: 14px;
+        right: 14px;
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Header row stacks vertically */
+    .modal-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .modal-row-left {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Image becomes full-width, fixed height */
+    .modal-image {
+        height: 200px;
+        border-radius: 16px;
+    }
+
+    .modal-row-right {
+        padding-right: 0;
+        gap: 12px;
+    }
+
+    /* Typography scale-down */
+    .modal-title {
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.25;
+        word-break: break-word;
+    }
+
+    .modal-tagline {
+        font-size: 15px;
+    }
+
+    .modal-description {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .modal-tags {
+        gap: 8px;
+    }
+
+    .modal-tag {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    /* What You Can Do section */
+    .modal-whatcando {
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
+
+    .modal-card {
+        padding: 16px;
+    }
+
+    .modal-section-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* Whatcando grid: 1 column on mobile */
+    .whatcando-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .whatcando-item {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .whatcando-icon {
+        width: 40px;
+        height: 40px;
+        margin-top: 0;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .whatcando-title {
+        font-size: 15px;
+    }
+
+    .whatcando-desc {
+        font-size: 13px;
+    }
+
+    /* Features grid: stack vertically */
+    .modal-features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .modal-features-grid .modal-card {
+        padding: 16px;
+        height: auto;
+    }
+
+    /* List items: prevent overflow */
+    .modal-keyfeatures-item,
+    .modal-benefits-item {
+        gap: 10px;
+        margin-bottom: 10px;
+        align-items: flex-start;
+    }
+
+    .modal-keyfeatures-text,
+    .modal-benefits-text {
+        font-size: 14px;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Remove nowrap so titles wrap naturally on mobile */
+    .modal-keyfeatures-title,
+    .modal-benefits-title {
+        white-space: normal;
+        word-break: break-word;
+        display: inline;
+    }
+}
+
+/* ============================================================
+   SMALL MOBILE  (below 480px)
+   ============================================================ */
+@media (max-width: 479px) {
+    .modal-content {
+        padding: 16px 12px 20px;
+        max-height: 92vh;
+    }
+
+    .modal-title {
+        font-size: 22px;
+    }
+
+    .modal-image {
+        height: 180px;
+    }
+
+    .modal-close {
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+    }
 }
