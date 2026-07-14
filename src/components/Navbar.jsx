@@ -80,18 +80,18 @@ const Navbar = () => {
           {/* Right Side CTAs */}
           <div className="desktop-ctas">
             <a
-              href="#login"
+              href="https://admin.facilitycore.in/login"
               className="btn-login"
             >
               Login
             </a>
             <motion.a
-              href="#demo"
+              href="https://admin.facilitycore.in/register"
               whileHover={{ y: -3, scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="btn-demo"
             >
-              Book Demo
+              Free Trial
             </motion.a>
           </div>
 
@@ -146,18 +146,18 @@ const Navbar = () => {
                 <div className="drawer-divider" />
                 <div className="mobile-ctas">
                   <a
-                    href="#login"
+                    href="https://admin.facilitycore.in/login"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="mobile-btn-login"
                   >
                     Login
                   </a>
                   <a
-                    href="#demo"
+                    href="https://admin.facilitycore.in/register"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="mobile-btn-demo"
                   >
-                    Book Demo
+                    Free Trial
                   </a>
                 </div>
               </div>
