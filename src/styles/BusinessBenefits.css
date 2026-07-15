@@ -1,0 +1,129 @@
+.bb-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.bb-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+/* Image styling */
+.bb-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.bb-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+}
+
+/* Content styling */
+.bb-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bb-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 99px;
+    background-color: rgba(105, 188, 69, 0.1);
+    color: #69BC45;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.bb-badge-icon {
+    font-size: 14px;
+}
+
+.bb-heading {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.bb-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 24px;
+}
+
+/* Benefits list styling */
+.bb-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.bb-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.bb-check-mark {
+    color: #69BC45;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.bb-benefit-text {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.4;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .bb-container {
+        gap: 32px;
+    }
+    
+    .bb-heading {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bb-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .bb-image-wrapper {
+        order: -1; /* Image on top on mobile */
+    }
+    
+    .bb-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .bb-benefits-list {
+        align-items: flex-start;
+        text-align: left;
+    }
+}

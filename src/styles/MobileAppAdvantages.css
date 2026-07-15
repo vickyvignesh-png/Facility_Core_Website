@@ -1,0 +1,114 @@
+.maa-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: #ffffff;
+}
+
+.maa-content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header styling */
+.maa-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.maa-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 99px;
+    background-color: rgba(105, 188, 69, 0.1);
+    color: #69BC45;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.maa-badge-icon {
+    font-size: 14px;
+}
+
+.maa-heading {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.maa-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #64748B;
+}
+
+/* Checklist Grid */
+.maa-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 40px;
+}
+
+.maa-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.maa-icon-wrapper {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(105, 188, 69, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.maa-check-icon {
+    color: #69BC45;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.maa-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.maa-item-label {
+    font-size: 16px;
+    font-weight: 750;
+    color: #0F172A;
+}
+
+.maa-item-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #64748B;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .maa-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .maa-heading {
+        font-size: 28px;
+    }
+}

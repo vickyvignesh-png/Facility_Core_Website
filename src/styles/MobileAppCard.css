@@ -1,0 +1,212 @@
+.mac-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Tabs wrapper styled cleanly */
+.mac-tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.mac-tabs {
+    display: flex;
+    background-color: #f1f5f9;
+    padding: 6px;
+    border-radius: 99px;
+    position: relative;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.mac-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+
+.mac-tab.active {
+    color: #ffffff;
+}
+
+.mac-tab-icon {
+    font-size: 16px;
+}
+
+.mac-tab-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1D4FA3, #69BC45);
+    border-radius: 99px;
+    z-index: -1;
+    box-shadow: 0 4px 12px rgba(29, 79, 163, 0.25);
+}
+
+/* Content grid */
+.mac-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.mac-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mac-image {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 20px;
+    filter: drop-shadow(0 15px 30px rgba(15, 23, 42, 0.08));
+}
+
+.mac-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mac-heading {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.mac-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #64748B;
+    margin-bottom: 24px;
+}
+
+.mac-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.mac-list-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0F172A;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.mac-bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mac-bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.mac-check {
+    color: #69BC45;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.mac-text {
+    font-size: 13.5px;
+    color: #334155;
+    line-height: 1.4;
+}
+
+.mac-ideal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mac-ideal-tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1D4FA3;
+    background-color: rgba(29, 79, 163, 0.06);
+    padding: 6px 14px;
+    border-radius: 99px;
+    border: 1px solid rgba(29, 79, 163, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .mac-content-grid {
+        gap: 32px;
+    }
+    
+    .mac-heading {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mac-tabs {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 8px;
+        width: 100%;
+        max-width: 320px;
+        align-items: stretch;
+    }
+    
+    .mac-tab {
+        justify-content: center;
+        padding: 10px 16px;
+    }
+    
+    .mac-content-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    
+    .mac-image-wrapper {
+        order: -1;
+    }
+    
+    .mac-text-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .mac-bullet-list {
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .mac-ideal-tags {
+        justify-content: center;
+    }
+}

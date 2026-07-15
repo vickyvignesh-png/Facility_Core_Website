@@ -1,0 +1,129 @@
+.hfch-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+.hfch-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+/* Content styling */
+.hfch-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hfch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 99px;
+    background-color: rgba(105, 188, 69, 0.1);
+    color: #69BC45;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.hfch-badge-icon {
+    font-size: 14px;
+}
+
+.hfch-heading {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.hfch-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 24px;
+}
+
+/* Bullets styling */
+.hfch-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.hfch-bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.hfch-check-mark {
+    color: #69BC45;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.hfch-bullet-text {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.4;
+}
+
+/* Image styling */
+.hfch-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.hfch-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .hfch-container {
+        gap: 32px;
+    }
+    
+    .hfch-heading {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hfch-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .hfch-image-wrapper {
+        order: -1; /* Image on top on mobile */
+    }
+    
+    .hfch-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hfch-bullets {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
