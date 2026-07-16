@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiCheckCircle } from 'react-icons/fi';
 import { whatYouCanMonitorData } from '../data/FeaturesPageData';
 import '../styles/WhatYouCanMonitor.css';
 
@@ -7,7 +8,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.08
     }
   }
 };
@@ -25,7 +26,7 @@ const WhatYouCanMonitor = () => {
     <section className="wycm-section">
       <div className="container mx-auto wycm-container">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="wycm-header">
           <div className="wycm-badge">
             <BadgeIcon className="wycm-badge-icon" />
@@ -35,9 +36,9 @@ const WhatYouCanMonitor = () => {
           <p className="wycm-description">{description}</p>
         </div>
 
-        {/* Dashboard Style Cards */}
+        {/* Dashboard Style Cards - Flex wrap layout */}
         <motion.div 
-          className="wycm-grid"
+          className="wycm-grid-flex"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -50,19 +51,25 @@ const WhatYouCanMonitor = () => {
                 key={idx} 
                 className="wycm-card"
                 variants={cardVariants}
-                whileHover={{ y: -6, boxShadow: "0 16px 32px rgba(15, 23, 42, 0.08)" }}
+                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.08)" }}
               >
-                <div className="wycm-card-header">
-                  <div className="wycm-icon-wrapper">
-                    <MonitorIcon className="wycm-card-icon" />
-                  </div>
-                  <h3 className="wycm-card-title">{mon.title}</h3>
+                {/* Icon Container */}
+                <div className="wycm-icon-wrapper">
+                  <MonitorIcon className="wycm-card-icon" />
                 </div>
+                
+                {/* Card Title */}
+                <h3 className="wycm-card-title">{mon.title}</h3>
+                
+                {/* Divider */}
+                <hr className="wycm-divider" />
+                
+                {/* Monitoring Items */}
                 <div className="wycm-card-body">
                   <ul className="wycm-bullet-list">
                     {mon.bullets.map((bullet, bulletIdx) => (
                       <li key={bulletIdx} className="wycm-bullet-item">
-                        <span className="wycm-dot">•</span>
+                        <FiCheckCircle className="wycm-item-icon" />
                         <span className="wycm-bullet-text">{bullet}</span>
                       </li>
                     ))}
@@ -79,3 +86,4 @@ const WhatYouCanMonitor = () => {
 };
 
 export default React.memo(WhatYouCanMonitor);
+// End of WhatYouCanMonitor.jsx component file

@@ -113,9 +113,10 @@ const Footer = () => {
               <li>
                 <FiMapPin className="footer-contact-icon" />
                 <span>
-                  FacilityCore Technologies Pvt. Ltd.<br />
-                  123, Anyware Road,<br />
-                  Any City, State - 123456
+                  FacilityCore <br />
+                  Plot No 8, 2nd Floor,
+                  100 feet Main Road, Tambaram,
+                  Chennai 600073.
                 </span>
               </li>
             </ul>

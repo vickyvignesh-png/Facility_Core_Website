@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiCheckCircle } from 'react-icons/fi';
 import { mobileAppAdvantagesData } from '../data/FeaturesPageData';
 import '../styles/MobileAppAdvantages.css';
 
@@ -9,7 +10,7 @@ const fadeUp = {
 };
 
 const MobileAppAdvantages = () => {
-  const { badge, heading, description, checklist } = mobileAppAdvantagesData;
+  const { badge, heading, description, leftColumn, rightColumn } = mobileAppAdvantagesData;
   const BadgeIcon = badge.icon;
 
   return (
@@ -32,19 +33,29 @@ const MobileAppAdvantages = () => {
             <p className="maa-description">{description}</p>
           </div>
 
-          {/* Checklist Layout (Two-column on Desktop, Single-column on Mobile) */}
-          <div className="maa-grid">
-            {checklist.map((item, idx) => (
-              <div key={idx} className="maa-item">
-                <div className="maa-icon-wrapper">
-                  <span className="maa-check-icon">✔</span>
+          {/* Enterprise Two-Column Checklist */}
+          <div className="maa-grid-columns">
+            
+            {/* Left Column */}
+            <div className="maa-list-column">
+              {leftColumn.map((item, idx) => (
+                <div key={idx} className="maa-list-item">
+                  <FiCheckCircle className="maa-item-icon" />
+                  <span className="maa-item-text">{item}</span>
                 </div>
-                <div className="maa-item-text">
-                  <h3 className="maa-item-label">{item.label}</h3>
-                  <p className="maa-item-desc">{item.desc}</p>
+              ))}
+            </div>
+
+            {/* Right Column */}
+            <div className="maa-list-column">
+              {rightColumn.map((item, idx) => (
+                <div key={idx} className="maa-list-item">
+                  <FiCheckCircle className="maa-item-icon" />
+                  <span className="maa-item-text">{item}</span>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
           </div>
         </motion.div>
       </div>
@@ -53,3 +64,5 @@ const MobileAppAdvantages = () => {
 };
 
 export default React.memo(MobileAppAdvantages);
+// End of MobileAppAdvantages.jsx component file
+

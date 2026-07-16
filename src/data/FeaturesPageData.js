@@ -28,6 +28,13 @@ import {
     FiMonitor,
     FiBox,
     FiTool,
+    FiAward,
+    FiLink,
+    FiDollarSign,
+    FiGlobe,
+    FiSettings,
+    FiPackage,
+    FiSmile,
 } from "react-icons/fi";
 
 export const mobileFirstOverviewData = {
@@ -271,17 +278,47 @@ export const mobileFeatureCardsData = {
 export const businessBenefitsData = {
     badge: {
         icon: FiTrendingUp,
-        text: "BUSINESS VALUE"
+        text: "Business Benefits"
     },
-    heading: "Unlock High Operational Efficiency",
-    description: "Maximize your return on facility assets by minimizing downtime, reducing overheads, and raising compliance standards.",
+    heading: "Drive Better Business Outcomes",
+    description: "FacilityCore’s mobile-first approach delivers measurable improvements across the organization.",
     benefits: [
-        "30% reduction in unplanned equipment breakdowns using automated preventive plans.",
-        "40% faster work order resolution times with smart routing algorithms.",
-        "25% drop in manual documentation expenses by switching to digital checklists.",
-        "100% auditable record keeping for all compliance and fire safety logs."
-    ],
-    image: "/qrtracking.png"
+        {
+            icon: FiTrendingUp,
+            title: "Improve Productivity",
+            description: "Enable employees to complete more work with fewer administrative tasks."
+        },
+        {
+            icon: FiActivity,
+            title: "Accelerate Decision-Making",
+            description: "Managers can review dashboards, approve requests, and monitor operations from anywhere."
+        },
+        {
+            icon: FiAward,
+            title: "Enhance Service Delivery",
+            description: "Respond to maintenance requests faster and improve occupant satisfaction."
+        },
+        {
+            icon: FiUsers,
+            title: "Increase Workforce Efficiency",
+            description: "Reduce paperwork and provide technicians with all the information they need in the field."
+        },
+        {
+            icon: FiLink,
+            title: "Improve Collaboration",
+            description: "Connect managers, technicians, contractors, vendors, and occupants through a single platform."
+        },
+        {
+            icon: FiDollarSign,
+            title: "Reduce Operational Costs",
+            description: "Eliminate unnecessary travel, paperwork, duplicate data entry, and manual reporting."
+        },
+        {
+            icon: FiGlobe,
+            title: "Support Multi-Site Operations",
+            description: "Monitor multiple buildings and facilities through one mobile platform."
+        }
+    ]
 };
 
 export const whatYouCanMonitorData = {
@@ -290,56 +327,61 @@ export const whatYouCanMonitorData = {
         text: "DASHBOARD ANALYTICS"
     },
     heading: "What You Can Monitor",
-    description: "Get full granular visibility into every aspect of your facility operations via specialized data categories.",
+    description: "FacilityCore provides real-time visibility into every aspect of your operations.",
     monitors: [
         {
-            icon: FiActivity,
+            icon: FiSettings,
             title: "Operations",
             bullets: [
-                "Open & overdue work orders count",
-                "SLA compliance & response times",
-                "Preventive vs reactive maintenance ratio",
-                "Inspection passing rates"
+                "Active Work Orders",
+                "Pending Approvals",
+                "Overdue Maintenance",
+                "Emergency Requests",
+                "Service Completion Rate"
             ]
         },
         {
             icon: FiUsers,
             title: "Workforce",
             bullets: [
-                "Technician utilization & task load",
-                "Average completion time per worker",
-                "Active team member locations",
-                "Safety compliance record"
+                "Technician Productivity",
+                "Attendance",
+                "Job Allocation",
+                "Field Activity",
+                "Labour Utilization"
             ]
         },
         {
-            icon: FiBox,
+            icon: FiPackage,
             title: "Assets",
             bullets: [
-                "Key equipment uptime & downtime",
-                "Asset total cost of ownership",
-                "Asset lifecycle & depreciation state",
-                "Warranty expiry milestones"
+                "Asset Health",
+                "Equipment Downtime",
+                "Maintenance History",
+                "Asset Availability",
+                "Warranty Status"
             ]
         },
         {
-            icon: FiHeart,
+            icon: FiSmile,
             title: "Customer Experience",
             bullets: [
-                "Occupant ticket feedback rating",
-                "Tenant response duration metrics",
-                "Visitor check-in volume patterns",
-                "Common complaints hotspot maps"
+                "Occupant Satisfaction",
+                "Complaint Trends",
+                "Feedback Ratings",
+                "Request Resolution Time",
+                "SLA Compliance"
             ]
         },
         {
             icon: FiBarChart2,
             title: "Business Performance",
             bullets: [
-                "Vendor contract compliance scores",
-                "Utilities consumption & carbon metrics",
-                "Maintenance budget allocations",
-                "Audit pass probability index"
+                "Maintenance Costs",
+                "Vendor Performance",
+                "Operational KPIs",
+                "Compliance Status",
+                "Executive Dashboards"
             ]
         }
     ]
@@ -350,19 +392,22 @@ export const mobileAppAdvantagesData = {
         icon: FiCheckCircle,
         text: "CORE ADVANTAGES"
     },
-    heading: "High-Performance Cloud Architecture",
+    heading: "Why Choose FacilityCore Mobile Applications?",
     description: "Robust, secure, and modern infrastructure designed to support enterprise-grade operations around the clock.",
-    checklist: [
-        { label: "Mobile First Design", desc: "Optimized specifically for handheld devices with clean layout structures." },
-        { label: "Cloud Syncing", desc: "AWS-backed cloud architecture with 99.9% availability." },
-        { label: "Offline Mode", desc: "Technicians keep compiling logs offline and sync instantly on connection." },
-        { label: "QR Code Actions", desc: "Direct asset actions via code scans without manual entry." },
-        { label: "Real-time Notifications", desc: "Frictionless notifications through push alerts, email, and SMS." },
-        { label: "Multi-site Support", desc: "Manage properties located in different cities under a single master profile." },
-        { label: "Security & Encryption", desc: "All user data encrypted in transit and at rest." },
-        { label: "Interactive Dashboards", desc: "Visualize metrics on mobile screens with responsive layout." },
-        { label: "Digital Inspection Checks", desc: "Eliminate physical checklist sheets completely." },
-        { label: "Anywhere Access", desc: "Access the entire workspace database anytime from any global region." }
+    leftColumn: [
+        "Mobile-First Platform",
+        "Real-Time Cloud Synchronization",
+        "QR Code Enabled",
+        "Multi-Site Management",
+        "Digital Inspections",
+        "Anywhere, Anytime Access"
+    ],
+    rightColumn: [
+        "Purpose-Built Apps for Every User",
+        "Offline Capability",
+        "Enterprise-Grade Security",
+        "Instant Notifications",
+        "Smart Dashboards"
     ]
 };
 
@@ -371,10 +416,9 @@ export const transformFacilityManagementData = {
         icon: FiZap,
         text: "GET STARTED"
     },
-    heading: "Transform Your Facility Management Today",
-    description: "Unify your operations teams, automate routines, and make intelligence-driven workspace decisions with FacilityCore.",
-    closingLine: "Experience the future of intelligent facility workspace operations.",
-    ctaText: "Schedule a Live Demo",
-    ctaLink: "/contact"
+    heading: "Transform the Way You Manage Facilities",
+    paragraph1: "FacilityCore’s mobile applications empower your entire organization to work smarter, respond faster, and make better decisions—whether in the office, on-site, or on the move.",
+    paragraph2: "With everything you need in the palm of your hand, managing facilities has never been simpler, faster, or more connected.",
+    highlightText: "FacilityCore — Where Facilities Run Smarter."
 };
 // End of FeaturesPageData.js

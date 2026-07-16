@@ -1,36 +1,22 @@
+/* ==============================================================
+   BusinessBenefits – Premium Center-Aligned Outcomes Layout
+   ============================================================== */
+
 .bb-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
     background-color: #ffffff;
-    overflow: hidden;
-}
-
-.bb-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-}
-
-/* Image styling */
-.bb-image-wrapper {
-    position: relative;
     width: 100%;
 }
 
-.bb-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 24px;
-    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
-}
-
-/* Content styling */
-.bb-content {
+/* Section Header  */
+.bb-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 52px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .bb-badge {
@@ -56,74 +42,123 @@
     font-weight: 800;
     color: #0F172A;
     line-height: 1.25;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .bb-description {
     font-size: 14px;
-    line-height: 1.6;
-    color: #475569;
-    margin-bottom: 24px;
+    line-height: 1.7;
+    color: #64748B;
+    margin: 0;
 }
 
-/* Benefits list styling */
-.bb-benefits-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* ── Benefits Flex Grid ───────────────────────────────────────── */
+/* 
+   We use flexbox wrap with justify-content: center.
+   This cleanly places 4 cards on Row 1, and centers the 3 cards on Row 2.
+*/
+.bb-grid-flex {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
     width: 100%;
 }
 
-.bb-benefit-item {
+/* ── Benefit Card ────────────────────────────────────────────── */
+.bb-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* Desktop: 4 per row — (3 gaps × 24px) / 4 */
+    flex: 0 0 calc((100% - 72px) / 4);
+    min-width: 0;
 }
 
-.bb-check-mark {
-    color: #69BC45;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 1;
+/* ── Icon Container ──────────────────────────────────────────── */
+.bb-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1D4FA3 0%, #69BC45 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    box-shadow: 0 6px 16px rgba(29, 79, 163, 0.15);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bb-benefit-text {
-    font-size: 14px;
-    color: #334155;
-    line-height: 1.4;
+.bb-card-icon {
+    font-size: 28px;
+    color: #ffffff;
 }
 
-/* Responsive Styles */
+/* ── Card Typography ─────────────────────────────────────────── */
+.bb-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.bb-card-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #64748B;
+    margin: 0;
+}
+
+/* ── Hover Animation ─────────────────────────────────────────── */
+.bb-card:hover .bb-icon-wrapper {
+    transform: scale(1.08);
+}
+
+/* ==============================================================
+   Responsive Queries
+   ============================================================== */
+
+/* Tablet: 2 per row */
 @media (max-width: 1024px) {
-    .bb-container {
-        gap: 32px;
+    .bb-section {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
     }
-    
-    .bb-heading {
-        font-size: 30px;
+
+    .bb-card {
+        /* 2 per row: (1 gap × 24px) / 2 */
+        flex: 0 0 calc((100% - 24px) / 2);
     }
 }
 
+/* Mobile: 1 per row, full width */
 @media (max-width: 768px) {
-    .bb-container {
-        grid-template-columns: 1fr;
-        gap: 32px;
+    .bb-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
     }
-    
-    .bb-image-wrapper {
-        order: -1; /* Image on top on mobile */
+
+    .bb-header {
+        margin-bottom: 36px;
     }
-    
-    .bb-content {
-        align-items: center;
-        text-align: center;
+
+    .bb-heading {
+        font-size: 28px;
     }
-    
-    .bb-benefits-list {
-        align-items: flex-start;
-        text-align: left;
+
+    .bb-card {
+        flex: 0 0 100%;
+        padding: 28px 24px;
     }
 }

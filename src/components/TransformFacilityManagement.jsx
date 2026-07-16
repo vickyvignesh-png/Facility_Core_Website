@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { transformFacilityManagementData } from '../data/FeaturesPageData';
 import '../styles/TransformFacilityManagement.css';
 
@@ -10,13 +9,8 @@ const fadeUp = {
 };
 
 const TransformFacilityManagement = () => {
-  const navigate = useNavigate();
-  const { badge, heading, description, closingLine, ctaText, ctaLink } = transformFacilityManagementData;
+  const { badge, heading, paragraph1, paragraph2, highlightText } = transformFacilityManagementData;
   const BadgeIcon = badge.icon;
-
-  const handleCtaClick = () => {
-    navigate(ctaLink);
-  };
 
   return (
     <section className="tfm-section">
@@ -37,20 +31,17 @@ const TransformFacilityManagement = () => {
             
             <h2 className="tfm-heading">{heading}</h2>
             
-            <p className="tfm-description">{description}</p>
+            {/* Paragraph 1 */}
+            <p className="tfm-paragraph">{paragraph1}</p>
+            
+            {/* Paragraph 2 */}
+            <p className="tfm-paragraph">{paragraph2}</p>
             
             {/* Divider */}
             <div className="tfm-divider" />
             
-            {/* Highlighted Closing Line */}
-            <p className="tfm-closing-line">{closingLine}</p>
-            
-            {/* Large CTA Style Button */}
-            <div className="tfm-action">
-              <button onClick={handleCtaClick} className="tfm-btn">
-                {ctaText}
-              </button>
-            </div>
+            {/* Highlighted Statement */}
+            <p className="tfm-closing-line">{highlightText}</p>
           </div>
         </motion.div>
       </div>

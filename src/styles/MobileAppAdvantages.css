@@ -1,7 +1,12 @@
+/* ==============================================================
+   MobileAppAdvantages – Enterprise Two-Column Checklist Layout
+   ============================================================== */
+
 .maa-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
     background-color: #ffffff;
+    width: 100%;
 }
 
 .maa-content-wrapper {
@@ -9,11 +14,11 @@
     margin: 0 auto;
 }
 
-/* Header styling */
+/* ── Section Header ─────────────────────────────────────────── */
 .maa-header {
     text-align: center;
     max-width: 720px;
-    margin: 0 auto 48px;
+    margin: 0 auto 52px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,73 +47,94 @@
     font-weight: 800;
     color: #0F172A;
     line-height: 1.25;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .maa-description {
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #64748B;
+    margin: 0;
 }
 
-/* Checklist Grid */
-.maa-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 40px;
-}
-
-.maa-item {
+/* ── Advantages Two-Column Grid ──────────────────────────────── */
+.maa-grid-columns {
     display: flex;
-    gap: 16px;
-    align-items: flex-start;
+    justify-content: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.maa-icon-wrapper {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: rgba(105, 188, 69, 0.15);
+.maa-list-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 22px; /* generous vertical spacing between items (20–24px) */
+}
+
+.maa-list-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
+    gap: 14px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.maa-check-icon {
-    color: #69BC45;
-    font-size: 14px;
-    font-weight: 900;
-    line-height: 1;
+.maa-item-icon {
+    font-size: 22px; /* Icon Size 22px */
+    color: #69BC45; /* FacilityCore Green (#69BC45) */
+    flex-shrink: 0;
 }
 
 .maa-item-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    font-size: 18px; /* Font Size 18px */
+    font-weight: 500; /* Font Weight 500 */
+    color: #111827; /* Text Color #111827 */
+    line-height: 1.4;
 }
 
-.maa-item-label {
-    font-size: 16px;
-    font-weight: 750;
-    color: #0F172A;
+/* ── Hover Effect ────────────────────────────────────────────── */
+.maa-list-item:hover {
+    transform: translateY(-2px); /* Slight lift */
 }
 
-.maa-item-desc {
-    font-size: 13.5px;
-    line-height: 1.5;
-    color: #64748B;
-}
+/* ==============================================================
+   Responsive Queries
+   ============================================================== */
 
-/* Responsive */
-@media (max-width: 768px) {
-    .maa-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+/* Tablet: keep 2 columns layout */
+@media (max-width: 1024px) {
+    .maa-section {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
     }
-    
+
+    .maa-grid-columns {
+        gap: 32px;
+    }
+}
+
+/* Mobile: 1 column, full width */
+@media (max-width: 768px) {
+    .maa-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .maa-header {
+        margin-bottom: 36px;
+    }
+
     .maa-heading {
         font-size: 28px;
     }
+
+    .maa-grid-columns {
+        flex-direction: column;
+        gap: 22px;
+        align-items: flex-start;
+        padding: 0 16px;
+    }
 }
+
