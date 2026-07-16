@@ -1,32 +1,46 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiCheckCircle } from 'react-icons/fi';
 import { mobileAppData } from '../data/FeaturesPageData';
 import '../styles/MobileAppCard.css';
 
 const tabContentVariants = {
-  hidden: { opacity: 0, x: 20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
-  exit: { opacity: 0, x: -20, transition: { duration: 0.3, ease: 'easeIn' } }
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+  exit: { opacity: 0, y: -15, transition: { duration: 0.3, ease: 'easeIn' } }
 };
 
 const imageVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
+  hidden: { opacity: 0, scale: 0.98 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
-  exit: { opacity: 0, scale: 0.95, transition: { duration: 0.3, ease: 'easeIn' } }
+  exit: { opacity: 0, scale: 0.98, transition: { duration: 0.3, ease: 'easeIn' } }
 };
 
 const MobileAppCard = () => {
   const [activeTabId, setActiveTabId] = useState('admin');
-  const activeTab = mobileAppData.tabs.find(tab => tab.id === activeTabId);
+  const { badge, heading, description, keyFunctionalitiesTitle, idealForTitle, tabs } = mobileAppData;
+  
+  const activeTab = tabs.find(tab => tab.id === activeTabId);
+  const BadgeIcon = badge.icon;
 
   return (
     <section className="mac-section">
       <div className="container mx-auto mac-container">
         
+        {/* Section Header */}
+        <div className="mac-header">
+          <div className="mac-badge">
+            {BadgeIcon && <BadgeIcon className="mac-badge-icon" />}
+            <span>{badge.text}</span>
+          </div>
+          <h2 className="mac-section-heading">{heading}</h2>
+          <p className="mac-section-description">{description}</p>
+        </div>
+
         {/* Three Premium Tabs */}
         <div className="mac-tabs-wrapper">
           <div className="mac-tabs">
-            {mobileAppData.tabs.map((tab) => {
+            {tabs.map((tab) => {
               const TabIcon = tab.icon;
               return (
                 <button
@@ -40,6 +54,7 @@ const MobileAppCard = () => {
                     <motion.div 
                       layoutId="activeTabIndicator" 
                       className="mac-tab-indicator" 
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
                 </button>
@@ -60,7 +75,7 @@ const MobileAppCard = () => {
               animate="visible"
               exit="exit"
             >
-              <img src={activeTab.image} alt={activeTab.heading} className="mac-image" />
+              <img src={activeTab.image} alt={activeTab.subHeading} className="mac-image" />
             </motion.div>
 
             {/* Right Side: Text & Lists */}
@@ -71,29 +86,35 @@ const MobileAppCard = () => {
               animate="visible"
               exit="exit"
             >
-              <h2 className="mac-heading">{activeTab.heading}</h2>
+              <span className="mac-subheading">{activeTab.subHeading}</span>
+              <h3 className="mac-highlight">{activeTab.highlightPoint}</h3>
               <p className="mac-description">{activeTab.description}</p>
               
-              <div className="mac-lists">
-                <div className="mac-features-col">
-                  <h3 className="mac-list-title">Key Features</h3>
-                  <ul className="mac-bullet-list">
+              {/* Key Functionalities - Single White Container */}
+              <div className="mac-section-block">
+                <h4 className="mac-list-title">{keyFunctionalitiesTitle}</h4>
+                <div className="mac-enterprise-container">
+                  <div className="mac-enterprise-list">
                     {activeTab.features.map((feat, idx) => (
-                      <li key={idx} className="mac-bullet-item">
-                        <span className="mac-check">✓</span>
-                        <span className="mac-text">{feat}</span>
-                      </li>
+                      <div key={idx} className="mac-enterprise-item">
+                        <FiCheckCircle className="mac-item-icon" />
+                        <span className="mac-item-text">{feat}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
-                
-                <div className="mac-ideal-col">
-                  <h3 className="mac-list-title">Ideal For</h3>
-                  <div className="mac-ideal-tags">
+              </div>
+
+              {/* Ideal For - Single White Container */}
+              <div className="mac-section-block">
+                <h4 className="mac-list-title">{idealForTitle}</h4>
+                <div className="mac-enterprise-container">
+                  <div className="mac-enterprise-list">
                     {activeTab.idealFor.map((ideal, idx) => (
-                      <span key={idx} className="mac-ideal-tag">
-                        {ideal}
-                      </span>
+                      <div key={idx} className="mac-enterprise-item">
+                        <FiCheckCircle className="mac-item-icon" />
+                        <span className="mac-item-text">{ideal}</span>
+                      </div>
                     ))}
                   </div>
                 </div>

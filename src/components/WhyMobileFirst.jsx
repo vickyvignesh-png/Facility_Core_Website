@@ -9,14 +9,14 @@ const fadeUp = {
 };
 
 const WhyMobileFirst = () => {
-  const { badge, heading, description, checklist } = whyMobileFirstData;
+  const { badge, heading, paragraphs } = whyMobileFirstData;
   const BadgeIcon = badge.icon;
 
   return (
     <section className="wmf-section">
       <div className="container mx-auto wmf-container">
         <motion.div 
-          className="wmf-box"
+          className="wmf-content-wrapper"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -25,24 +25,17 @@ const WhyMobileFirst = () => {
           {/* Centered Header */}
           <div className="wmf-header">
             <div className="wmf-badge">
-              <BadgeIcon className="wmf-badge-icon" />
+              {BadgeIcon && <BadgeIcon className="wmf-badge-icon" />}
               <span>{badge.text}</span>
             </div>
             <h2 className="wmf-heading">{heading}</h2>
-            <p className="wmf-description">{description}</p>
           </div>
 
-          {/* Two-Column Checklist */}
-          <div className="wmf-grid">
-            {checklist.map((item, idx) => (
-              <div key={idx} className="wmf-item">
-                <div className="wmf-icon-wrapper">
-                  <BadgeIcon className="wmf-item-icon" />
-                </div>
-                <div className="wmf-item-content">
-                  <h3 className="wmf-item-label">{item.label}</h3>
-                  <p className="wmf-item-desc">{item.desc}</p>
-                </div>
+          {/* Three Individual Premium Cards */}
+          <div className="wmf-panels-wrapper">
+            {paragraphs && paragraphs.map((para, idx) => (
+              <div key={idx} className="wmf-premium-panel">
+                <p className="wmf-panel-paragraph">{para}</p>
               </div>
             ))}
           </div>
@@ -53,3 +46,4 @@ const WhyMobileFirst = () => {
 };
 
 export default React.memo(WhyMobileFirst);
+

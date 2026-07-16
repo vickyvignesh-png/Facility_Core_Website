@@ -42,13 +42,6 @@
     font-weight: 800;
     color: #0F172A;
     line-height: 1.25;
-    margin-bottom: 12px;
-}
-
-.hfch-description {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #475569;
     margin-bottom: 24px;
 }
 
@@ -69,17 +62,17 @@
     gap: 12px;
 }
 
-.hfch-check-mark {
+.hfch-bullet-icon {
     color: #69BC45;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 1;
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 5px;
 }
 
 .hfch-bullet-text {
     font-size: 14px;
     color: #334155;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 /* Image styling */
@@ -101,7 +94,7 @@
     .hfch-container {
         gap: 32px;
     }
-    
+
     .hfch-heading {
         font-size: 30px;
     }
@@ -112,16 +105,19 @@
         grid-template-columns: 1fr;
         gap: 32px;
     }
-    
+
     .hfch-image-wrapper {
-        order: -1; /* Image on top on mobile */
+        order: 2;
+        /* Image below content on mobile */
     }
-    
+
     .hfch-content {
+        order: 1;
+        /* Content first on mobile */
         align-items: center;
         text-align: center;
     }
-    
+
     .hfch-bullets {
         align-items: flex-start;
         text-align: left;

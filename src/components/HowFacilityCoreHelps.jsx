@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiCheckCircle } from 'react-icons/fi';
 import { howFacilityCoreHelpsData } from '../data/FeaturesPageData';
 import '../styles/HowFacilityCoreHelps.css';
 
@@ -14,14 +15,15 @@ const imageFade = {
 };
 
 const HowFacilityCoreHelps = () => {
-  const { badge, heading, description, bullets, image } = howFacilityCoreHelpsData;
+  const { badge, heading, bullets, image } = howFacilityCoreHelpsData;
   const BadgeIcon = badge.icon;
 
   return (
     <section className="hfch-section">
       <div className="container mx-auto hfch-container">
+
         {/* Left Side - Content */}
-        <motion.div 
+        <motion.div
           className="hfch-content"
           initial="hidden"
           whileInView="visible"
@@ -33,12 +35,11 @@ const HowFacilityCoreHelps = () => {
             <span>{badge.text}</span>
           </div>
           <h2 className="hfch-heading">{heading}</h2>
-          <p className="hfch-description">{description}</p>
-          
+
           <ul className="hfch-bullets">
             {bullets.map((bullet, idx) => (
               <li key={idx} className="hfch-bullet-item">
-                <span className="hfch-check-mark">✓</span>
+                <FiCheckCircle className="hfch-bullet-icon" />
                 <span className="hfch-bullet-text">{bullet}</span>
               </li>
             ))}
@@ -46,7 +47,7 @@ const HowFacilityCoreHelps = () => {
         </motion.div>
 
         {/* Right Side - Image */}
-        <motion.div 
+        <motion.div
           className="hfch-image-wrapper"
           initial="hidden"
           whileInView="visible"
@@ -55,6 +56,7 @@ const HowFacilityCoreHelps = () => {
         >
           <img src={image} alt={heading} className="hfch-image" />
         </motion.div>
+
       </div>
     </section>
   );

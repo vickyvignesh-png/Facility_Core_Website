@@ -50,7 +50,7 @@ const MobileFeatureCard = () => {
                 key={idx} 
                 className="mfc-card"
                 variants={cardVariants}
-                whileHover={{ y: -6, boxShadow: "0 16px 32px rgba(15, 23, 42, 0.08)" }}
+                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.08)" }}
               >
                 <div className="mfc-icon-wrapper">
                   <IconComponent className="mfc-card-icon" />

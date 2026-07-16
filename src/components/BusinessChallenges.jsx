@@ -7,23 +7,24 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.08
     }
   }
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
 };
 
 const BusinessChallenges = () => {
-  const { badge, heading, description, challenges } = businessChallengesData;
+  const { badge, heading, description, tagline, challenges } = businessChallengesData;
   const BadgeIcon = badge.icon;
 
   return (
     <section className="bc-section">
       <div className="container mx-auto bc-container">
+
         {/* Section Header */}
         <div className="bc-header">
           <div className="bc-badge">
@@ -34,9 +35,9 @@ const BusinessChallenges = () => {
           <p className="bc-description">{description}</p>
         </div>
 
-        {/* Challenges Grid */}
-        <motion.div 
-          className="bc-grid"
+        {/* Challenge Cards — Flexbox wrap */}
+        <motion.div
+          className="bc-cards-flex"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -45,21 +46,26 @@ const BusinessChallenges = () => {
           {challenges.map((challenge, idx) => {
             const ChallengeIcon = challenge.icon;
             return (
-              <motion.div 
-                key={idx} 
+              <motion.div
+                key={idx}
                 className="bc-card"
                 variants={cardVariants}
-                whileHover={{ y: -6, boxShadow: "0 16px 32px rgba(15, 23, 42, 0.08)" }}
+                whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(15, 23, 42, 0.10)" }}
               >
                 <div className="bc-card-icon-wrapper">
                   <ChallengeIcon className="bc-card-icon" />
                 </div>
-                <h3 className="bc-card-title">{challenge.title}</h3>
-                <p className="bc-card-desc">{challenge.description}</p>
+                <p className="bc-card-text">{challenge.text}</p>
               </motion.div>
             );
           })}
         </motion.div>
+
+        {/* Bottom Tagline Banner */}
+        <div className="bc-tagline-banner">
+          <p className="bc-tagline-text">{tagline}</p>
+        </div>
+
       </div>
     </section>
   );
