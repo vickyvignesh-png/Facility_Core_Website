@@ -1,0 +1,150 @@
+/* ==============================================================
+   MobileFirstOverview – Premium Split & Mobile-Responsive Layout
+   ============================================================== */
+
+.mfo-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Grid layout for Desktop & Tablet */
+.mfo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "img badge"
+        "img heading"
+        "img desc"
+        "img paragraphs";
+    align-items: center;
+    gap: 20px 48px;
+}
+
+/* Left Column Styling */
+.mfo-image-wrapper {
+    grid-area: img;
+    width: 100%;
+    align-self: center;
+}
+
+.mfo-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+}
+
+/* Right Column Elements Styling */
+.mfo-badge {
+    grid-area: badge;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 99px;
+    background-color: rgba(105, 188, 69, 0.1);
+    color: #69BC45;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    justify-self: start;
+}
+
+.mfo-badge-icon {
+    font-size: 14px;
+}
+
+.mfo-heading {
+    grid-area: heading;
+    font-size: 34px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.mfo-description {
+    grid-area: desc;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #475569;
+    font-weight: 600;
+    margin: 0;
+}
+
+.mfo-paragraphs {
+    grid-area: paragraphs;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mfo-paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #64748B;
+    margin: 0;
+}
+
+/* Tablet Responsive: Keep exact same layout as desktop, reduce spacing slightly */
+@media (max-width: 1024px) {
+    .mfo-container {
+        gap: 16px 32px;
+    }
+    
+    .mfo-heading {
+        font-size: 28px;
+    }
+    
+    .mfo-description {
+        font-size: 14px;
+    }
+    
+    .mfo-paragraph {
+        font-size: 13.5px;
+    }
+}
+
+/* Mobile Responsive: Redesign mobile layout completely */
+@media (max-width: 768px) {
+    .mfo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    /* Reorder elements for mobile view */
+    .mfo-badge {
+        order: 1;
+        justify-self: center;
+    }
+    
+    .mfo-heading {
+        order: 2;
+        font-size: 26px;
+    }
+    
+    .mfo-description {
+        order: 3;
+        font-size: 14px;
+    }
+    
+    .mfo-image-wrapper {
+        order: 4;
+        width: 100%;
+        max-width: 480px;
+    }
+    
+    .mfo-paragraphs {
+        order: 5;
+        gap: 14px;
+        text-align: center;
+        align-items: center;
+    }
+}

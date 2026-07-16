@@ -1,0 +1,117 @@
+.tfm-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+.tfm-card-container {
+    background-color: #0F172A;
+    border-radius: 30px;
+    padding: 64px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+/* Background soft glows */
+.tfm-card-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(29, 79, 163, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.tfm-card-container::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    right: -20%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(105, 188, 69, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.tfm-content {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.tfm-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 99px;
+    background-color: rgba(105, 188, 69, 0.15);
+    color: #69BC45;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.tfm-badge-icon {
+    font-size: 14px;
+}
+
+.tfm-heading {
+    font-size: 34px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.tfm-paragraph {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 680px;
+}
+
+.tfm-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #1D4FA3, #69BC45);
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+
+.tfm-closing-line {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tfm-card-container {
+        padding: 48px 24px;
+    }
+    
+    .tfm-heading {
+        font-size: 28px;
+    }
+    
+    .tfm-closing-line {
+        font-size: 14px;
+    }
+}

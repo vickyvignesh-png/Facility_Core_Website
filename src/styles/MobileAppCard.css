@@ -1,0 +1,311 @@
+/* ==============================================================
+   MobileAppCard – Premium Enterprise App Tabs & Content Layout
+   ============================================================== */
+
+.mac-section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+/* ── Section Header ─────────────────────────────────────────── */
+.mac-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mac-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 99px;
+    background-color: rgba(105, 188, 69, 0.1);
+    color: #69BC45;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.mac-badge-icon {
+    font-size: 14px;
+}
+
+.mac-section-heading {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.mac-section-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #64748B;
+    margin: 0;
+}
+
+/* ── Tabs Wrapper ────────────────────────────────────────────── */
+.mac-tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.mac-tabs {
+    display: flex;
+    gap: 12px;
+    background-color: transparent;
+    padding: 4px;
+    border-radius: 99px;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mac-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background-color: #ffffff;
+    border-radius: 99px;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.02);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.mac-tab.active {
+    color: #ffffff !important;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(29, 79, 163, 0.25);
+}
+
+.mac-tab-icon {
+    font-size: 16px;
+}
+
+.mac-tab-indicator {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(135deg, #1D4FA3, #69BC45);
+    border-radius: 99px;
+    z-index: -1;
+    box-shadow: 0 4px 12px rgba(29, 79, 163, 0.25);
+}
+
+/* ── Content Grid ────────────────────────────────────────────── */
+.mac-content-grid {
+    display: flex;
+    align-items: stretch; /* equal height */
+    gap: 48px;
+    width: 100%;
+}
+
+.mac-image-wrapper {
+    flex: 1;
+    display: flex;
+    width: 100%;
+}
+
+.mac-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06), 0 5px 15px rgba(15, 23, 42, 0.04);
+}
+
+.mac-text-content {
+    flex: 1.25;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.mac-subheading {
+    font-size: 14px;
+    font-weight: 700;
+    color: #69BC45;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.mac-highlight {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.mac-description {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #475569;
+    margin-bottom: 28px;
+    white-space: pre-wrap;
+}
+
+.mac-section-block {
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.mac-section-block:last-child {
+    margin-bottom: 0;
+}
+
+.mac-list-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0F172A;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+/* ── Enterprise Lists (Key Functionalities & Ideal For) ──────── */
+.mac-enterprise-container {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
+    width: 100%;
+}
+
+.mac-enterprise-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.mac-enterprise-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.mac-item-icon {
+    font-size: 18px;
+    color: #69BC45; /* FacilityCore Green */
+    flex-shrink: 0;
+    margin-top: 2px; /* aligns with text line-height */
+}
+
+.mac-item-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #334155;
+    line-height: 1.45;
+}
+
+/* ==============================================================
+   Responsive Queries
+   ============================================================== */
+
+/* Tablet: keep desktop layout, scale spacing down slightly */
+@media (max-width: 1024px) {
+    .mac-section {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .mac-content-grid {
+        gap: 32px;
+    }
+
+    .mac-section-heading {
+        font-size: 30px;
+    }
+
+    .mac-highlight {
+        font-size: 24px;
+    }
+}
+
+/* Mobile: stack vertically, content first, image second */
+@media (max-width: 768px) {
+    .mac-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .mac-section-heading {
+        font-size: 26px;
+    }
+
+    .mac-tabs {
+        width: 100%;
+        flex-direction: column;
+        border-radius: 20px;
+        background-color: #f1f5f9;
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .mac-tab {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .mac-tab.active {
+        box-shadow: none;
+    }
+
+    .mac-tab-indicator {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .mac-content-grid {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+    }
+
+    .mac-image-wrapper {
+        order: 2; /* Image second on mobile */
+        height: 380px;
+    }
+
+    .mac-text-content {
+        order: 1; /* Content first on mobile */
+    }
+
+    .mac-enterprise-list {
+        grid-template-columns: 1fr;
+    }
+
+    .mac-enterprise-container {
+        padding: 24px;
+    }
+}
+
