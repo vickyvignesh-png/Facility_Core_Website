@@ -126,7 +126,7 @@ export const modules = [
     description: "Manage your workforce efficiently from hire to retire.",
     modalDescription: "FacilityCore's HR Management module helps you manage your entire workforce from onboarding to exit. Automate HR operations, monitor employee performance, manage training, assets, attendance, leave and compliance—all from a single platform.",
     icon: React.createElement(FiUsers),
-    img: "/hrmanagement.png",
+    img: "/pmworking.png",
     link: "/solutions/hr-management",
     tagline: "Empower your people. Elevate your organization.",
     tags: [
@@ -200,7 +200,7 @@ export const modules = [
     description: "Manage parking, vehicles and visitors from one platform.",
     modalDescription: "FacilityCore's Parking, Vehicle & Visitor Management module helps you manage parking zones, parking slots, vehicles, visitors and entry operations from a single platform. Improve security, optimize parking utilization and deliver a seamless arrival experience.",
     icon: React.createElement(FiTruck),
-    img: "/parkingvehiclevisitor.png",
+    img: "/pmworking.png",
     link: "/solutions/parking-vehicle-visitor-management",
     tagline: "Smart parking. Secure vehicles. Seamless visitor experience.",
     tags: [
@@ -272,7 +272,7 @@ export const modules = [
     description: "Manage occupants, leases and services from one platform.",
     modalDescription: "FacilityCore's Occupant Management module helps you manage occupant profiles, lease agreements, payments, maintenance requests, visitors and support services—all from a centralized platform. Improve resident experience, streamline operations and gain complete visibility across your property.",
     icon: React.createElement(FiHome),
-    img: "/occupantmanagement.png",
+    img: "/pmworking.png",
     link: "/solutions/occupant-management",
     tagline: "Manage every occupant. Elevate every experience.",
     tags: [
@@ -344,7 +344,7 @@ export const modules = [
     description: "Manage leads, customers, sales and tasks in one platform.",
     modalDescription: "FacilityCore's CRM Management & Task Management module helps you manage your complete sales lifecycle—from lead capture to job completion. Track customers, quotations, tasks, employees and service delivery in one centralized platform with real-time visibility.",
     icon: React.createElement(FiBriefcase),
-    img: "/crmtaskmanagement.png",
+    img: "/pmworking.png",
     link: "/solutions/crm-task-management",
     tagline: "Convert Leads. Win Customers. Deliver Services. Track Tasks.",
     tags: [
@@ -418,7 +418,7 @@ export const modules = [
     description: "Manage vendors, contracts, and service providers.",
     modalDescription: "FacilityCore's Vendor Management module helps you manage your external contractors, track their compliance documents, assign work orders, and log service payments—all from a single platform.",
     icon: React.createElement(FiUsers),
-    img: "/sectionpagedashboard.png",
+    img: "/pmworking.png",
     link: "/solutions/vendor-management",
     tagline: "Manage contractors. Verify compliance. Track performance.",
     tags: [
@@ -458,7 +458,7 @@ export const modules = [
     description: "Maintain audit-ready compliance records.",
     modalDescription: "FacilityCore's Compliance Logs module helps you verify local code safety inspections, fire safety compliance, track certifications, and schedule recurring audits to ensure your building remains fully compliant and safe.",
     icon: React.createElement(FiClipboard),
-    img: "/sectionpagedashboard.png",
+    img: "/pmworking.png",
     link: "/solutions/compliance-logs",
     tagline: "Stay safe. Ensure building code compliance. Simplify audits.",
     tags: [

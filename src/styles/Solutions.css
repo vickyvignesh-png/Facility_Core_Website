@@ -6,7 +6,7 @@
 .solutions-section {
   position: relative;
   width: 100%;
-  background: #ffffff !important;
+  background-color: #F8FAFC !important;
   overflow: hidden;
   isolation: isolate;
 }
@@ -25,7 +25,6 @@
 .solutions-section {
   position: relative;
   overflow: hidden;
-  background: #fff !important;
   padding: 80px 0;
 }
 
