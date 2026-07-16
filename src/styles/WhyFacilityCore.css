@@ -5,6 +5,7 @@
     padding-top: 2.5rem !important;
     padding-bottom: 2.5rem !important;
     min-height: auto;
+    background-color: #fff !important;
 }
 
 /* Page container responsive padding and max-widths */
@@ -22,7 +23,8 @@
 
 @media (min-width: 1200px) {
     .whyfc-section .container {
-        max-width: 1320px; /* Container max-width: 1320px */
+        max-width: 1320px;
+        /* Container max-width: 1320px */
         margin: 0 auto;
         padding-left: 24px;
         padding-right: 24px;
@@ -32,19 +34,24 @@
 /* CSS Grid Container (Desktop default: 1200px and above) */
 .whyfc-row {
     display: grid;
-    grid-template-columns: 48% 52%; /* grid-template-columns: 48% 52% */
-    align-items: center; /* align-items: center */
-    column-gap: 56px; /* column-gap: 56px Desktop */
+    grid-template-columns: 48% 52%;
+    /* grid-template-columns: 48% 52% */
+    align-items: center;
+    /* align-items: center */
+    column-gap: 56px;
+    /* column-gap: 56px Desktop */
     width: 100%;
 }
 
 /* Left Side: Desktop Image Collage (max-height: 500px) */
 .desktop-only-gallery {
     display: flex;
-    height: 500px; /* Large Image/Column Height: 500px */
+    height: 500px;
+    /* Large Image/Column Height: 500px */
     max-height: 500px;
     width: 100%;
-    margin: 0 auto 0 0; /* Align left */
+    margin: 0 auto 0 0;
+    /* Align left */
     flex-shrink: 0;
     gap: 20px;
 }
@@ -56,7 +63,8 @@
     justify-content: center;
     width: 100%;
     flex-shrink: 0;
-    text-align: left; /* Text alignment should remain LEFT */
+    text-align: left;
+    /* Text alignment should remain LEFT */
 }
 
 /* Tag */
@@ -69,7 +77,8 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #69BC45;
-    margin-bottom: 12px; /* margin-bottom: 12px */
+    margin-bottom: 12px;
+    /* margin-bottom: 12px */
 }
 
 .whyfc-tag-icon {
@@ -81,7 +90,8 @@
     font-size: 34px;
     font-weight: 800;
     color: #111827;
-    margin-bottom: 16px; /* margin-bottom: 16px */
+    margin-bottom: 16px;
+    /* margin-bottom: 16px */
     line-height: 1.25;
 }
 
@@ -90,14 +100,15 @@
     font-size: 16px;
     line-height: 1.7;
     color: #4B5563;
-    margin-bottom: 20px; /* margin-bottom: 20px */
+    margin-bottom: 20px;
+    /* margin-bottom: 20px */
 }
 
 /* Checklist list-items styling */
 .whyfc-list {
     display: flex;
     flex-direction: column;
-    gap: 14px; /* Bullet List gap: 14px */
+    gap: 14px;
     width: 100%;
 }
 
@@ -108,8 +119,8 @@
 }
 
 .whyfc-item-icon {
-    width: 18px; /* Bullet Icon Width: 18px */
-    height: 18px; /* Bullet Icon Height: 18px */
+    width: 18px;
+    height: 18px;
     color: #1D4FA3;
     flex-shrink: 0;
     display: flex;
@@ -124,17 +135,20 @@
 }
 
 .whyfc-item-title {
-    font-size: 18px; /* Bullet Title font-size: 18px */
+    font-size: 18px;
+    /* Bullet Title font-size: 18px */
     font-weight: 700;
     color: #111827;
     margin: 0 0 4px 0;
 }
 
 .whyfc-item-desc {
-    font-size: 14px; /* Bullet Description font-size: 14px */
+    font-size: 14px;
+    /* Bullet Description font-size: 14px */
     font-weight: 400;
     color: #4B5563;
-    line-height: 1.5; /* line-height: 1.5 */
+    line-height: 1.5;
+    /* line-height: 1.5 */
     margin: 0;
 }
 
@@ -146,19 +160,22 @@
 }
 
 .whyfc-gallery-left {
-    flex: 1.4; /* Large image container flex: 1.4 */
+    flex: 1.4;
+    /* Large image container flex: 1.4 */
     height: 100%;
     overflow: hidden;
     background: #F8FAFC;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 28px; /* Keep existing border radius */
+    border-radius: 28px;
+    /* Keep existing border radius */
 }
 
 .whyfc-gallery-right {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Right Column stack flex: 1 */
+    flex: 1;
+    /* Right Column stack flex: 1 */
     gap: 20px;
     height: 100%;
 }
@@ -170,13 +187,15 @@
     background: #F8FAFC;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 28px; /* Keep existing border radius */
+    border-radius: 28px;
+    /* Keep existing border radius */
 }
 
 /* Specific heights of desktop small images based on 500px stack */
 .desktop-only-gallery .whyfc-gallery-item-small,
 .desktop-only-gallery .whyfc-gallery-item-tall {
-    height: calc((500px - 20px) / 2); /* height: calc((500px - 20px) / 2) */
+    height: calc((500px - 20px) / 2);
+    /* height: calc((500px - 20px) / 2) */
 }
 
 .whyfc-collage-img {
@@ -204,41 +223,57 @@
 @media (max-width: 1199px) {
     .whyfc-row {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* grid-template-columns: 1fr 1fr */
-        align-items: center; /* align-items: center */
-        gap: 40px; /* gap: 40px Tablet */
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr */
+        align-items: center;
+        /* align-items: center */
+        gap: 40px;
+        /* gap: 40px Tablet */
     }
+
     .desktop-only-gallery {
         display: flex;
         width: 100%;
-        height: 420px; /* Tablet Large Image Height: 420px */
-        max-height: 420px; /* Small Column Height: 420px */
-        margin: 0 auto 0 0; /* Left aligned */
+        height: 420px;
+        /* Tablet Large Image Height: 420px */
+        max-height: 420px;
+        /* Small Column Height: 420px */
+        margin: 0 auto 0 0;
+        /* Left aligned */
     }
+
     /* Specific heights of tablet small images based on 420px stack */
     .desktop-only-gallery .whyfc-gallery-item-small,
     .desktop-only-gallery .whyfc-gallery-item-tall {
         height: calc((420px - 20px) / 2);
     }
+
     .whyfc-gallery-right {
         height: 420px;
     }
+
     .whyfc-gallery-left {
         height: 420px;
     }
+
     .whyfc-content-col {
         width: 100%;
         text-align: left;
     }
+
     .whyfc-heading {
-        font-size: 30px; /* Reduce heading size slightly */
+        font-size: 30px;
+        /* Reduce heading size slightly */
         margin-bottom: 14px;
     }
+
     .whyfc-description {
         margin-bottom: 16px;
     }
+
     .whyfc-list {
-        gap: 12px; /* Reduce bullet spacing */
+        gap: 12px;
+        /* Reduce bullet spacing */
     }
 }
 
@@ -253,28 +288,34 @@
 @media (max-width: 767px) {
     .whyfc-row {
         display: flex;
-        flex-direction: column; /* Stacked layout */
+        flex-direction: column;
+        /* Stacked layout */
         gap: 24px;
     }
-    
+
     .desktop-only-gallery {
-        display: none !important; /* Hide main desktop gallery */
+        display: none !important;
+        /* Hide main desktop gallery */
     }
-    
+
     .mobile-only-gallery {
-        display: grid !important; /* Show inline mobile gallery */
+        display: grid !important;
+        /* Show inline mobile gallery */
         grid-template-columns: 3fr 2fr !important;
         gap: 16px !important;
         aspect-ratio: 1.25 !important;
         height: auto !important;
-        width: 70%; /* Scaled to 70% on Mobile */
-        margin: 24px auto !important; /* Centered horizontally */
+        width: 70%;
+        /* Scaled to 70% on Mobile */
+        margin: 24px auto !important;
+        /* Centered horizontally */
     }
 
     .whyfc-gallery-left {
         flex: none !important;
         height: 100% !important;
-        border-radius: 20px !important; /* Keep mobile border radius */
+        border-radius: 20px !important;
+        /* Keep mobile border radius */
     }
 
     .whyfc-gallery-right {
@@ -289,16 +330,19 @@
     .whyfc-gallery-item-tall {
         height: 100% !important;
         flex: none !important;
-        border-radius: 20px !important; /* Keep mobile border radius */
+        border-radius: 20px !important;
+        /* Keep mobile border radius */
     }
 
     .whyfc-description {
-        display: none !important; /* Hide description paragraph on mobile only */
+        display: none !important;
+        /* Hide description paragraph on mobile only */
     }
 
     .whyfc-content-col {
         width: 100% !important;
-        text-align: center !important; /* Everything Center Aligned on mobile */
+        text-align: center !important;
+        /* Everything Center Aligned on mobile */
         align-items: center !important;
     }
 
@@ -316,11 +360,13 @@
     .whyfc-list {
         margin: 0 auto !important;
         max-width: 540px !important;
-        align-items: center !important; /* Center aligned */
+        align-items: center !important;
+        /* Center aligned */
     }
 
     .whyfc-item {
-        text-align: left !important; /* Keep text/icons aligned cleanly inside items */
+        text-align: left !important;
+        /* Keep text/icons aligned cleanly inside items */
         width: 100% !important;
     }
 
@@ -337,13 +383,15 @@
 /* Small Mobile (max-width: 576px) */
 @media (max-width: 576px) {
     .mobile-only-gallery {
-        width: 80% !important; /* Scale up slightly for smaller viewports */
+        width: 80% !important;
+        /* Scale up slightly for smaller viewports */
     }
 }
 
 /* Very Small Mobile (max-width: 480px) */
 @media (max-width: 480px) {
     .mobile-only-gallery {
-        width: 90% !important; /* Expand to cover tiny mobile screens nicely */
+        width: 90% !important;
+        /* Expand to cover tiny mobile screens nicely */
     }
 }

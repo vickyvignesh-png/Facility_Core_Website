@@ -15,7 +15,7 @@ const SolutionsPage = () => {
         backgroundImage="/solutionpageherosection.png"
         badge="SMART SOLUTIONS"
         title="Smart Solutions For Every Facility"
-        description="Stay audit-ready with automated compliance tracking."
+        description="Streamline facility operations with intelligent automation, compliance, and real-time visibility."
         breadcrumbItems={[
           { label: "Home", link: "/" },
           { label: "Solutions" }
