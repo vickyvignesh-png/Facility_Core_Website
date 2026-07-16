@@ -1,359 +1,41 @@
+/* ==============================================================
+   FeaturesPage – Overall Page Layout
+   All individual components have their own standalone CSS files.
+   ============================================================== */
+
 .features-page {
     width: 100%;
     overflow-x: hidden;
+    background-color: #f8fafc;
 }
 
-/* Common Container */
-
-.container {
+/* Common container limits */
+.features-page .container {
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 48px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 48px;
+    padding-left: 48px;
 }
 
-.section-title {
-    font-size: 48px;
-    font-weight: 800;
-    color: #0F172A;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.section-description {
-    font-size: 18px;
-    color: #64748B;
-    line-height: 1.8;
-}
-
-/* ================= HERO ================= */
-
-.features-hero {
-    min-height: 650px;
-    background: linear-gradient(rgba(8, 20, 43, 0.85),
-            rgba(8, 20, 43, 0.75)),
-        url('/solutionpageherosection.png') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.breadcrumb {
-    color: rgba(255, 255, 255, .8);
-    margin-bottom: 24px;
-}
-
-.badge {
-    display: inline-flex;
-    padding: 12px 24px;
-    border-radius: 100px;
-    background: rgba(255, 255, 255, .12);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, .15);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-}
-
-.hero-title {
-    font-size: 60px;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 24px;
-}
-
-.hero-description {
-    font-size: 18px;
-    color: rgba(255, 255, 255, .85);
-    line-height: 1.8;
-    margin-bottom: 40px;
-}
-
-.hero-cta {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-}
-
-.btn {
-    padding: 14px 32px;
-    border-radius: 100px;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    transition: .3s ease;
-}
-
-.primary {
-    background: #69BC45;
-    color: #fff;
-}
-
-.secondary {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, .3);
-    color: #fff;
-}
-
-/* ================= MOBILE APPS ================= */
-
-.mobile-app-section {
-    padding: 120px 0;
-}
-
-.grid-mobile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.app-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 40px;
-}
-
-.app-card {
-    padding: 28px;
-    border-radius: 24px;
-    background: #fff;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, .06);
-}
-
-.app-card h3 {
-    margin: 20px 0 10px;
-}
-
-.app-card p {
-    color: #64748B;
-    line-height: 1.7;
-}
-
-.app-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 18px;
-}
-
-.admin {
-    background: linear-gradient(135deg, #1D4FA3, #69BC45);
-}
-
-.employee {
-    background: linear-gradient(135deg, #0EA5E9, #1D4FA3);
-}
-
-.occupant {
-    background: linear-gradient(135deg, #69BC45, #22C55E);
-}
-
-.mobile-mocks {
-    position: relative;
-    min-height: 650px;
-}
-
-.mock {
-    position: absolute;
-    width: 260px;
-    height: 540px;
-    border-radius: 40px;
-    background: #fff;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, .12);
-}
-
-.mock-1 {
-    left: 0;
-    top: 60px;
-}
-
-.mock-2 {
-    left: 140px;
-    top: 0;
-    z-index: 2;
-}
-
-.mock-3 {
-    left: 280px;
-    top: 60px;
-}
-
-/* ================= DASHBOARD ================= */
-
-.dashboard-section {
-    padding: 120px 0;
-    background: #F8FAFC;
-}
-
-.grid-dashboard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.dashboard-screenshot {
-    width: 100%;
-    height: 500px;
-    border-radius: 32px;
-    background: #fff;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, .08);
-}
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 40px;
-}
-
-.feature-list li {
-    padding: 18px 0;
-    border-bottom: 1px solid #E2E8F0;
-    font-weight: 600;
-}
-
-/* ================= ANALYTICS ================= */
-
-.analytics-section {
-    padding: 120px 0;
-    background: #0F172A;
-    text-align: center;
-}
-
-.analytics-section .section-title,
-.analytics-section .section-description {
-    color: #fff;
-}
-
-.kpi-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 60px;
-}
-
-.kpi-card {
-    padding: 40px 20px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, .08);
-    backdrop-filter: blur(16px);
-}
-
-.kpi-value {
-    display: block;
-    font-size: 52px;
-    font-weight: 800;
-    color: #69BC45;
-}
-
-.kpi-label {
-    color: #fff;
-}
-
-/* ================= AUTOMATION ================= */
-
-.automation-section {
-    padding: 120px 0;
-}
-
-.workflow-timeline {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 70px 0;
-    flex-wrap: wrap;
-}
-
-.step {
-    text-align: center;
-}
-
-.icon {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #1D4FA3, #69BC45);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0 auto 15px;
-}
-
-.connector {
-    width: 60px;
-    border-top: 3px dashed #1D4FA3;
-}
-
-.automation-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.auto-card {
-    background: #fff;
-    padding: 32px;
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, .06);
-}
-
-.auto-card p {
-    color: #64748B;
-    line-height: 1.7;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width:1200px) {
-
-    .grid-mobile,
-    .grid-dashboard {
-        grid-template-columns: 1fr;
-    }
-
-    .automation-cards,
-    .kpi-cards {
-        grid-template-columns: repeat(2, 1fr);
+/* Responsive margins */
+@media (max-width: 1024px) {
+    .features-page .container {
+        padding-right: 32px;
+        padding-left: 32px;
     }
 }
 
-@media (max-width:768px) {
-
-    .container {
-        padding: 0 20px;
+@media (max-width: 768px) {
+    .features-page .container {
+        padding-right: 20px;
+        padding-left: 20px;
     }
+}
 
-    .hero-title,
-    .section-title {
-        font-size: 38px;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-    }
-
-    .kpi-cards,
-    .automation-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .mobile-mocks {
-        display: none;
-    }
-
-    .connector {
-        display: none;
+@media (max-width: 576px) {
+    .features-page .container {
+        padding-right: 16px;
+        padding-left: 16px;
     }
 }

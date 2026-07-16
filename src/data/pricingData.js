@@ -10,8 +10,23 @@ import {
   FiGrid,
   FiLock,
   FiSliders,
-  FiAward
+  FiAward,
+  FiBarChart2,
+  FiClipboard,
+  FiTool,
+  FiShield,
+  FiCalendar,
+  FiPieChart,
+  FiZap,
+  FiBell,
+  FiSmartphone,
+  FiMessageSquare,
+  FiPhoneCall,
+  FiServer,
+  FiSettings,
 } from "react-icons/fi";
+
+// ─── Existing Exports (unchanged) ────────────────────────────────────────────
 
 export const platformPricing = {
   fee: "₹550",
@@ -141,7 +156,7 @@ export const businessPackagesTable = {
     { label: "CRM Module", starter: true, professional: true, enterprise: true },
     { label: "Task Management Module", starter: true, professional: true, enterprise: true },
     { label: "Integrations & API", starter: false, professional: true, enterprise: true },
-    { label: "SLA Custom Support", starter: false, starter: false, enterprise: true }
+    { label: "SLA Custom Support", starter: false, enterprise: true }
   ]
 };
 
@@ -191,5 +206,210 @@ export const fmCompanyPackages = [
     ],
     cta: "Talk to Sales",
     contactButton: true
+  }
+];
+
+// ─── NEW: FM SaaS Company Pricing Plans (4-card section) ─────────────────────
+
+export const fmSaasPlans = [
+  {
+    id: "starter",
+    name: "Starter",
+    originalPrice: "₹2,139",
+    discountPercent: "30% OFF",
+    discountedPrice: "₹1,497",
+    period: "/month",
+    users: "Up to 10 Users",
+    storage: "5 GB Storage",
+    platform: "Web + Mobile",
+    features: [
+      "5 Properties",
+      "1,000 Assets",
+      "5 Web Users",
+      "5 Mobile Users",
+      "Email Support",
+      "Basic Analytics"
+    ],
+    buttonText: "Sign Up",
+    buttonType: "signup",
+    buttonLink: "https://admin.facilitycore.in/register",
+    moduleIds: [
+      "dashboard", "businessSuite", "assetManagement", "preventiveMaintenance",
+      "helpdesk", "attendance", "reports", "mobileApp", "notifications"
+    ]
+  },
+  {
+    id: "business",
+    name: "Business",
+    originalPrice: "₹4,284",
+    discountPercent: "30% OFF",
+    discountedPrice: "₹2,997",
+    period: "/month",
+    users: "Up to 25 Users",
+    storage: "20 GB Storage",
+    platform: "Web + Mobile",
+    features: [
+      "15 Properties",
+      "5,000 Assets",
+      "15 Web Users",
+      "10 Mobile Users",
+      "Priority Support",
+      "Advanced Analytics",
+      "Vendor Management",
+      "Compliance Tracking"
+    ],
+    buttonText: "Sign Up",
+    buttonType: "signup",
+    buttonLink: "https://admin.facilitycore.in/register",
+    moduleIds: [
+      "dashboard", "businessSuite", "assetManagement", "preventiveMaintenance",
+      "reactiveMaintenance", "helpdesk", "vendorManagement", "compliance",
+      "attendance", "visitor", "reports", "workflow", "mobileApp", "notifications"
+    ]
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    originalPrice: "₹7,139",
+    discountPercent: "30% OFF",
+    discountedPrice: "₹4,997",
+    period: "/month",
+    users: "Up to 50 Users",
+    storage: "50 GB Storage",
+    platform: "Web + Mobile",
+    features: [
+      "30 Properties",
+      "Unlimited Assets",
+      "25 Web Users",
+      "25 Mobile Users",
+      "24/7 Dedicated Support",
+      "Custom Dashboards",
+      "Full Module Access",
+      "API Integrations"
+    ],
+    buttonText: "Sign Up",
+    buttonType: "signup",
+    buttonLink: "https://admin.facilitycore.in/register",
+    moduleIds: [
+      "dashboard", "businessSuite", "assetManagement", "preventiveMaintenance",
+      "reactiveMaintenance", "helpdesk", "vendorManagement", "compliance",
+      "attendance", "visitor", "parking", "crm", "reports", "workflow",
+      "mobileApp", "notifications"
+    ]
+  },
+  {
+    id: "customize",
+    name: "Customize",
+    originalPrice: "Custom",
+    discountPercent: null,
+    discountedPrice: "Contact Us",
+    period: "",
+    users: "Unlimited Users",
+    storage: "Unlimited Storage",
+    platform: "Web + Mobile + API",
+    features: [
+      "Unlimited Properties",
+      "Unlimited Assets",
+      "Custom User Allocation",
+      "Dedicated Account Manager",
+      "White-label Options",
+      "Custom Integrations",
+      "SLA Guarantee",
+      "On-premise Available"
+    ],
+    buttonText: "Contact Us",
+    buttonType: "contact",
+    buttonLink: "/contact",
+    moduleIds: [
+      "dashboard", "businessSuite", "assetManagement", "preventiveMaintenance",
+      "reactiveMaintenance", "helpdesk", "vendorManagement", "compliance",
+      "attendance", "visitor", "parking", "crm", "reports", "workflow",
+      "mobileApp", "notifications"
+    ]
+  }
+];
+
+// ─── Module definitions for "Products Included" icon grid ────────────────────
+
+export const fmModules = [
+  {
+    id: "dashboard",
+    name: "Dashboard",
+    icon: FiBarChart2
+  },
+  {
+    id: "businessSuite",
+    name: "Business Suite",
+    icon: FiServer
+  },
+  {
+    id: "assetManagement",
+    name: "Asset Management",
+    icon: FiBox
+  },
+  {
+    id: "preventiveMaintenance",
+    name: "Preventive Maintenance",
+    icon: FiTool
+  },
+  {
+    id: "reactiveMaintenance",
+    name: "Reactive Maintenance",
+    icon: FiZap
+  },
+  {
+    id: "helpdesk",
+    name: "Helpdesk",
+    icon: FiMessageSquare
+  },
+  {
+    id: "vendorManagement",
+    name: "Vendor Management",
+    icon: FiClipboard
+  },
+  {
+    id: "compliance",
+    name: "Compliance",
+    icon: FiShield
+  },
+  {
+    id: "attendance",
+    name: "Attendance",
+    icon: FiCalendar
+  },
+  {
+    id: "visitor",
+    name: "Visitor",
+    icon: FiUserCheck
+  },
+  {
+    id: "parking",
+    name: "Parking",
+    icon: FiMapPin
+  },
+  {
+    id: "crm",
+    name: "CRM",
+    icon: FiUsers
+  },
+  {
+    id: "reports",
+    name: "Reports",
+    icon: FiPieChart
+  },
+  {
+    id: "workflow",
+    name: "Workflow",
+    icon: FiSettings
+  },
+  {
+    id: "mobileApp",
+    name: "Mobile App",
+    icon: FiSmartphone
+  },
+  {
+    id: "notifications",
+    name: "Notifications",
+    icon: FiBell
   }
 ];

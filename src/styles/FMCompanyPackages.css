@@ -1,40 +1,641 @@
-.fm-company-packages-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+/* ==============================================================
+   FMCompanyPackages – Premium SaaS Pricing Section
+   FacilityCore Design System
+   Brand: Blue #1D4FA3  |  Green #69BC45  |  Dark #0F172A
+   ============================================================== */
+
+/* ─── Section Wrapper ──────────────────────────────────────── */
+
+.fmsp-section {
+    padding: 100px 0;
     background: #f8fafc;
-    border-top: 1px solid rgba(15, 23, 42, 0.04);
+    position: relative;
+    overflow: hidden;
 }
 
-.fm-company-packages-section .pricing-section-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 48px;
-    padding: 0 48px;
+/* Subtle background decoration */
+.fmsp-section::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    right: -180px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(29, 79, 163, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
 }
 
-.fm-cards-grid {
+.fmsp-section::after {
+    content: "";
+    position: absolute;
+    bottom: -180px;
+    left: -180px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(105, 188, 69, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.fmsp-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 48px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    position: relative;
+    z-index: 1;
 }
+
+/* ─── Section Header ───────────────────────────────────────── */
+
+.fmsp-section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fmsp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: rgba(29, 79, 163, 0.08);
+    color: #1D4FA3;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.fmsp-badge-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.fmsp-heading {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.fmsp-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #64748b;
+    margin: 0;
+    max-width: 520px;
+}
+
+/* ─── Cards Grid ───────────────────────────────────────────── */
+
+.fmsp-cards-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 80px;
+}
+
+/* ─── Individual Card ──────────────────────────────────────── */
+
+.fmsp-card {
+    flex: 1 1 0;
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease;
+}
+
+.fmsp-card:hover {
+    border-color: rgba(29, 79, 163, 0.18);
+}
+
+/* ─── Card Header ──────────────────────────────────────────── */
+
+.fmsp-card-header {
+    margin-bottom: 24px;
+}
+
+.fmsp-plan-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
+}
+
+.fmsp-plan-meta {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.fmsp-meta-dot {
+    color: #cbd5e1;
+}
+
+/* ─── Price Block ──────────────────────────────────────────── */
+
+.fmsp-price-block {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* Original (struck-through) price */
+.fmsp-original-price {
+    font-size: 16px;
+    font-weight: 500;
+    color: #94a3b8;
+    text-decoration: line-through;
+    text-decoration-color: #94a3b8;
+    letter-spacing: 0;
+}
+
+/* Green discount badge */
+.fmsp-discount-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(105, 188, 69, 0.14);
+    color: #3d8c21;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Discounted price row */
+.fmsp-discounted-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+/* Large discounted price */
+.fmsp-discounted-price {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+/* /month */
+.fmsp-price-period {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    letter-spacing: 0;
+    align-self: flex-end;
+    padding-bottom: 4px;
+}
+
+/* Custom / Contact Us plan */
+.fmsp-custom-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.fmsp-contact-price {
+    font-size: 34px;
+    background: linear-gradient(135deg, #1D4FA3, #69BC45);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ─── Divider ──────────────────────────────────────────────── */
+
+.fmsp-divider {
+    height: 1px;
+    background: rgba(15, 23, 42, 0.06);
+    margin-bottom: 24px;
+}
+
+/* ─── Features List ────────────────────────────────────────── */
+
+.fmsp-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fmsp-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.fmsp-check-icon {
+    color: #69BC45;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 1.5;
+    flex-shrink: 0;
+}
+
+.fmsp-feature-text {
+    font-size: 13.5px;
+    color: #334155;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* ─── Modules Inside Card ──────────────────────────────────── */
+
+.fmsp-modules-section {
+    margin-bottom: 28px;
+    flex-grow: 1;
+}
+
+.fmsp-modules-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 12px 0;
+}
+
+.fmsp-modules-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.fmsp-module-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(29, 79, 163, 0.05);
+    border: 1px solid rgba(29, 79, 163, 0.1);
+    transition: background 0.2s ease;
+}
+
+.fmsp-module-chip:hover {
+    background: rgba(29, 79, 163, 0.1);
+}
+
+.fmsp-module-chip-icon {
+    font-size: 11px;
+    color: #1D4FA3;
+    flex-shrink: 0;
+}
+
+.fmsp-module-chip-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap;
+}
+
+/* ─── CTA Button ───────────────────────────────────────────── */
+
+.fmsp-card-action {
+    margin-top: auto;
+}
+
+.fmsp-btn {
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: 0.2px;
+}
+
+.fmsp-btn-primary {
+    background: linear-gradient(135deg, #1D4FA3 0%, #1a4595 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(29, 79, 163, 0.3);
+}
+
+.fmsp-btn-primary:hover {
+    background: linear-gradient(135deg, #163d80 0%, #1D4FA3 100%);
+    box-shadow: 0 8px 24px rgba(29, 79, 163, 0.4);
+    transform: translateY(-2px);
+}
+
+.fmsp-btn-outline {
+    background: transparent;
+    color: #1D4FA3;
+    border: 2px solid rgba(29, 79, 163, 0.3);
+}
+
+.fmsp-btn-outline:hover {
+    background: rgba(29, 79, 163, 0.06);
+    border-color: #1D4FA3;
+    transform: translateY(-2px);
+}
+
+/* ─── Products Included Section ────────────────────────────── */
+
+.fmsp-products-section {
+    background: #ffffff;
+    border-radius: 28px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+    padding: 56px 56px 48px;
+}
+
+.fmsp-products-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.fmsp-products-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.3px;
+}
+
+.fmsp-products-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Icon grid – 8 columns on desktop */
+.fmsp-products-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+}
+
+/* Each module card */
+.fmsp-product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 18px 10px 16px;
+    background: #f8fafc;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 16px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+    text-align: center;
+}
+
+.fmsp-product-card:hover {
+    background: #ffffff;
+    border-color: rgba(29, 79, 163, 0.16);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.fmsp-product-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1D4FA3 0%, #69BC45 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(29, 79, 163, 0.25);
+}
+
+.fmsp-product-icon {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.fmsp-product-name {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.3;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* ─── Responsive: Tablet (max 1200px) ──────────────────────── */
+
+@media (max-width: 1200px) {
+    .fmsp-section {
+        padding: 80px 0;
+    }
+
+    .fmsp-container {
+        padding: 0 32px;
+    }
+
+    .fmsp-cards-grid {
+        gap: 20px;
+    }
+
+    .fmsp-card {
+        padding: 28px;
+    }
+
+    .fmsp-discounted-price {
+        font-size: 36px;
+    }
+
+    .fmsp-products-section {
+        padding: 44px 40px;
+    }
+
+    .fmsp-products-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+    }
+}
+
+/* ─── Responsive: Tablet (max 1024px) — 2 cards per row ───── */
 
 @media (max-width: 1024px) {
-    .fm-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+    .fmsp-section {
+        padding: 72px 0;
+    }
+
+    .fmsp-cards-grid {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .fmsp-card {
+        flex: 1 1 calc(50% - 10px);
+        min-width: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+
+    .fmsp-heading {
+        font-size: 32px;
+    }
+
+    .fmsp-products-grid {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
+/* ─── Responsive: Small Tablet (max 768px) ─────────────────── */
+
 @media (max-width: 768px) {
-    .fm-company-packages-section {
-        padding-left: 24px;
-        padding-right: 24px;
+    .fmsp-section {
+        padding: 60px 0;
     }
-    .fm-cards-grid {
-        padding: 0;
-        grid-template-columns: 1fr;
+
+    .fmsp-container {
+        padding: 0 20px;
+    }
+
+    .fmsp-section-header {
+        margin-bottom: 48px;
+    }
+
+    .fmsp-heading {
+        font-size: 28px;
+    }
+
+    .fmsp-description {
+        font-size: 15px;
+    }
+
+    .fmsp-cards-grid {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 48px;
+    }
+
+    .fmsp-card {
+        flex: none;
+        width: 100%;
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .fmsp-discounted-price {
+        font-size: 38px;
+    }
+
+    .fmsp-products-section {
+        padding: 36px 28px;
+        border-radius: 20px;
+    }
+
+    .fmsp-products-title {
+        font-size: 22px;
+    }
+
+    .fmsp-products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+
+    .fmsp-product-icon-wrap {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .fmsp-product-icon {
+        font-size: 18px;
+    }
+
+    .fmsp-product-name {
+        font-size: 11px;
+    }
+}
+
+/* ─── Responsive: Mobile (max 576px) ──────────────────────── */
+
+@media (max-width: 576px) {
+    .fmsp-section {
+        padding: 48px 0;
+    }
+
+    .fmsp-container {
+        padding: 0 16px;
+    }
+
+    .fmsp-heading {
+        font-size: 24px;
+    }
+
+    .fmsp-card {
+        padding: 24px;
+    }
+
+    .fmsp-discounted-price {
+        font-size: 34px;
+    }
+
+    .fmsp-products-section {
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+
+    .fmsp-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .fmsp-product-card {
+        padding: 14px 8px 12px;
+    }
+
+    .fmsp-product-icon-wrap {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+    }
+
+    .fmsp-product-icon {
+        font-size: 16px;
+    }
+
+    .fmsp-product-name {
+        font-size: 10.5px;
+    }
+}
+
+/* ─── Responsive: Extra Small Mobile (max 400px) ───────────── */
+
+@media (max-width: 400px) {
+    .fmsp-products-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
