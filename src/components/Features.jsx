@@ -68,7 +68,7 @@ const tabs = [
     id: "maintenance",
     label: "Preventive Maintenance",
     icon: <FiTool />,
-    image: "/pmworking.png",
+    image: "/PreventiveMaintenanceimg.png",
     title: "Preventive Maintenance",
     overview:
       "Automate recurring inspections and maintenance schedules to minimize downtime, extend asset life, and improve operational efficiency.",
@@ -85,7 +85,7 @@ const tabs = [
     id: "automation",
     label: "Workflow Automation",
     icon: <FiZap />,
-    image: "/workflowautomation.png",
+    image: "/WorkflowAutomationimg.png",
     title: "Workflow Automation",
     overview:
       "Automate routine processes with intelligent workflows. Trigger actions, route approvals, escalate issues, and streamline facility operations without manual intervention.",

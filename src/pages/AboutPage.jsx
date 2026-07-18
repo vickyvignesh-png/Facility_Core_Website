@@ -35,8 +35,12 @@ const AboutPage = () => {
         ]}
       />
 
-      {/* Assembly of the new page sections */}
+
       <AboutIntro />
+
+      <VisionMission />
+
+      <CoreValues />
 
       <OurStory />
 
@@ -47,10 +51,6 @@ const AboutPage = () => {
       <WhyChooseFacilityCore />
 
       <OurApproach />
-
-      <VisionMission />
-
-      <CoreValues />
 
       <WhyChooseUs />
 

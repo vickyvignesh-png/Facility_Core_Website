@@ -147,7 +147,7 @@ export const mobileAppData = {
             icon: FiBriefcase,
             subHeading: "FC Admin App",
             highlightPoint: "Complete Operational Control in Your Pocket",
-            description: "The FC Admin App is designed for Facility Managers, Property Managers, Operations Directors, Business Owners, Supervisors, and Senior Management.\n\nIt provides a real-time operational command center, allowing decision-makers to monitor facilities, approve requests, review dashboards, and oversee business performance from anywhere.",
+            description: "The FC Admin App is a comprehensive mobile solution designed for facility managers, supervisors, business owners, and field teams. Monitor operations, approve work orders, track assets, manage maintenance activities, and oversee workforce performance in real time from anywhere.",
             features: [
                 "Executive dashboards",
                 "Live operational KPIs",
@@ -166,8 +166,10 @@ export const mobileAppData = {
                 "Facility Managers",
                 "Property Managers",
                 "Operations Managers",
-                "Regional Managers",
+                "Supervisors",
                 "Business Owners",
+                "Field Engineers",
+                "Maintenance Teams",
                 "Senior Leadership"
             ],
             image: "/adminapp.png"
@@ -208,9 +210,9 @@ export const mobileAppData = {
         },
         {
             id: "occupant",
-            label: "FC Occupant App",
+            label: "FC Tenant App",
             icon: FiUsers,
-            subHeading: "FC Occupant App",
+            subHeading: "FC Tenant App",
             highlightPoint: "Deliver Exceptional Occupant Experiences",
             description: "The FC Occupant App is designed for tenants, residents, employees, visitors, and building occupants.\n\nIt provides a simple self-service platform that improves communication between occupants and facility management while reducing the workload of helpdesk teams.",
             features: [
@@ -234,7 +236,7 @@ export const mobileAppData = {
                 "Tenants",
                 "Visitors"
             ],
-            image: "/adminapp.png"
+            image: "/employeapp.png"
         }
     ]
 };
