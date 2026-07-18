@@ -104,22 +104,10 @@ const MobileFirst = () => {
           >
             <div className="premium-image-wrapper">
               <img
-                src="/facility_mobile_app.png"
+                src="/aboutuspagemobileimg.png"
                 alt="Facility Management Mobile Application"
                 className="premium-mobile-image"
               />
-
-              {/* Floating Card 1 */}
-              <div className="floating-card card-top-left">
-                <span className="floating-emoji">📱</span>
-                <span className="floating-text">Real-Time Monitoring</span>
-              </div>
-
-              {/* Floating Card 2 */}
-              <div className="floating-card card-bottom-right">
-                <span className="floating-emoji">✔</span>
-                <span className="floating-text">Work Orders Completed</span>
-              </div>
             </div>
           </motion.div>
 

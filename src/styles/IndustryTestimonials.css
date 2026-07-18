@@ -2,7 +2,7 @@
 .ind-testimonials-section {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    background: #FFFFFF;
+    background: #F8FAFC;
     width: 100%;
 }
 
@@ -138,7 +138,8 @@
     }
 
     .ind-timeline-line {
-        display: none; /* Hide connecting line in grid format */
+        display: none;
+        /* Hide connecting line in grid format */
     }
 
     .ind-timeline-card-content {
@@ -165,7 +166,8 @@
         position: absolute;
         top: 28px;
         bottom: 28px;
-        left: 48px; /* Aligned centered to circles */
+        left: 48px;
+        /* Aligned centered to circles */
         width: 3px;
         border-left: 3px dashed #1D4FA3;
         opacity: 0.4;
@@ -193,7 +195,8 @@
     }
 
     .ind-timeline-line {
-        display: none; /* Hide standard line */
+        display: none;
+        /* Hide standard line */
     }
 
     .ind-timeline-card-content {
