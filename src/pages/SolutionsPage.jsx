@@ -21,7 +21,6 @@ const SolutionsPage = () => {
           { label: "Solutions" }
         ]}
       />
-      <PlatformModules />
       <DetailedModules />
       <WorkflowSection />
       <Footer />

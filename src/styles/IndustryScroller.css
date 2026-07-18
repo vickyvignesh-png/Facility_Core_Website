@@ -2,7 +2,7 @@
 .ind-scroller-section {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    background: #FFFFFF;
+    background: #F8FAFC;
     width: 100%;
 }
 
@@ -65,7 +65,8 @@
     display: grid;
     grid-template-columns: 45% 55%;
     gap: 60px;
-    align-items: center; /* Vertically centered */
+    align-items: center;
+    /* Vertically centered */
 }
 
 /* Left Side: Image */
@@ -108,7 +109,8 @@
 .ind-bullet-list {
     display: flex;
     flex-direction: column;
-    gap: 24px; /* Spacing between bullet items: 24px */
+    gap: 24px;
+    /* Spacing between bullet items: 24px */
 }
 
 .ind-bullet-item {

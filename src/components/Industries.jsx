@@ -5,14 +5,14 @@ import '../styles/Industries.css';
 
 const Industries = () => {
   const industries = [
-    { title: 'Commercial', image: '/commercialimg.png', description: 'Office towers, corporate headquarters & business parks' },
-    { title: 'Smart Cities', image: '/smartcitiesimg.png', description: 'Municipal properties, traffic management & smart grids' },
-    { title: 'Hospital', image: '/hospitalimg.png', description: 'Hospitals, biotech labs & medical diagnostic spaces' },
-    { title: 'School', image: '/schoolimg.png', description: 'K‑12 schools, university campuses & academic structures' },
-    { title: 'Apartment', image: '/appartemntimg.png', description: 'Multi‑family apartments, HOAs & condominium communities' },
-    { title: 'Industry', image: '/industryimg.png', description: 'Assembly lines, production plants & logistics centers' },
-    { title: 'IT Campuses', image: '/itcampusesimg.png', description: 'Tech campuses, data centers & innovation hubs' },
-    { title: 'Shopping Mall', image: '/shoppingmallimg.png', description: 'Retail malls, entertainment complexes & mixed‑use spaces' },
+    { title: 'Commercial', image: '/CommercialBuildingimg.png', description: 'Office towers, corporate headquarters & business parks' },
+    { title: 'Smart Cities', image: '/SmartCityimg.png', description: 'Municipal properties, traffic management & smart grids' },
+    { title: 'Hospital', image: '/Hospitalllimg.png', description: 'Hospitals, biotech labs & medical diagnostic spaces' },
+    { title: 'School', image: '/Schoollllimg.png', description: 'K‑12 schools, university campuses & academic structures' },
+    { title: 'Apartment', image: '/Apartmentimg.png', description: 'Multi‑family apartments, HOAs & condominium communities' },
+    { title: 'Industry', image: '/Industryyyyyimg.png', description: 'Assembly lines, production plants & logistics centers' },
+    { title: 'IT Campuses', image: '/ITCampusimggg.png', description: 'Tech campuses, data centers & innovation hubs' },
+    { title: 'Shopping Mall', image: '/ShoppingMallimgggg.png', description: 'Retail malls, entertainment complexes & mixed‑use spaces' },
   ];
 
   const containerVariants = {
