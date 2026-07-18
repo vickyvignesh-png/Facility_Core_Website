@@ -30,6 +30,13 @@ const SaasPricingCard = ({ plan, index }) => {
   const handleButtonClick = () => {
     if (isCustomize) {
       navigate(plan.buttonLink);
+      // Smooth scroll to ContactDetails section after navigation
+      setTimeout(() => {
+        const target = document.querySelector('.cd-section');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     } else {
       window.open(plan.buttonLink, "_blank", "noopener noreferrer");
     }
