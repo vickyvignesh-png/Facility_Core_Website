@@ -210,9 +210,9 @@ export const mobileAppData = {
         },
         {
             id: "occupant",
-            label: "FC Occupant App",
+            label: "FC Tenant App",
             icon: FiUsers,
-            subHeading: "FC Occupant App",
+            subHeading: "FC Tenant App",
             highlightPoint: "Deliver Exceptional Occupant Experiences",
             description: "The FC Occupant App is designed for tenants, residents, employees, visitors, and building occupants.\n\nIt provides a simple self-service platform that improves communication between occupants and facility management while reducing the workload of helpdesk teams.",
             features: [
@@ -236,7 +236,7 @@ export const mobileAppData = {
                 "Tenants",
                 "Visitors"
             ],
-            image: "/adminapp.png"
+            image: "/employeapp.png"
         }
     ]
 };

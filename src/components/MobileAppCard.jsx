@@ -19,8 +19,9 @@ const imageVariants = {
 const MobileAppCard = () => {
   const [activeTabId, setActiveTabId] = useState('admin');
   const { badge, heading, description, keyFunctionalitiesTitle, idealForTitle, tabs } = mobileAppData;
-  
-  const activeTab = tabs.find(tab => tab.id === activeTabId);
+
+  const filteredTabs = tabs.filter(tab => tab.id !== 'employee');
+  const activeTab = filteredTabs.find(tab => tab.id === activeTabId);
   const BadgeIcon = badge.icon;
 
   return (
@@ -40,7 +41,7 @@ const MobileAppCard = () => {
         {/* Three Premium Tabs */}
         <div className="mac-tabs-wrapper">
           <div className="mac-tabs">
-            {tabs.map((tab) => {
+            {filteredTabs.map((tab) => {
               const TabIcon = tab.icon;
               return (
                 <button
