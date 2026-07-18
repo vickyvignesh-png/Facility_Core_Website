@@ -24,12 +24,12 @@ const contactBlocks = [
   {
     icon: <FiPhone />,
     title: "Phone Number",
-    lines: ["+91 XXXXX XXXXX"],
+    lines: ["+91 9361600649"],
   },
   {
     icon: <FiMail />,
     title: "Email Address",
-    lines: ["info@facilitycore.com", "support@facilitycore.com"],
+    lines: ["sales@facilitycore.in"],
   },
   {
     icon: <FiMapPin />,

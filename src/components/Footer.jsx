@@ -101,13 +101,13 @@ const Footer = () => {
               <li>
                 <FiMail className="footer-contact-icon" />
                 <a href="mailto:sales@facilitycore.com">
-                  sales@facilitycore.com
+                  sales@facilitycore.in
                 </a>
               </li>
               <li>
                 <FiPhone className="footer-contact-icon" />
                 <a href="tel:+919876543210">
-                  +91 9876543210
+                  +91 9361600649
                 </a>
               </li>
               <li>
@@ -126,7 +126,7 @@ const Footer = () => {
         {/* Bottom separator & Copyright */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {currentYear} FacilityCore Technologies. All rights reserved.
+            © {currentYear} FacilityCore . All rights reserved.
           </p>
         </div>
       </div>
